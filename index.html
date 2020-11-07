@@ -17,7 +17,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide"><b>LOGO</b></h3>
+    <h3 class="w3-wide"><b>TRIPLE T</b></h3>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Sign in</button>
@@ -62,7 +62,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
             </form>
         </div>
       </div>
-      
+    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-green w3-large">Login</button>
     <div id="id02" class="w3-modal" style="display: block;">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
       
@@ -71,7 +71,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
           </div>
     
-          <form class="w3-container" action="/action_page.php">
+          <form class="w3-container">
             <div class="w3-section">
               <label><b>Username</b></label>
               <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required="">
@@ -110,7 +110,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <div class="w3-bar-item w3-padding-24 w3-wide">TRIPLE T</div>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
@@ -134,7 +134,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide"><b>LOGO</b></h3>
+    <h3 class="w3-wide"><b>TRIPLE T</b></h3>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
     <a href="#" class="w3-bar-item w3-button">Shirts</a>
@@ -160,7 +160,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <div class="w3-bar-item w3-padding-24 w3-wide">TRIPLE T</div>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
@@ -178,11 +178,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <p class="w3-left">Jeans</p>
     <p class="w3-right">
       <i class="fa fa-shopping-cart w3-margin-right w3-hover-opacity w3-large"></i>
-      <i class="fa fa-search w3-hover-opacity w3-large">
-        <div>
-            <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-            <a href="#" class="w3-bar-item w3-button w3-green">Go</a>
-        </div>
+      <i class="fa fa-search w3-hover-opacity w3-large"></i>
       </i>
     </p>
   </header>
@@ -375,15 +371,12 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
   <header class="w3-container w3-xlarge">
     <p class="w3-left">Perfume</p>
     <p class="w3-right">
-      <i class="fa fa-shopping-cart w3-margin-right w3-hover-opacity w3-large">
-          <button ></button>
-      </i>
-      <i class="fa fa-search w3-hover-opacity w3-large"></i>
-      <div class="w3-left">
-        <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-        <a href="#" class="w3-bar-item w3-button w3-green">Go</a>
-    </div>
+      <i class="fa fa-shopping-cart w3-margin-right w3-hover-opacity w3-large"></i>
     </p>
+    <div class="w3-container">
+      <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
+      <button class="w3-button w3-right">GO</button>
+    </div>
   </header>
 
   <!-- Image header -->
