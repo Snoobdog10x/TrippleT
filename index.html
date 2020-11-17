@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
@@ -17,24 +18,24 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index:3;width:250px; background-color:rgb(255, 255, 255,0);" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16 ">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <img src="/Images/3523174.gif" alt="TRIPPLE T" style="width:128px;height:128px;">
+    <a href="index.html"><img src="/Images/3523174.gif" alt="TRIPPLE T" style="width:128px;height:128px;"></a>
   </div> 
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large" style="background-color:rgb(0, 254, 169);">Sign in</button>
-    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-large">Login</button>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-flat-turquoise w3-large"><p style="color: black;"> Sign in</p></button>
+    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-large"><p style="color: black;">Login</p></button>
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       Perfume <i class="fa fa-caret-down"></i>
     </a>
-    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium w3-text-black">
       <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
       <a href="#" class="w3-bar-item w3-button">Relaxed</a>
       <a href="#" class="w3-bar-item w3-button">Bootcut</a>
       <a href="#" class="w3-bar-item w3-button">Straight</a>
     </div>
-    <a href="#" class="w3-bar-item w3-button">Jackets</a>
-    <a href="#" class="w3-bar-item w3-button">Gymwear</a>
-    <a href="#" class="w3-bar-item w3-button">Blazers</a>
-    <a href="#" class="w3-bar-item w3-button">Shoes</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-black">Jackets</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-black">Gymwear</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-black">Blazers</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-black">Shoes</a>
   </div>
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
@@ -69,7 +70,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
     <h3 class="w3-wide"><b>TRIPLE T</b></h3>
   </div>
-  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+  <div class="w3-padding-64 w3-large w3-text-black" style="font-weight:bold">
     <a href="#" class="w3-bar-item w3-button">Shirts</a>
     <a href="#" class="w3-bar-item w3-button">Dresses</a>
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
@@ -191,7 +192,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   </div>
 
   <!-- Subscribe section -->
-  <div class="w3-container w3-black w3-padding-32">
+  <div class="w3-container w3-padding-32">
     <h1>Subscribe</h1>
     <p>To get special offers and VIP treatment:</p>
     <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
@@ -387,7 +388,7 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
   </div>
 
   <!-- Subscribe section -->
-  <div class="w3-container w3-black w3-padding-32">
+  <div class="w3-container w3-black w3-padding-32" style="background-color: rgb(42, 50, 60,0.2);">
     <h1>Subscribe</h1>
     <p>To get special offers and VIP treatment:</p>
     <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
