@@ -16,16 +16,22 @@
         </style>
 </head>
 <body class="w3-content" style="max-width:1200px; background-image: linear-gradient(blueviolet,white); background-repeat: no-repeat;">
-    <div>
+    <div class="w3-container">
         <img src="Images/3523174.gif" alt="">
-        <div class="w3-right" style=" padding-top: 200px; background-color: #f0f2f5;">
-            <form class="w3-container" style="display: block;">
-                <label>Email or phone</label>
-                <input class="w3-input w3-round" type="text">    
-                <label>Password</label>
-                <input class="w3-input w3-round" type="password">
-                <button class="w3-btn w3-blue">Login</button>
-            </form>
+        <div class="w3-right" style=" padding-top: 200px;width: 456px;">
+            <div class="w3-container w3-round">
+                <form class="w3-container">
+                    <div class="w3-container" style="padding: 14px 30px;" >
+                        <input class="w3-input w3-round" style="height: 52px; width: 364px;" placeholder="Email or phone number" type="text">    
+                    </div>
+                    <div class="w3-container" style="padding: 0px 30px;">
+                        <input class="w3-input w3-round" style="height: 52px; width: 364px;" placeholder="Password" type="password">
+                    </div>
+                    <div class="w3-container" style="padding: 30px 30px;">
+                        <button class="w3-btn w3-blue w3-round" onclick="document.getElementById('id01').style.display='block'" style="height: 52px; width: 364px;">Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>    
 </body> 
