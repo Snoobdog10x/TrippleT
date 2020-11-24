@@ -21,28 +21,44 @@
             <a href="index.html"><img src="Images/3523174.gif" alt=""></a>
         </div>
         <div class="w3-col w3-container w3-twothird w3-round" style=" margin-top: 90px;margin-left: 200px;height: 390px; width: 460px; background-color: rgb(255,255,255,0.3);">
-                <form class="w3-container">
-                    <div class="w3-container" style="margin: 40px 0px 0px 0px;" >
-                        <input class="w3-input w3-round" style="height: 52px; width: 364px; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" placeholder="Email or phone number" type="text">    
-                    </div>
-                    <div class="w3-container" style="margin: 20px 0px 0px 0px;">
-                        <input class="w3-input w3-round" style="height: 52px; width: 364px;box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" placeholder="Password" type="password">
-                    </div>
-                    <div class="w3-container" style="margin: 20px 0px 0px 0px;">
-                        <a href="index.html">
-                            <button class="w3-btn w3-blue w3-round" style="height: 52px; width: 364px; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" type="submit">Login</button>
-                        </a>
-                    </div>
-                    <div class="w3-container" style="margin-top: 15px;margin-left: 120px;">
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    <div class="w3-container" style="margin: 20px 0px 0px 0px;">
-                        <a href="Signup.html">
-                            <button class="w3-btn w3-blue w3-round" style="height: 52px; width: 364px;box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" type="submit">Sign up</button>
-                        </a>
-                    </div>
-                </form>
+            <form class="w3-container" action="Admin.html" method="GET" onsubmit="return validateform()">
+                <div class="w3-container" style="margin: 40px 0px 0px 0px;" >
+                    <input class="w3-input w3-round" name="username" id="username" style="height: 52px; width: 364px; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" placeholder="Email or phone number" type="text">    
+                </div>
+                <div class="w3-container" style="margin: 20px 0px 0px 0px;">
+                   <input class="w3-input w3-round" name="password" id="password" style="height: 52px; width: 364px;box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" placeholder="Password" type="password">
+                </div>
+                <div class="w3-container" style="margin: 20px 0px 0px 0px;">
+                    <button class="w3-btn w3-blue w3-round" style="height: 52px; width: 364px; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);" type="submit">Login</button>
+                </div>
+                <div class="w3-container" style="margin-top: 15px;margin-left: 120px;">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div class="w3-container" style="margin: 20px 0px 0px 0px;">
+                    <button onclick="window.location.href='Signup.html';" class="w3-btn w3-blue w3-round" style="height: 52px; width: 364px;box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);" type="button">Sign up</button>
+                </div>
+            </form>
         </div>
-    </div>    
-</body> 
+    </div>
+</body>
+<script type="text/javascript">
+    function validateform(){
+        var u=document.getElementById("username").value;
+        var p=document.getElementById("password").value;
+        if(u==""){
+            alert("Please enter your username");
+            return false;
+        }
+        if(p==""){
+            alert("Please enter your password");
+            return false;
+        }
+        if(u=="admin"&&p=="123456"){
+            alert("hello Admin")
+            return true;
+        }
+        alert("hello "+u);
+        return true;
+    }
+</script>
 </html>
