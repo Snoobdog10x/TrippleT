@@ -21,7 +21,7 @@
             <a href="index.html"><img src="Images/3523174.gif" alt=""></a>
         </div>
         <div class="w3-col w3-container w3-twothird w3-round" style=" margin-top: 90px;margin-left: 200px;height: 390px; width: 460px; background-color: rgb(255,255,255,0.3);">
-            <form class="w3-container" action="index.html" method="GET" onsubmit="return validateform()">
+            <form class="w3-container" method="POST" onsubmit="return validateform()">
                 <div class="w3-container" style="margin: 40px 0px 0px 0px;" >
                     <input class="w3-input w3-round" name="username" id="username" style="height: 52px; width: 364px; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2)" placeholder="Email or phone number" type="text">    
                 </div>
@@ -55,11 +55,12 @@
         }
         if(u=="admin"&&p=="123456"){
             alert("hello Admin")
-            window.open("Admin.html","_self")
+            window.open("Admin.html","_self");
             return false;
         }
         alert("hello "+u);
-        return true;
+        window.open("index.html","_self");
+        return false;
     }
 </script>
 </html>
