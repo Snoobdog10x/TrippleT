@@ -1,34 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triple T Perfume</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-    <style>
-      .w3-sidebar a {
-        font-family: "Roboto", sans-serif
-      }
-    
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      .w3-wide {
-        font-family: "Montserrat", sans-serif;
-      }
-    </style>    
-</head>
-<body>
-  
+<html>
+<title>Triple T Perfume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<style>
+  .w3-sidebar a {
+    font-family: "Roboto", sans-serif
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .w3-wide {
+    font-family: "Montserrat", sans-serif;
+  }
+</style>
+
+<body class="w3-content" style="max-width:1200px; background-image: linear-gradient(blueviolet,white); background-repeat: no-repeat;">
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-top"
+    style="z-index:3;width:250px; background-color:rgb(255, 255, 255,0);" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16 ">
+      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+      <a href="index.html"><img src="/Images/3523174.gif" alt="TRIPPLE T" style="width:128px;height:128px;"></a>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+      <div class="w3-container">
+        <h5 style="color: black;" class="w3-half">Hello Ad</h5>
+        <a href="index.html" style="color:black; margin-top: 9px;" class="w3-half">Log out</a>
+      </div>
+      <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+        Admin menu <i class="fa fa-caret-down"></i>
+      </a>
+      <div id="demoAcc" class="w3-bar-block  w3-padding-large w3-medium w3-text-black">
+        <a onclick='document.getElementById('').innerHTML=""' class="w3-bar-item w3-button">Product management</a>
+        <a href="#" class="w3-bar-item w3-button">Order management</a>
+        <a href="#" class="w3-bar-item w3-button">User management</a>
+        <a href="#" class="w3-bar-item w3-button">Statistic</a>
+      </div>
+  </nav>
+      <script>
+        // Accordion 
+        function myAccFunc() {
+          var x = document.getElementById("demoAcc");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+
+        // Click on the "Jeans" link on page load to open the accordion for demo purposes
+        document.getElementById("myBtn").click();
+
+
+        // Open and close sidebar
+        function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+        }
+      </script>
+    </body>
+</html>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge w3-row">
+    <div class="w3-cotainter">
+      <p class="w3-col" style="width: 10%;">Perfume</p>
+      <div class="w3-container w3-col" style="width: 90%;margin-top: 20px;">
+        <form action="Search.html" style="margin-left: 45%;" class="w3-half">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <button><i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+  </header>
+    <div class="w3-container">
+      
+    </div>
+ </div>
+</div>
+
+<script>
+  // Accordion 
+  function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+
+  // Click on the "Jeans" link on page load to open the accordion for demo purposes
+  document.getElementById("myBtn").click();
+
+
+  // Open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+</script>
+
 </body>
+
 </html>
