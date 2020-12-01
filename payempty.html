@@ -225,14 +225,16 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Top header -->
-  <header class="w3-container w3-xlarge">
-    <p class="w3-left">Perfume</p>
-    <p class="w3-right">
-      <i class="fa fa-shopping-cart w3-margin-right w3-hover-opacity w3-large"></i>
-    </p>
-    <div class="w3-container">
-      <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-      <p class="w3-left">Card <span>(no item found)</span></p>
+  <header class="w3-container w3-xlarge w3-row">
+    <div class="w3-cotainter">
+      <p class="w3-col" style="width: 10%;">Perfume</p>
+      <div class="w3-container w3-col" style="width: 90%;margin-top: 20px;">
+        <form action="Search.html" style="margin-left: 45%;" class="w3-half">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <button onclick="window.location.href='payempty.html'" type="button"><i class="fa fa-shopping-cart"></i></button>
+      </div>
     </div>
   </header>
 
