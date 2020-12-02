@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-<link  rel="stylesheet" href="//theme.hstatic.net/1000357687/1000521705/14/timber.scss.css?v=107" type="text/css" media="all">
+<link rel="stylesheet" href="/CSS/style1.css">
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
@@ -112,16 +112,6 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   </header>
 
   <!-- Image header -->
-  <center>
-    <div class="w3-display-container w3-container">
-      <div class="CartEmpty__StyledCartEmpty-sc-1vx42mq-0 dExlGl" style="display: inline-flex;">
-            <div><img src="/Images/cnitem.png" alt="NO ITEMS" class="empty__img">
-              <p>Your card is emty.</p>
-              <a href="index.html"><button class="w3-yellow">Continue Shopping</button></a>
-            </div>
-      </div>
-    </div>
-  </center>
   <!-- Subscribe section -->
   <!-- Footer -->
   <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
@@ -226,71 +216,171 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Top header -->
-  <header class="w3-container w3-xlarge">
-    <p class="w3-left">Perfume</p>
-    <p class="w3-right">
-      <i class="fa fa-shopping-cart w3-margin-right w3-hover-opacity w3-large"></i>
-    </p>
-    <div class="w3-container">
-      <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-      <p class="w3-left">Card <span>(1 item)</span></p>
+  <header class="w3-container w3-xlarge w3-row">
+    <div class="w3-cotainter">
+      <p class="w3-col" style="width: 10%;">Perfume</p>
+      <div class="w3-container w3-col" style="width: 90%;margin-top: 20px;">
+        <form action="Search.html" style="margin-left: 45%;" class="w3-half">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <button onclick="window.location.href='payempty.html'" type="button"><i class="fa fa-shopping-cart"></i></button>
+        <p class="w3-left">ADVANCED SEARCH</p>
+      </div>
     </div>
   </header>
-
-  <!-- Image header -->
-  <form action="/cart" method="post" novalidate="" class="cart table-wrap small--hide">
-    <table class="cart-table full table--responsive">
-      <thead class="cart__row cart__header-labels">
-        <tr><th colspan="2" class="text-center">Thông tin chi tiết sản phẩm</th>
-        <th class="text-center">Đơn giá</th>
-        <th class="text-center">Số lượng</th>
-        <th class="text-right">Tổng giá</th>
-      </tr></thead>
-      <tbody>
-        <tr class="cart__row table__section">
-          <td data-label="Sản phẩm">
-            <a href="product3.html" class="cart__image">
-              <img src="Images/cool water.jpg" width="60%" class="smallImg">
-            </a>
-          </td>
-          <td>
-            <a href="product3.html" class="h4">Cool Water</a>
-            <br>
-            <small>5 ml</small>
-            <a href="/cart/change?line=1&amp;quantity=0" class="cart__remove">
-              <small>Xóa</small>
-            </a>
-          </td>
-          <td data-label="Đơn giá">
-            <span class="h3">$20.50</span>
-          </td>
-          <td data-label="Số lượng">
-            <div class="buttons_added">
-              <input aria-label="quantity" class="input-qty" max="10" min="0" name="" type="number" value="1">
-            </div>
-          </td>
-          <td data-label="Tổng giá" class="text-right">
-            <span class="h3">$20.50</span> 
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="grid cart__row">
-      <div class="grid__item two-thirds small--one-whole">
-        <label for="CartSpecialInstructions">Chú thích cho chủ cửa hàng</label>
-        <textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
-      </div>
-      <div class="grid__item text-right one-third small--one-whole">
-        <p>
-          <span class="cart__subtotal-title">Tổng tiền</span>
-          <span class="h3 cart__subtotal">$20.50</span>
-        </p>
-        <button type="submit" name="update" class="btn update-cart">Cập nhật</button>
-        <button type="submit" name="checkout" class="btn">Thanh toán</button>
+  <!-- Search Advanced -->
+  <div class="advancedline">
+    <div class="advancedsearch">
+      <div class="w3-container w3-col w3-row">
+        <select name="choices-single-defaul">
+          <option value="">Gender</option>
+          <option>Women</option>
+          <option>Men</option>
+          <option>Unisex</option>
+      </select>
+    </div>
+  </div>
+  <div class="advancedsearch">
+    <div class="w3-container w3-col w3-row">
+        <select data-trigger="" name="choices-single-defaul">
+          <option placeholder="" value="">Brand</option>
+          <option>Versace</option>
+          <option>Calvin Klein</option>
+          <option>Hugo Boss</option>
+          <option>Jimmy Choo</option>
+          <option>Victoria's Secret</option>
+        </select>
       </div>
     </div>
-  </form>
+    <div class="advancedsearch">
+      <div class="w3-container w3-col w3-row">
+        <select data-trigger="" name="choices-single-defaul">
+          <option placeholder="" value="">Type</option>
+          <option>Tester</option>
+          <option>Travel Mini's</option>
+          <option>Samples</option>
+          <option>Gift Sets</option>
+          <option>Body Lotion</option>
+        </select>
+      </div>
+    </div>
+    <div class="advancedsearch">
+      <div class="w3-container w3-col w3-row">
+          <select data-trigger="" name="choices-single-defaul">
+            <option placeholder="" value="">Price</option>
+            <option>Under 15$</option>
+            <option>15$ - 30$</option>
+            <option>30$ - 50$</option>
+            <option>50$ +</option>
+          </select>
+        </div>
+    </div>
+    <div class="advancedsearch">
+      <div class="w3-container w3-col w3-row">
+        <button class="advancedbutton">RESET</button>
+      </div>
+  </div>
+  <div class="advancedsearch">
+    <div class="w3-container w3-col w3-row">
+      <button class="advancedbutton">SEARCH</button>
+    </div>
+</div>
+</div>
   <!-- Product grid -->
+  <div class="w3-container nw3-row w3-col" style="margin-top: 20px;">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <a href="product1.html"><img src="/Images/69867m.jpg" style="width:100%"></a>
+          <div class="w3-display-middle w3-display-hover">
+            <a href="payment.html"><button class="w3-button w3-black">Buy now <i
+                  class="fa fa-shopping-cart"></i></button></a>
+          </div>
+        </div>
+        <p>Versace Eros Cologne<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <a href="product1.html"><img src="/Images/men-versage1.jpg" style="width:100%"></a>
+          <div class="w3-display-middle w3-display-hover">
+            <a href="payment.html">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </a>
+          </div>
+        </div>
+        <p>Versace<br><b>$19.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <a href="product2.html"><img src="/Images/Eternity cologne.jpg" style="width:100%"></a>
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <a href="payment.html">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </a>
+          </div>
+        </div>
+        <p>Eternity Cologne<br><b>$19.99</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <a href="product1.html"><img src="/Images/men-versage3.jpg" style="width:100%"></a>
+          <div class="w3-display-middle w3-display-hover">
+            <a href="payment.html"><button class="w3-button w3-black">Buy now <i
+                  class="fa fa-shopping-cart"></i></button></a>
+          </div>
+        </div>
+        <p>Versace 3 <br><b>$19.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+        <a href="product3.html"><img src="/Images/cool water.jpg" style="width:100%"></a>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="payment.html"><button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button></a>
+          </div>
+       </div>
+        <p>Cool Water<br><b>$20.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="/Images/men-versage2.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/Images/obsession cologne.jpg" style="width:100%">
+        <p>Cool Water<br><b>$14.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="/Images/men-ck.jpg" style="width:100%">
+        <p>Obsession Cologne<br><b>$24.99</b></p>
+      </div>
+    </div>
+  </div>
+  <!--pagination-->
+  <center>
+  <ul class="pagination modal-5">
+    <li><a href="#" class="prev fa fa-arrow-left"> </a></li>
+    <li><a href="#" class="active">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#" class="next fa fa-arrow-right"></a></li>
+  </ul>
+  </center>
   <!-- Subscribe section -->
   <div class="w3-container w3-black w3-padding-32">
     <h1>Subscribe</h1>
