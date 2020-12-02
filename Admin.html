@@ -25,7 +25,8 @@
   }
 </style>
 
-<body class="w3-content" style="max-width:1200px; background-image: linear-gradient(blueviolet,white); background-repeat: no-repeat;">
+<body class="w3-content"
+  style="max-width:1200px; background-image: linear-gradient(blueviolet,white); background-repeat: no-repeat;">
 
   <!-- Sidebar/menu -->
   <nav class="w3-sidebar w3-bar-block w3-collapse w3-top"
@@ -43,39 +44,40 @@
         Admin menu <i class="fa fa-caret-down"></i>
       </a>
       <div id="demoAcc" class="w3-bar-block  w3-padding-large w3-medium w3-text-black">
-        <a onclick='document.getElementById('').innerHTML=""' class="w3-bar-item w3-button">Product management</a>
-        <a href="#" class="w3-bar-item w3-button">Order management</a>
-        <a href="#" class="w3-bar-item w3-button">User management</a>
-        <a href="#" class="w3-bar-item w3-button">Statistic</a>
+        <a onclick='document.getElementById("PM").innerHTML=document.getElementById("OM").innerHTML' class="w3-bar-item w3-button">Product management</a>
+        <a onclick='document.getElementById("PM").innerHTML=innerHTML.document.getElementById("OM").innerHTML' class="w3-bar-item w3-button">Order management</a>
+        <a onclick='document.getElementById("PM").innerHTML=""' class="w3-bar-item w3-button">User management</a>
+        <a onclick='document.getElementById("PM").innerHTML=""' class="w3-bar-item w3-button">Statistic</a>
       </div>
   </nav>
-      <script>
-        // Accordion 
-        function myAccFunc() {
-          var x = document.getElementById("demoAcc");
-          if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-          } else {
-            x.className = x.className.replace(" w3-show", "");
-          }
-        }
+  <script>
+    // Accordion 
+    function myAccFunc() {
+      var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
 
-        // Click on the "Jeans" link on page load to open the accordion for demo purposes
-        document.getElementById("myBtn").click();
+    // Click on the "Jeans" link on page load to open the accordion for demo purposes
+    document.getElementById("myBtn").click();
 
 
-        // Open and close sidebar
-        function w3_open() {
-          document.getElementById("mySidebar").style.display = "block";
-          document.getElementById("myOverlay").style.display = "block";
-        }
+    // Open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
 
-        function w3_close() {
-          document.getElementById("mySidebar").style.display = "none";
-          document.getElementById("myOverlay").style.display = "none";
-        }
-      </script>
-    </body>
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
+</body>
+
 </html>
 
 <!-- !PAGE CONTENT! -->
@@ -85,22 +87,174 @@
   <div class="w3-hide-large" style="margin-top:83px"></div>
 
   <!-- Top header -->
-  <header class="w3-container w3-xlarge w3-row">
-    <div class="w3-cotainter">
+  <header class="w3-container w3-xlarge w3-row w3-bar">
+    <div class="w3-cotainter w3-bar w3-round" style="background-color: rgb(0, 0, 0,0.2);margin-top: 20px;">
       <p class="w3-col" style="width: 10%;">Perfume</p>
       <div class="w3-container w3-col" style="width: 90%;margin-top: 20px;">
         <form action="Search.html" style="margin-left: 45%;" class="w3-half">
           <input type="text" placeholder="Search.." name="search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <button><i class="fa fa-shopping-cart"></i></button>
+        <button onclick="window.location.href='payempty.html'" type="button"><i
+            class="fa fa-shopping-cart"></i></button>
       </div>
     </div>
   </header>
-    <div class="w3-container">
-      
+  <br>
+  <div class="w3-container" id="PM">
+
+  </div>
+  <div class="w3-container w3-main w3-hide" id="UM">
+      <div class="w3-container w3-black">
+        <h1>User management</h1>
+      </div>
+      <br>
+      <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
+        <tr height="50px">
+          <th>Serial</th>
+          <th>Name</th>
+          <th>Email or phone</th>
+          <th>Password</th>
+          <th>Sign in day</th>
+          <th>Status</th>
+          <th>Acc level</th>
+          <th>Block acc</th>
+        </tr>
+        <tr height="50px">
+          <th>1</th>
+          <th>Nguyễn Duy Thanh</th>
+          <th>duythanh1565@gmail.com</th>
+          <th>Lucifer111</th>
+          <th>20/10/2018</th>
+          <th>Onl</th>
+          <th>V.I.P</th>
+          <th></th>  
+        </tr>
+        <tr height="50px">
+          <th>2</th>
+          <th>Trần đặng Minh Tâm</th>
+          <th>Tam565@gmail.com</th>
+          <th>Medusa121</th>
+          <th>15/10/2018</th>
+          <th>Off</th>
+          <th>V.I.P</th>
+          <th></th>  
+        </tr>
+        <tr height="50px">
+          <th>3</th>
+          <th>Nguyễn Trần Ngọc Hân</th>
+          <th>0809221549</th>
+          <th>AgentC</th>
+          <th>20/10/2018</th>
+          <th>Onl</th>
+          <th>Platinum</th>
+          <th></th>  
+        </tr>
+        <tr height="50px">
+          <th>4</th>
+          <th>Nguyễn Duy Thanh</th>
+          <th>duythanh1565@gmail.com</th>
+          <th>Lucifer111</th>
+          <th>20/10/2018</th>
+          <th>Onl</th>
+          <th>V.I.P</th>
+          <th></th>  
+        </tr>
+        </tr><tr height="50px">
+          <th>5</th>
+          <th>Nguyễn Duy Thanh</th>
+          <th>duythanh1565@gmail.com</th>
+          <th>Lucifer111</th>
+          <th>20/10/2018</th>
+          <th>Onl</th>
+          <th>V.I.P</th>
+          <th></th>  
+        </tr>
+      </table>
     </div>
- </div>
+  </div>
+  
+  </div>
+  <div class="w3-container w3-main w3-hide" id="OM">
+    <div class="w3-container w3-black">
+      <h1>Order management</h1>
+    </div>
+    <br>
+    <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
+      <tr height="50px">
+        <th>Serial</th>
+        <th>Name</th>
+        <th>
+          Date of purchase</th>
+        <th>Amount</th>
+        <th>Total</th>
+        <th>
+          Not yet</th>
+        <th>Finished</th>
+      </tr>
+      <tr height="50px">
+        <th>1</th>
+        <th>Lê Trần Diệu Linh</th>
+        <th>30/10/2018</th>
+        <th>1</th>
+        <th>45.000đ</th>
+        <form>
+          <th>
+            <input type="radio" name="gender" value="male">
+          </th>
+          <th>
+            <input type="radio" name="gender" value="female" checked>
+          </th>
+        </form>
+      </tr>
+      <tr height="50px">
+        <th>2</th>
+        <th>Nguyễn Việt Thảo</th>
+        <th>11/11/2018</th>
+        <th>2</th>
+        <th>100.000đ</th>
+        <form>
+          <th>
+            <input type="radio" name="gender" value="male" checked>
+          </th>
+          <th>
+            <input type="radio" name="gender" value="female">
+          </th>
+        </form>
+      </tr>
+      <tr height="50px">
+        <th>3</th>
+        <th>Phan Đình Anh</th>
+        <th>20/11/2018</th>
+        <th>2</th>
+        <th>60.000đ</th>
+        <form>
+          <th>
+            <input type="radio" name="gender" value="male" checked>
+          </th>
+          <th>
+            <input type="radio" name="gender" value="female">
+          </th>
+        </form>
+      </tr>
+      <tr height="50px">
+        <th>4</th>
+        <th>Đoàn Bảo Triết</th>
+        <th>2/12/2018</th>
+        <th>5</th>
+        <th>200.000đ</th>
+        <form>
+          <th>
+            <input type="radio" name="gender" value="male">
+          </th>
+          <th>
+            <input type="radio" name="gender" value="female" checked>
+          </th>
+        </form>
+      </tr>
+    </table>
+  </div>
+</div>
 </div>
 
 <script>
