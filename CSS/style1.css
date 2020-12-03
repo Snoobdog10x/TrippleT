@@ -327,15 +327,17 @@ tr.shopping-cart-item {
   display:flex;
 }
 .advancedsearch{
-  margin-left: 20px;
-  margin-right: 10px;
+  margin-left: -10px;
+  margin-right: 0px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.advancedbutton{
+  font-size: 15px;
+  background-color: #a9d6ee;
+  border: none;
+  cursor: pointer;
+  margin-left: 50px;
 }
 
-.advancedbutton{
-  size: 15px;
-  font-size: 12px;
-  background-color: #96a19a;
-  border:none;
-  cursor: pointer;
-}
 /*# sourceMappingURL=style1.css.map */
