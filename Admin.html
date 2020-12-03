@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<link rel="stylesheet" href="CSS/Admin.css">
 <style>
   .w3-sidebar a {
     font-family: "Roboto", sans-serif
@@ -43,11 +44,9 @@
         Admin menu <i class="fa fa-caret-down"></i>
       </a>
       <div id="demoAcc" class="w3-bar-block  w3-padding-large w3-medium w3-text-black">
-        <a onclick="myFunction('PM')"
-          class="w3-bar-item w3-button">Product management</a>
+        <a onclick="myFunction('PM')" class="w3-bar-item w3-button">Product management</a>
         <a onclick="myFunction('OM')" class="w3-bar-item w3-button">Order management</a>
-        <a onclick="myFunction('UM')"
-          class="w3-bar-item w3-button">User management</a>
+        <a onclick="myFunction('UM')" class="w3-bar-item w3-button">User management</a>
         <a onclick='document.getElementById("PM").innerHTML=""' class="w3-bar-item w3-button">Statistic</a>
       </div>
   </nav>
@@ -72,10 +71,10 @@
     </div>
   </header>
   <br>
-  <div class="w3-container" id="PM" >
+  <div class="w3-container" id="PM">
 
   </div>
-  <div class="w3-container w3-main" id="UM">
+  <div class="w3-container w3-main" id="UM" style="display: none;">
     <div class="w3-container w3-black">
       <h1>User management</h1>
     </div>
@@ -91,7 +90,7 @@
         <th>Acc level</th>
         <th>Block acc</th>
       </tr>
-      <tr height="50px">
+      <tr height="50px" id='1'>
         <th>1</th>
         <th>Nguyễn Duy Thanh</th>
         <th>duythanh1565@gmail.com</th>
@@ -99,9 +98,12 @@
         <th>20/10/2018</th>
         <th>Onl</th>
         <th>V.I.P</th>
-        <th></th>
+        <th>
+          <button onclick="block('1','a','b')" id="a" class="block">BLOCK</button>
+          <button onclick="unblock('1','a','b')" id="b" class="unblock">UNBLOCK</button>
+        </th>
       </tr>
-      <tr height="50px">
+      <tr height="50px" id='2'>
         <th>2</th>
         <th>Trần đặng Minh Tâm</th>
         <th>Tam565@gmail.com</th>
@@ -109,9 +111,12 @@
         <th>15/10/2018</th>
         <th>Off</th>
         <th>V.I.P</th>
-        <th></th>
+        <th>
+          <button onclick="block('2','c','d')" id="c"class="block">BLOCK</button>
+          <button onclick="unblock('2','c','d')" id="d" class="unblock">UNBLOCK</button>
+        </th>
       </tr>
-      <tr height="50px">
+      <tr height="50px" id='3'>
         <th>3</th>
         <th>Nguyễn Trần Ngọc Hân</th>
         <th>0809221549</th>
@@ -119,9 +124,12 @@
         <th>20/10/2018</th>
         <th>Onl</th>
         <th>Platinum</th>
-        <th></th>
+        <th>
+          <button onclick="block('3','e','f')" id="e" class="block">BLOCK</button>
+          <button onclick="unblock('3','e','f')" id="f" class="unblock">UNBLOCK</button>
+        </th>
       </tr>
-      <tr height="50px">
+      <tr height="50px" id='4'>
         <th>4</th>
         <th>Nguyễn Thanh Tâm</th>
         <th>Thanhthanh1565@gmail.com</th>
@@ -129,10 +137,13 @@
         <th>20/10/2018</th>
         <th>Onl</th>
         <th>V.I.P</th>
-        <th></th>
+        <th>
+          <button onclick="block('4','g','h')" id="g" class="block">BLOCK</button>
+          <button onclick="unblock('4','g','h')" id="h" class="unblock">UNBLOCK</button>
+        </th>
       </tr>
       </tr>
-      <tr height="50px">
+      <tr height="50px" id='5'>
         <th>5</th>
         <th>Nguyễn Tấn Thanh</th>
         <th>thanh1565@gmail.com</th>
@@ -140,11 +151,14 @@
         <th>20/10/2018</th>
         <th>Onl</th>
         <th>Gold</th>
-        <th></th>
+        <th>
+          <button onclick="block('5','j','k')" id="j" class="block">BLOCK</button>
+          <button onclick="unblock('5','j','k')" id="k" class="unblock">UNBLOCK</button>
+        </th>
       </tr>
     </table>
   </div>
-  <div class="w3-container w3-main" id="OM">
+  <div class="w3-container w3-main" id="OM" style="display: none;">
     <div class="w3-container w3-black">
       <h1>Order management</h1>
     </div>
@@ -227,10 +241,10 @@
 </div>
 <script>
   function myFunction(y) {
-    var a=[document.getElementById('OM'),document.getElementById('UM')];
+    var a = [document.getElementById('OM'), document.getElementById('UM')];
     a.forEach(element => {
-     if(element.style.display==='block')
-      element.style.display='none';
+      if (element.style.display === 'block')
+        element.style.display = 'none';
     });
     var x = document.getElementById(y);
     if (x.style.display === 'none')
@@ -238,6 +252,26 @@
     else
       x.style.display = 'none';
   }
+  function block(ten, sl, un) {
+
+var x = confirm("Bạn muốn block tài khoản này !!!");
+if (x == true) {
+    document.getElementById(ten).style.textDecoration = "line-through";
+    document.getElementById(sl).style.display = "none";
+    document.getElementById(un).style.display = "block";
+}
+}
+
+function unblock(ten, sl, un) {
+
+var z = confirm("Bạn muốn hủy block tài khoản này !!!");
+if (z == true) {
+    document.getElementById(ten).style.textDecoration = "none";
+    document.getElementById(sl).style.display = "block";
+    document.getElementById(un).style.display = "none";
+}
+
+}
 </script>
 
 </body>

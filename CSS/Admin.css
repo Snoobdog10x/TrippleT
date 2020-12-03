@@ -1,0 +1,12 @@
+.unblock
+{
+    display: none;
+    margin: auto;
+    cursor: pointer;
+}
+.block
+{
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
