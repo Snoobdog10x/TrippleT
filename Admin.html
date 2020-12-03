@@ -26,8 +26,7 @@
 </style>
 
 <body class="w3-content"
-  style="max-width:1200px; background-image: linear-gradient(blueviolet,white); background-repeat: no-repeat;">
-
+  style="max-width:1200px; background-image: linear-gradient(#C08DEF,white); background-repeat: no-repeat;">
   <!-- Sidebar/menu -->
   <nav class="w3-sidebar w3-bar-block w3-collapse w3-top"
     style="z-index:3;width:250px; background-color:rgb(255, 255, 255,0);" id="mySidebar">
@@ -44,48 +43,20 @@
         Admin menu <i class="fa fa-caret-down"></i>
       </a>
       <div id="demoAcc" class="w3-bar-block  w3-padding-large w3-medium w3-text-black">
-        <a onclick='document.getElementById("PM").innerHTML=document.getElementById("OM").innerHTML' class="w3-bar-item w3-button">Product management</a>
-        <a onclick='document.getElementById("PM").innerHTML=innerHTML.document.getElementById("OM").innerHTML' class="w3-bar-item w3-button">Order management</a>
-        <a onclick='document.getElementById("PM").innerHTML=""' class="w3-bar-item w3-button">User management</a>
+        <a onclick="myFunction('PM')"
+          class="w3-bar-item w3-button">Product management</a>
+        <a onclick="myFunction('OM')" class="w3-bar-item w3-button">Order management</a>
+        <a onclick="myFunction('UM')"
+          class="w3-bar-item w3-button">User management</a>
         <a onclick='document.getElementById("PM").innerHTML=""' class="w3-bar-item w3-button">Statistic</a>
       </div>
   </nav>
-  <script>
-    // Accordion 
-    function myAccFunc() {
-      var x = document.getElementById("demoAcc");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-
-    // Click on the "Jeans" link on page load to open the accordion for demo purposes
-    document.getElementById("myBtn").click();
-
-
-    // Open and close sidebar
-    function w3_open() {
-      document.getElementById("mySidebar").style.display = "block";
-      document.getElementById("myOverlay").style.display = "block";
-    }
-
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("myOverlay").style.display = "none";
-    }
-  </script>
 </body>
 
 </html>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:250px">
-
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-
   <!-- Top header -->
   <header class="w3-container w3-xlarge w3-row w3-bar">
     <div class="w3-cotainter w3-bar w3-round" style="background-color: rgb(0, 0, 0,0.2);margin-top: 20px;">
@@ -101,86 +72,85 @@
     </div>
   </header>
   <br>
-  <div class="w3-container" id="PM">
+  <div class="w3-container" id="PM" >
 
   </div>
-  <div class="w3-container w3-main w3-hide" id="UM">
-      <div class="w3-container w3-black">
-        <h1>User management</h1>
-      </div>
-      <br>
-      <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
-        <tr height="50px">
-          <th>Serial</th>
-          <th>Name</th>
-          <th>Email or phone</th>
-          <th>Password</th>
-          <th>Sign in day</th>
-          <th>Status</th>
-          <th>Acc level</th>
-          <th>Block acc</th>
-        </tr>
-        <tr height="50px">
-          <th>1</th>
-          <th>Nguyễn Duy Thanh</th>
-          <th>duythanh1565@gmail.com</th>
-          <th>Lucifer111</th>
-          <th>20/10/2018</th>
-          <th>Onl</th>
-          <th>V.I.P</th>
-          <th></th>  
-        </tr>
-        <tr height="50px">
-          <th>2</th>
-          <th>Trần đặng Minh Tâm</th>
-          <th>Tam565@gmail.com</th>
-          <th>Medusa121</th>
-          <th>15/10/2018</th>
-          <th>Off</th>
-          <th>V.I.P</th>
-          <th></th>  
-        </tr>
-        <tr height="50px">
-          <th>3</th>
-          <th>Nguyễn Trần Ngọc Hân</th>
-          <th>0809221549</th>
-          <th>AgentC</th>
-          <th>20/10/2018</th>
-          <th>Onl</th>
-          <th>Platinum</th>
-          <th></th>  
-        </tr>
-        <tr height="50px">
-          <th>4</th>
-          <th>Nguyễn Duy Thanh</th>
-          <th>duythanh1565@gmail.com</th>
-          <th>Lucifer111</th>
-          <th>20/10/2018</th>
-          <th>Onl</th>
-          <th>V.I.P</th>
-          <th></th>  
-        </tr>
-        </tr><tr height="50px">
-          <th>5</th>
-          <th>Nguyễn Duy Thanh</th>
-          <th>duythanh1565@gmail.com</th>
-          <th>Lucifer111</th>
-          <th>20/10/2018</th>
-          <th>Onl</th>
-          <th>V.I.P</th>
-          <th></th>  
-        </tr>
-      </table>
+  <div class="w3-container w3-main" id="UM">
+    <div class="w3-container w3-black">
+      <h1>User management</h1>
     </div>
+    <br>
+    <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
+      <tr height="50px">
+        <th>Serial</th>
+        <th>Name</th>
+        <th>Email or phone</th>
+        <th>Password</th>
+        <th>Sign in day</th>
+        <th>Status</th>
+        <th>Acc level</th>
+        <th>Block acc</th>
+      </tr>
+      <tr height="50px">
+        <th>1</th>
+        <th>Nguyễn Duy Thanh</th>
+        <th>duythanh1565@gmail.com</th>
+        <th>**********</th>
+        <th>20/10/2018</th>
+        <th>Onl</th>
+        <th>V.I.P</th>
+        <th></th>
+      </tr>
+      <tr height="50px">
+        <th>2</th>
+        <th>Trần đặng Minh Tâm</th>
+        <th>Tam565@gmail.com</th>
+        <th>*********</th>
+        <th>15/10/2018</th>
+        <th>Off</th>
+        <th>V.I.P</th>
+        <th></th>
+      </tr>
+      <tr height="50px">
+        <th>3</th>
+        <th>Nguyễn Trần Ngọc Hân</th>
+        <th>0809221549</th>
+        <th>*********</th>
+        <th>20/10/2018</th>
+        <th>Onl</th>
+        <th>Platinum</th>
+        <th></th>
+      </tr>
+      <tr height="50px">
+        <th>4</th>
+        <th>Nguyễn Thanh Tâm</th>
+        <th>Thanhthanh1565@gmail.com</th>
+        <th>***********</th>
+        <th>20/10/2018</th>
+        <th>Onl</th>
+        <th>V.I.P</th>
+        <th></th>
+      </tr>
+      </tr>
+      <tr height="50px">
+        <th>5</th>
+        <th>Nguyễn Tấn Thanh</th>
+        <th>thanh1565@gmail.com</th>
+        <th>*********</th>
+        <th>20/10/2018</th>
+        <th>Onl</th>
+        <th>Gold</th>
+        <th></th>
+      </tr>
+    </table>
   </div>
-  
-  </div>
-  <div class="w3-container w3-main w3-hide" id="OM">
+  <div class="w3-container w3-main" id="OM">
     <div class="w3-container w3-black">
       <h1>Order management</h1>
     </div>
     <br>
-    <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
+    <table class="" border="1px" cellpadding="0px" cellspacing="0px" width="100%"
+      style="background-color:  rgb(0, 0, 0,0.2);">
       <tr height="50px">
         <th>Serial</th>
         <th>Name</th>
@@ -255,32 +225,18 @@
     </table>
   </div>
 </div>
-</div>
-
 <script>
-  // Accordion 
-  function myAccFunc() {
-    var x = document.getElementById("demoAcc");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-
-  // Click on the "Jeans" link on page load to open the accordion for demo purposes
-  document.getElementById("myBtn").click();
-
-
-  // Open and close sidebar
-  function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-  }
-
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
+  function myFunction(y) {
+    var a=[document.getElementById('OM'),document.getElementById('UM')];
+    a.forEach(element => {
+     if(element.style.display==='block')
+      element.style.display='none';
+    });
+    var x = document.getElementById(y);
+    if (x.style.display === 'none')
+      x.style.display = 'block';
+    else
+      x.style.display = 'none';
   }
 </script>
 
