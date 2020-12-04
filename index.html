@@ -55,7 +55,6 @@
       onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>
     <a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>
   </nav>
-
   <!-- Top menu on small screens -->
   <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
     <img src="/Images/3523174.gif" alt="TRIPPLE T" style="width:100px;height:100px;">
@@ -345,10 +344,108 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
           <input type="text" placeholder="Search..." name="search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <button onclick="window.location.href='payempty.html'" type="button"><i class="fa fa-shopping-cart"></i></button>
-      </div>
+          
     </div>
+  </div>
+
   </header>
+  <style>
+    .container {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+    /* Dropdown Button */
+    .dropbtn {
+        background-color: rgb(15, 165, 15);
+        color:black;
+        padding: 14px;
+        
+       
+        font-size: 22px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    /* ĐỔi màu nền khi hover và focus Dropdown button */
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: none;
+    }
+    
+    /* Định dạng các thẻ bao bọc các menu */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* Dropdown Content, mặc định sẽ được ẩn đi */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    /* Định dạng các thẻ a là các menu con */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    /* Thay đổi màu nền khi các menu con được hover */
+    .dropdown-content a:hover {background-color: #f1f1f1}
+    
+    /* Hiển thị menu, ta sẽ dùng javascript để thêm class này vào các nôi dung cần được hiển thị */
+    .show {display:block;}
+  </style>
+</head>
+<body>
+  <div style="margin-left: 550px; margin-top: -65px;" class="container">
+        <div class="dropdown">
+          <button  value="laptrinh" class="dropbtn fa fa-shopping-cart"></button>
+          <div id="laptrinh" class="dropdown-content">
+              <a href="product1.html">Versace Eros Cologne (5ml)</a>
+              <a href="product2.html">Versace (5ml)</a>
+              <a href="product3.html">Cool Water (5ml)</a>
+          </div>
+      </div>
+  </div>
+</body>
+<script>
+  /* Thêm hoặc xóa class show ra khỏi phần tử */
+  function myFunction(id) {
+      document.getElementById(id).classList.toggle("show");
+  }
+//lấy tất cả các button menu
+var buttons = document.getElementsByClassName('dropbtn');
+//lấy tất cả các thẻ chứa menu con
+var contents = document.getElementsByClassName('dropdown-content');
+//lặp qua tất cả các button menu và gán sự kiện
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function(){
+        //lấy value của button
+        var id = this.value;
+        //ẩn tất cả các menu con đang được hiển thị
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("show");
+        }
+        //hiển thị menu vừa được click
+        myFunction(id);
+    });
+}
+//nếu click ra ngoài các button thì ẩn tất cả các menu con
+window.addEventListener("click", function(){
+     if (!event.target.matches('.dropbtn')){
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("show");
+        }
+     }
+});
+</script>
 <br>
   <!-- Image header -->
   <div class="w3-display-container w3-container">
