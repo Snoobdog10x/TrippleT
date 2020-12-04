@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 <link rel="stylesheet" href="CSS/Admin.css">
+<link rel="stylesheet" href="/CSS/style1.css">
 <style>
   .w3-sidebar a {
     font-family: "Roboto", sans-serif
@@ -47,7 +48,7 @@
         <a onclick="myFunction('PM')" class="w3-bar-item w3-button">Product management</a>
         <a onclick="myFunction('OM')" class="w3-bar-item w3-button">Order management</a>
         <a onclick="myFunction('UM')" class="w3-bar-item w3-button">User management</a>
-        <a onclick='document.getElementById("PM").innerHTML=""' class="w3-bar-item w3-button">Statistic</a>
+        <a onclick="myFunction('S')" class="w3-bar-item w3-button">Statistic</a>
       </div>
   </nav>
 </body>
@@ -79,84 +80,74 @@
       <h1>User management</h1>
     </div>
     <br>
-    <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
+    <table border="1px" cellpadding="0px" cellspacing="0px" width="100%">
       <tr height="50px">
         <th>Serial</th>
-        <th>Name</th>
-        <th>Email or phone</th>
+        <th>Username</th>
         <th>Password</th>
-        <th>Sign in day</th>
+        <th>Sign up date</th>
         <th>Status</th>
-        <th>Acc level</th>
-        <th>Block acc</th>
+        <th>Note</th>
+        <th>Block Account</th>
       </tr>
-      <tr height="50px" id='1'>
+      <tr height="50px" id="1">
         <th>1</th>
-        <th>Nguyễn Duy Thanh</th>
-        <th>duythanh1565@gmail.com</th>
-        <th>**********</th>
-        <th>20/10/2018</th>
-        <th>Onl</th>
+        <th>linhlinh99</th>
+        <th>*************</th>
+        <th>10/10/2018</th>
+        <th>Offline</th>
         <th>V.I.P</th>
         <th>
-          <button onclick="block('1','a','b')" id="a" class="block">BLOCK</button>
-          <button onclick="unblock('1','a','b')" id="b" class="unblock">UNBLOCK</button>
+          <button onclick="block('1','c','q')" id="c" class="block">BLOCK</button>
+          <button onclick="unblock('1','c','q')" id="q" class="unblock">UNBLOCK</button>
         </th>
       </tr>
-      <tr height="50px" id='2'>
+      <tr height="50px" id="2">
         <th>2</th>
-        <th>Trần đặng Minh Tâm</th>
-        <th>Tam565@gmail.com</th>
-        <th>*********</th>
-        <th>15/10/2018</th>
-        <th>Off</th>
-        <th>V.I.P</th>
+        <th>hahahihi11</th>
+        <th>**********</th>
+        <th>1/9/2018</th>
+        <th>Online</th>
+        <th>None</th>
         <th>
-          <button onclick="block('2','c','d')" id="c"class="block">BLOCK</button>
-          <button onclick="unblock('2','c','d')" id="d" class="unblock">UNBLOCK</button>
+          <button onclick="block('2','d','z')" id="d" class="block">BLOCK</button>
+          <button onclick="unblock('2','d','z')" id="z" class="unblock">UNBLOCK</button>
         </th>
       </tr>
-      <tr height="50px" id='3'>
+      <tr height="50px" id="3">
         <th>3</th>
-        <th>Nguyễn Trần Ngọc Hân</th>
-        <th>0809221549</th>
-        <th>*********</th>
-        <th>20/10/2018</th>
-        <th>Onl</th>
-        <th>Platinum</th>
+        <th>lylelanhuong22</th>
+        <th>**********</th>
+        <th>22/11/2018</th>
+        <th>Offline</th>
+        <th>None</th>
         <th>
-          <button onclick="block('3','e','f')" id="e" class="block">BLOCK</button>
-          <button onclick="unblock('3','e','f')" id="f" class="unblock">UNBLOCK</button>
+          <button onclick="block('3','e','x')" id="e" class="block">BLOCK</button>
+          <button onclick="unblock('3','e','x')" id="x" class="unblock">UNBLOCK</button>
         </th>
       </tr>
-      <tr height="50px" id='4'>
+      <tr height="50px" id="4">
         <th>4</th>
-        <th>Nguyễn Thanh Tâm</th>
-        <th>Thanhthanh1565@gmail.com</th>
-        <th>***********</th>
-        <th>20/10/2018</th>
-        <th>Onl</th>
-        <th>V.I.P</th>
+        <th>phongphile20</th>
+        <th>*********************</th>
+        <th>11/10/2018</th>
+        <th>Online</th>
+        <th>None</th>
         <th>
-          <button onclick="block('4','g','h')" id="g" class="block">BLOCK</button>
-          <button onclick="unblock('4','g','h')" id="h" class="unblock">UNBLOCK</button>
-        </th>
-      </tr>
-      </tr>
-      <tr height="50px" id='5'>
-        <th>5</th>
-        <th>Nguyễn Tấn Thanh</th>
-        <th>thanh1565@gmail.com</th>
-        <th>*********</th>
-        <th>20/10/2018</th>
-        <th>Onl</th>
-        <th>Gold</th>
-        <th>
-          <button onclick="block('5','j','k')" id="j" class="block">BLOCK</button>
-          <button onclick="unblock('5','j','k')" id="k" class="unblock">UNBLOCK</button>
+          <button onclick="block('4','f','v')" id="f" class="block">BLOCK</button>
+          <button onclick="unblock('4','f','v')" id="v" class="unblock">UNBLOCK</button>
         </th>
       </tr>
     </table>
+    <center>
+      <ul class="pagination modal-5">
+        <li><a href="#" class="prev fa fa-arrow-left"> </a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#" class="next fa fa-arrow-right"></a></li>
+      </ul>
+    </center>
   </div>
   <div class="w3-container w3-main" id="OM" style="display: none;">
     <div class="w3-container w3-black">
@@ -237,11 +228,198 @@
         </form>
       </tr>
     </table>
+    <center>
+      <ul class="pagination modal-5">
+        <li><a href="#" class="prev fa fa-arrow-left"> </a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#" class="next fa fa-arrow-right"></a></li>
+      </ul>
+    </center>
+  </div>
+  <div class="w3-container w3-main" id="S" style="display: none;">
+    <table border="1px" cellpadding="0px" cellspacing="0px" width="100%">
+      <tr>
+      <tr>
+        <th></th>
+        <th height="50px" colspan="3">Access Times</th>
+        <th height="50px" colspan="3"> Number of orders</th>
+        <th height="50px" colspan="3"> Total</th>
+
+      </tr>
+      <tr>
+        <th height="50px">Month/Name</th>
+        <th height="50px" width="150px">Lê Diệu Linh</th>
+        <th height="50px" width="150px">Nguyễn Vi Thảo</th>
+        <th height="50px" width="150px">Phan Đình Anh</th>
+        <th height="50px" width="150px">Lê Diệu Linh</th>
+        <th height="50px" width="150px">Nguyễn Vi Thảo</th>
+        <th height="50px" width="150px">Phan Đình Anh</th>
+        <th height="50px" width="150px">Lê Diệu Linh</th>
+        <th height="50px" width="150px">Nguyễn Vi Thảo</th>
+        <th height="50px" width="150px">Phan Đình Anh</th>
+
+      </tr>
+      <tr height=50px>
+        <th>1</th>
+        <th>314</th>
+        <th>529</th>
+        <th>457</th>
+        <th>15</th>
+        <th>30</th>
+        <th>25</th>
+        <th>525.000</th>
+        <th>1.800.000</th>
+        <th>750.000</th>
+      </tr>
+      <tr height=50px>
+        <th>2</th>
+        <th>587</th>
+        <th>258</th>
+        <th>467</th>
+        <th>27</th>
+        <th>16</th>
+        <th>7</th>
+        <th>1.620.000</th>
+        <th>560.000</th>
+        <th>420.000</th>
+      </tr>
+      <tr height=50px>
+        <th>3</th>
+        <th>468</th>
+        <th>291</th>
+        <th>136</th>
+        <th>13</th>
+        <th>6</th>
+        <th>28</th>
+        <th>390.000</th>
+        <th>360.000</th>
+        <th>980.000</th>
+      </tr>
+      <tr height=50px>
+        <th>4</th>
+        <th>224</th>
+        <th>127</th>
+        <th>567</th>
+        <th>6</th>
+        <th>20</th>
+        <th>15</th>
+        <th>270.000</th>
+        <th>700.000</th>
+        <th>675.000</th>
+      </tr>
+      <tr height=50px>
+        <th>5</th>
+        <th>543</th>
+        <th>287</th>
+        <th>126</th>
+        <th>39</th>
+        <th>10</th>
+        <th>27</th>
+        <th>1.365.000</th>
+        <th>450.000</th>
+        <th>810.000</th>
+      </tr>
+      <tr height=50px>
+        <th>6</th>
+        <th>174</th>
+        <th>389</th>
+        <th>267</th>
+        <th>8</th>
+        <th>22</th>
+        <th>17</th>
+        <th>480.000</th>
+        <th>770.000</th>
+        <th>1.020.000</th>
+      </tr>
+      <tr height=50px>
+        <th>7</th>
+        <th>74</th>
+        <th>335</th>
+        <th>298</th>
+        <th>2</th>
+        <th>35</th>
+        <th>12</th>
+        <th>120.000</th>
+        <th>1.225.000</th>
+        <th>540.000</th>
+      </tr>
+      <tr height=50px>
+        <th>8</th>
+        <th>78</th>
+        <th>27</th>
+        <th>156</th>
+        <th>5</th>
+        <th>2</th>
+        <th>30</th>
+        <th>300.000</th>
+        <th>90.000</th>
+        <th>1.050.000</th>
+      </tr>
+      <tr height=50px>
+        <th>9</th>
+        <th>785</th>
+        <th>457</th>
+        <th>276</th>
+        <th>40</th>
+        <th>20</th>
+        <th>17</th>
+        <th>1.800.000</th>
+        <th>700.000</th>
+        <th>765.000</th>
+      </tr>
+      <tr height=50px>
+        <th>10</th>
+        <th>846</th>
+        <th>356</th>
+        <th>502</th>
+        <th>45</th>
+        <th>27</th>
+        <th>33</th>
+        <th>675.000</th>
+        <th>465.000</th>
+        <th>495.000</th>
+      </tr>
+      <tr height=50px>
+        <th>11</th>
+        <th>726</th>
+        <th>955</th>
+        <th>467</th>
+        <th>27</th>
+        <th>47</th>
+        <th>32</th>
+        <th>945.000</th>
+        <th>1.410.000</th>
+        <th>1.120.000</th>
+      </tr>
+      <tr height=50px>
+        <th>12</th>
+        <th>598</th>
+        <th>758</th>
+        <th>260</th>
+        <th>47</th>
+        <th>59</th>
+        <th>35</th>
+        <th>705.000</th>
+        <th>1.770.000</th>
+        <th>1.575.000</th>
+      </tr>
+    </table>
+    <center>
+      <ul class="pagination modal-5">
+        <li><a href="#" class="prev fa fa-arrow-left"> </a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#" class="next fa fa-arrow-right"></a></li>
+      </ul>
+    </center>
   </div>
 </div>
 <script>
   function myFunction(y) {
-    var a = [document.getElementById('OM'), document.getElementById('UM')];
+    var a = [document.getElementById('PM'), document.getElementById('OM'), document.getElementById('UM'), document.getElementById('S')];
     a.forEach(element => {
       if (element.style.display === 'block')
         element.style.display = 'none';
@@ -254,24 +432,24 @@
   }
   function block(ten, sl, un) {
 
-var x = confirm("Bạn muốn block tài khoản này !!!");
-if (x == true) {
-    document.getElementById(ten).style.textDecoration = "line-through";
-    document.getElementById(sl).style.display = "none";
-    document.getElementById(un).style.display = "block";
-}
-}
+    var x = confirm("Bạn muốn block tài khoản này !!!");
+    if (x == true) {
+      document.getElementById(ten).style.textDecoration = "line-through";
+      document.getElementById(sl).style.display = "none";
+      document.getElementById(un).style.display = "block";
+    }
+  }
 
-function unblock(ten, sl, un) {
+  function unblock(ten, sl, un) {
 
-var z = confirm("Bạn muốn hủy block tài khoản này !!!");
-if (z == true) {
-    document.getElementById(ten).style.textDecoration = "none";
-    document.getElementById(sl).style.display = "block";
-    document.getElementById(un).style.display = "none";
-}
+    var z = confirm("Bạn muốn hủy block tài khoản này !!!");
+    if (z == true) {
+      document.getElementById(ten).style.textDecoration = "none";
+      document.getElementById(sl).style.display = "block";
+      document.getElementById(un).style.display = "none";
+    }
 
-}
+  }
 </script>
 
 </body>
