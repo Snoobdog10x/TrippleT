@@ -23,6 +23,10 @@
   .w3-wide {
     font-family: "Montserrat", sans-serif;
   }
+
+  .mySlides {
+    display: none;
+  }
 </style>
 
 <body class="w3-content" style="max-width:1200px; background-image: linear-gradient(#C08DEF,white);">
@@ -344,143 +348,178 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
           <input type="text" placeholder="Search..." name="search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-          
+
+      </div>
     </div>
-  </div>
 
   </header>
   <style>
     .container {
-        width: 70%;
-        margin: auto;
-        text-align: center;
+      width: 70%;
+      margin: auto;
+      text-align: center;
     }
+
     /* Dropdown Button */
     .dropbtn {
-        background-color:white;
-        color:black;
-        padding: 14px;  
-        font-size: 22px;
-        border: 1;
+      background-color: white;
+      color: black;
+      padding: 14px;
+      font-size: 22px;
+      border: 1;
     }
-    
+
     /* ĐỔi màu nền khi hover và focus Dropdown button */
-    .dropbtn:hover, .dropbtn:focus {
-        background-color: none;
+    .dropbtn:hover,
+    .dropbtn:focus {
+      background-color: none;
     }
-    
+
     /* Định dạng các thẻ bao bọc các menu */
     .dropdown {
-        position: relative;
-        display: inline-block;
+      position: relative;
+      display: inline-block;
     }
-    
+
     /* Dropdown Content, mặc định sẽ được ẩn đi */
     .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 320px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        right: 0;
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 320px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
     }
-    
+
     /* Định dạng các thẻ a là các menu con */
     .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
     }
-    
+
     /* Thay đổi màu nền khi các menu con được hover */
-    .dropdown-content a:hover {background-color: #f1f1f1}
-    
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+
     /* Hiển thị menu, ta sẽ dùng javascript để thêm class này vào các nôi dung cần được hiển thị */
-    .show {display:block;}
+    .show {
+      display: block;
+    }
   </style>
-</head>
-<body>
-  <div style="margin-left: 550px; margin-top: -65px;" class="container">
-        <div class="dropdown">
-          <button  value="laptrinh" class="dropbtn fa fa-shopping-cart">&#160;(3)</button>
-          <div id="laptrinh" class="dropdown-content">
-            <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
-                <img src="/Images/69867m.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px; ">
-                <a href="product1.html" style="font-size: 12px; margin-left: 12px ;text-align: center;">Versace Eros Cologne (5ml)</a>
-                <input type="text" value="1" style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
-                <p style="margin-top: 20px; font-size: 12px;">$24.99</p>
-                <i class="fa fa-times" style="margin-right: 5px"></i>
-              </div>
-              <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
-                <img src="/Images/men-versage1.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px;">
-                <a href="product2.html" style="font-size: 12px; margin-left: 35px ;text-align: center;">Versace (5ml)</a>
-                <input type="text" value="1" style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
-                <p style="margin-top: 20px; font-size: 12px;">$19.99</p>
-                <i class="fa fa-times" style="margin-right: 5px"></i>
-              </div>
-              <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
-                <img src="/Images/cool water.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px;">
-                <a href="product3.html" style="font-size: 12px; margin-left: 30px ;text-align: center;">Cool Water (5ml)</a>
-                <input type="text" value="1" style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
-                <p style="margin-top: 20px; font-size: 12px;">$19.99</p>
-                <i class="fa fa-times" style="margin-right: 5px"></i>
-              </div>
-              <div style="display:flex;">
-                <p style="font-size: 14px; font-weight: bolder; text-align: left; margin-left: 35px;" >Your Total : </p>
-                <p style="font-size:14px; font-weight: bolder; margin-left: 150px;">$65.48</p>
-              </div>
-              <div class="cart-button" style="display: flex; margin-bottom: 10px;">
-                <div style="margin-left: 10px; background-color: gray;"><a href="cart.html" class="btn-cart">VIEW CART</a></div>
-                <div style="margin-left: 60px; background-color: red;"><a href="payment.html" class="btn-check-out">CHECKOUT</a></div>
-              </div>    
+  </head>
+
+  <body>
+    <div style="margin-left: 550px; margin-top: -65px;" class="container">
+      <div class="dropdown">
+        <button value="laptrinh" class="dropbtn fa fa-shopping-cart">&#160;(3)</button>
+        <div id="laptrinh" class="dropdown-content">
+          <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
+            <img src="/Images/69867m.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px; ">
+            <a href="product1.html" style="font-size: 12px; margin-left: 12px ;text-align: center;">Versace Eros Cologne
+              (5ml)</a>
+            <input type="text" value="1"
+              style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
+            <p style="margin-top: 20px; font-size: 12px;">$24.99</p>
+            <i class="fa fa-times" style="margin-right: 5px"></i>
           </div>
+          <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
+            <img src="/Images/men-versage1.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px;">
+            <a href="product2.html" style="font-size: 12px; margin-left: 35px ;text-align: center;">Versace (5ml)</a>
+            <input type="text" value="1"
+              style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
+            <p style="margin-top: 20px; font-size: 12px;">$19.99</p>
+            <i class="fa fa-times" style="margin-right: 5px"></i>
+          </div>
+          <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
+            <img src="/Images/cool water.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px;">
+            <a href="product3.html" style="font-size: 12px; margin-left: 30px ;text-align: center;">Cool Water (5ml)</a>
+            <input type="text" value="1"
+              style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
+            <p style="margin-top: 20px; font-size: 12px;">$19.99</p>
+            <i class="fa fa-times" style="margin-right: 5px"></i>
+          </div>
+          <div style="display:flex;">
+            <p style="font-size: 14px; font-weight: bolder; text-align: left; margin-left: 35px;">Your Total : </p>
+            <p style="font-size:14px; font-weight: bolder; margin-left: 150px;">$65.48</p>
+          </div>
+          <div class="cart-button" style="display: flex; margin-bottom: 10px;">
+            <div style="margin-left: 10px; background-color: gray;"><a href="cart.html" class="btn-cart">VIEW CART</a>
+            </div>
+            <div style="margin-left: 60px; background-color: red;"><a href="payment.html"
+                class="btn-check-out">CHECKOUT</a></div>
+          </div>
+        </div>
       </div>
-  </div>
-</body>
-<script>
-  /* Thêm hoặc xóa class show ra khỏi phần tử */
-  function myFunction(id) {
+    </div>
+  </body>
+  <script>
+    /* Thêm hoặc xóa class show ra khỏi phần tử */
+    function myFunction(id) {
       document.getElementById(id).classList.toggle("show");
-  }
-//lấy tất cả các button menu
-var buttons = document.getElementsByClassName('dropbtn');
-//lấy tất cả các thẻ chứa menu con
-var contents = document.getElementsByClassName('dropdown-content');
-//lặp qua tất cả các button menu và gán sự kiện
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function(){
+    }
+    //lấy tất cả các button menu
+    var buttons = document.getElementsByClassName('dropbtn');
+    //lấy tất cả các thẻ chứa menu con
+    var contents = document.getElementsByClassName('dropdown-content');
+    //lặp qua tất cả các button menu và gán sự kiện
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function () {
         //lấy value của button
         var id = this.value;
         //ẩn tất cả các menu con đang được hiển thị
         for (var i = 0; i < contents.length; i++) {
-            contents[i].classList.remove("show");
+          contents[i].classList.remove("show");
         }
         //hiển thị menu vừa được click
         myFunction(id);
-    });
-}
-//nếu click ra ngoài các button thì ẩn tất cả các menu con
-window.addEventListener("click", function(){
-     if (!event.target.matches('.dropbtn')){
+      });
+    }
+    //nếu click ra ngoài các button thì ẩn tất cả các menu con
+    window.addEventListener("click", function () {
+      if (!event.target.matches('.dropbtn')) {
         for (var i = 0; i < contents.length; i++) {
-            contents[i].classList.remove("show");
+          contents[i].classList.remove("show");
         }
-     }
-});
-</script>
-<br>
+      }
+    });
+  </script>
+  <br>
   <!-- Image header -->
   <div class="w3-display-container w3-container">
-    <img src="/Images/newarrival1.jpg" alt="Jeans" style="width:100%">
-    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
-      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
-      <h1 class="w3-hide-small">COLLECTION 2016</h1>
-      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    <div class="w3-container w3-section">
+      <img src="/Images/newarrival1.jpg" class="mySlides" alt="Perfume" style="width:100%">
+      <img src="/Images/boots-perfumes-mothers-day-t.jpg" class="mySlides" alt="Perfume" style="width:100%">
+      <img src="/Images/CKbanner.jpg" class="mySlides" alt="Perfume" style="width:100%">
+    </div>
+    <div class="w3-display-topleft w3-text-black" style="padding:24px 48px">
+      <div class="w3-container w3-round w3-hover-opacity" style="background-color: rgb(255, 255, 255,0.3);">
+        <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+        <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+        <h1 class="w3-hide-small">COLLECTION 2016</h1>
+        <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+      </div>
     </div>
   </div>
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 3000); // Change image every 2 seconds
+    }
+  </script>
 
   <div class="w3-container w3-text-black" id="jeans">
     <p>8 items</p>
@@ -540,11 +579,12 @@ window.addEventListener("click", function(){
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-        <a href="product3.html"><img src="/Images/cool water.jpg" style="width:100%"></a>
-        <div class="w3-display-middle w3-display-hover">
-          <a href="cart.html"><button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button></a>
+          <a href="product3.html"><img src="/Images/cool water.jpg" style="width:100%"></a>
+          <div class="w3-display-middle w3-display-hover">
+            <a href="cart.html"><button class="w3-button w3-black">Buy now <i
+                  class="fa fa-shopping-cart"></i></button></a>
           </div>
-       </div>
+        </div>
         <p>Cool Water<br><b>$20.50</b></p>
       </div>
       <div class="w3-container">
