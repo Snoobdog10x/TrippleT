@@ -72,7 +72,19 @@
     </div>
   </header>
   <br>
+  <!--Product management-->
   <div class="w3-container w3-main" id="PM" style="display: block;">
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+          <form action="">
+            
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="w3-container w3-black">
       <h1>Product management</h1>
     </div>
@@ -84,9 +96,10 @@
           <div class="w3-container">
             <div class="w3-display-container">
               <a href="product1.html"><img src="/Images/69867m.jpg" style="width:100%"></a>
-              <div class="w3-display-middle w3-display-hover">
-                <a href=""><button class="w3-button w3-black" style="width:90px;">Update</button></a>
-                <a href=""><button class="w3-button w3-black" style="width:90px;">Delete</button></a>
+              <div class="w3-display-middle w3-display-hover"><button
+                  onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"
+                  style="width:90px;">Update</button>
+                <button class="w3-button w3-black" style="width:90px;">Delete</button>
               </div>
             </div>
             <p>Versace Eros Cologne<br><b>$24.99</b></p>
@@ -190,6 +203,7 @@
       </ul>
     </center>
   </div>
+  <!--User management-->
   <div class="w3-container w3-main" id="UM" style="display: none;">
     <div class="w3-container w3-black">
       <h1>User management</h1>
@@ -264,6 +278,7 @@
       </ul>
     </center>
   </div>
+  <!--Oder management-->
   <div class="w3-container w3-main" id="OM" style="display: none;">
     <div class="w3-container w3-black">
       <h1>Order management</h1>
@@ -353,7 +368,12 @@
       </ul>
     </center>
   </div>
+  <!--S-->
   <div class="w3-container w3-main" id="S" style="display: none;">
+    <div class="w3-container w3-black">
+      <h1>Statistic</h1>
+    </div>
+    <br>
     <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="background-color:  rgb(0, 0, 0,0.2);">
       <tr>
       <tr>
