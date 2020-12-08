@@ -90,7 +90,7 @@
     <body class="w3-content" style="max-width:1200px">
 
       <!-- Sidebar/menu -->
-      <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+      <nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index:3;width:250px;" id="mySidebar">
         <div class="w3-container w3-display-container w3-padding-16">
           <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
           <h3 class="w3-wide"><b>TRIPLE T</b></h3>
@@ -349,14 +349,36 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
 <br>
   <!-- Image header -->
   <div class="w3-display-container w3-container">
-    <img src="/Images/newarrival1.jpg" alt="Jeans" style="width:100%">
-    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
-      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
-      <h1 class="w3-hide-small">COLLECTION 2016</h1>
-      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    <div class="w3-container w3-section">
+      <img src="/Images/newarrival1.jpg" class="mySlides" alt="Perfume" style="width:100%">
+      <img src="/Images/boots-perfumes-mothers-day-t.jpg" class="mySlides" alt="Perfume" style="width:100%">
+      <img src="/Images/CKbanner.jpg" class="mySlides" alt="Perfume" style="width:100%">
+    </div>
+    <div class="w3-display-topleft w3-text-black" style="padding:24px 48px">
+      <div class="w3-container w3-round w3-hover-opacity" style="background-color: rgb(255, 255, 255,0.3);">
+        <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+        <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+        <h1 class="w3-hide-small">COLLECTION 2016</h1>
+        <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+      </div>
     </div>
   </div>
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 3000); // Change image every 2 seconds
+    }
+  </script>
 
   <div class="w3-container w3-text-black" id="jeans">
     <p>8 items</p>
