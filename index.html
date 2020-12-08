@@ -364,7 +364,6 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
     .dropbtn {
       background-color: white;
       color: black;
-      padding: 14px;
       font-size: 22px;
       border: 1;
     }
@@ -413,9 +412,9 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
   </head>
 
   <body>
-    <div style="margin-left: 550px; margin-top: -65px;" class="container">
+    <div style="margin-left: 550px; margin-top: -62px;" class="container">
       <div class="dropdown">
-        <button value="laptrinh" class="dropbtn fa fa-shopping-cart">&#160;(3)</button>
+        <button value="laptrinh" style="width: 40px; height: 40px;" class="dropbtn fa fa-shopping-cart"></button>
         <div id="laptrinh" class="dropdown-content">
           <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
             <img src="/Images/69867m.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px; ">
@@ -449,8 +448,15 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
           <div class="cart-button" style="display: flex; margin-bottom: 10px;">
             <div style="margin-left: 10px; background-color: gray;"><a href="cart.html" class="btn-cart">VIEW CART</a>
             </div>
-            <div style="margin-left: 60px; background-color: red;"><a href="payment.html"
-                class="btn-check-out">CHECKOUT</a></div>
+            <div style="margin-left: 60px; background-color: red;">
+              <a class="btn-check-out" onclick="check()">CHECKOUT</a>
+              <script>
+                function check(){
+                  alert('Please login to continue.')
+                  window.open("Login.html","_self");
+                }
+              </script>
+            </div>
           </div>
         </div>
       </div>
