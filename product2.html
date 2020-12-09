@@ -518,6 +518,19 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
             <img src="Images/Eternity cologne 1.jpg" width="100%" class="smallImg">
           </div>
         </div>
+        <script>
+          var productImg = document.getElementById("productImg");
+          var smallImg = document.getElementsByClassName("smallImg");
+          smallImg[0].onclick = function () {
+            productImg.src = smallImg[0].src;
+          }
+          smallImg[1].onclick = function () {
+            productImg.src = smallImg[1].src;
+          }
+          smallImg[2].onclick = function () {
+            productImg.src = smallImg[2].src;
+          }
+        </script>
       </div>
       <div class="w3-col s6">
         <p>HOME/For men</p>
@@ -777,19 +790,7 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
     document.getElementById("myOverlay").style.display = "none";
   }
 </script>
-<script>
-  var productImg = document.getElementById("productImg");
-  var smallImg = document.getElementsByClassName("smallImg");
-  smallImg[0].onclick = function () {
-    productImg.src = smallImg[0].src;
-  }
-  smallImg[1].onclick = function () {
-    productImg.src = smallImg[1].src;
-  }
-  smallImg[2].onclick = function () {
-    productImg.src = smallImg[2].src;
-  }
-</script>
+
 </body>
 
 </html>
