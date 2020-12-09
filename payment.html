@@ -197,9 +197,9 @@
     <!-- Shopping Cart Menu -->
     <div id="form-cart-menu">
       <div class="shopping-cart-head">
-        <div class="fonts">Shopping Cart</div>
+        <div class="fonts" style="font-size: 16px;">1.&ensp;SHOPPING CART</div>
       </div>
-      <table id="shopping-cart-menu">
+      <table id="shopping-cart-menu" style="margin-top: -30px; font-size: 12px;">
         <tr class='shopping-cart-item'>
           <td class='cart-title'><a class='lhref' href="product1.html">Versace Eros Cologne (5 ml)</a></td>
           <td class='cart-price'>24.99</td>
@@ -215,11 +215,25 @@
           <td class='cart-price'>20.50</td>
           <td class='cart-delete'><button type="button">x</button></td>
         </tr>
-        <tr class='shopping-cart-total'>
+        <tr class='shopping-cart-total'style="margin-top:-10px;">
           <td class='cart-total'>Total</td>
           <td class='cart-price-total'></td>
         </tr>
       </table>
+      <div class="fonts" style="font-size: 16px;">2.&ensp;SECURE PAYMENTS </div>
+      <input type="checkbox" style="font-size: 12px;">&ensp;<font color="#34a7e8">Pay by Credit Card</font>
+      <img alt="Visa, MasterCard, American Express, JCB, Discover, and UnionPay" src="/Images/credit_cards.gif"></img>
+      <div style="display: flex;">
+        <p><font color="#34a7e8">Card number:&ensp;</font></p>
+        <input type="text" style="font-size: 12px; width: 100px; height: 30px; margin-top: 10px;">
+      </div>
+      <div style="display: flex;">
+        <p><font color="#34a7e8">Expiration date:&ensp;</font></p>
+        <input type="text" style="font-size: 12px; width: 60px; height: 30px; margin-top: 10px;">
+      </div>
+      <p style="margin-top: 1px; margin-left: 105px;"><font color="#34a7e8">(mm/yyyy)</font></p>
+      <div class="fonts" style="font-size: 16px;">3.&ensp;SHIPPING DETAILS</div>
+      <input type="checkbox" style="font-size: 12px;">&ensp;<font color="#34a7e8"> Shipping (7 Business Days) - 5$.</font>
     </div>
   </form>
 <button class="buttonsent" onclick="accept1()">Sent</button>
