@@ -516,19 +516,7 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
             <img src="Images/gallery-1.jpg" width="100%" class="smallImg">
           </div>
         </div>
-        <script>
-          var productImg = document.getElementById("productImg");
-          var smallImg = document.getElementsByClassName("smallImg");
-          smallImg[0].onclick = function () {
-            productImg.src = smallImg[0].src;
-          }
-          smallImg[1].onclick = function () {
-            productImg.src = smallImg[1].src;
-          }
-          smallImg[2].onclick = function () {
-            productImg.src = smallImg[2].src;
-          }
-        </script>
+
       </div>
       <div class="w3-col s6">
         <p>HOME/For men</p>
@@ -542,11 +530,11 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
         </select>
         <input aria-label="quantity" class="input-qty" max="10" min="0" name="" type="number" value="1">
         <a onclick="addcart()" class="btn"><button class="w3-button w3-red"> TO CART<i class="fa fa-shopping-cart"></i></button></a>
-          <script>
-            function addcart() {
-              alert('Add to cart successfully');
-            }
-          </script>
+        <script>
+          function addcart() {
+            alert('Add to cart successfully');
+          }
+        </script>
         <h3>Product Details</h3>
         <p>Versace Eros by Versace Cologne. There's nothing wrong with dinner at a fancy place or an expensive piece of
           jewelry when you are trying to impress someone and win her heart.</p>
@@ -789,7 +777,19 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
     document.getElementById("myOverlay").style.display = "none";
   }
 </script>
-
+<script>
+  var productImg = document.getElementById("productImg");
+  var smallImg = document.getElementsByClassName("smallImg");
+  smallImg[0].onclick = function () {
+    productImg.src = smallImg[0].src;
+  }
+  smallImg[1].onclick = function () {
+    productImg.src = smallImg[1].src;
+  }
+  smallImg[2].onclick = function () {
+    productImg.src = smallImg[2].src;
+  }
+</script>
 </body>
 
 </html>
