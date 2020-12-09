@@ -312,12 +312,152 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
           <input type="text" placeholder="Search.." name="search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <button onclick="window.location.href='payempty.html'" type="button"><i
-            class="fa fa-shopping-cart"></i></button>
+        
       </div>
     </div>
   </header>
+  <style>
+    .container {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* Dropdown Button */
+    .dropbtn {
+      background-color: white;
+      color: black;
+      font-size: 22px;
+      border: 1;
+    }
+
+    /* ĐỔi màu nền khi hover và focus Dropdown button */
+    .dropbtn:hover,
+    .dropbtn:focus {
+      background-color: none;
+    }
+
+    /* Định dạng các thẻ bao bọc các menu */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content, mặc định sẽ được ẩn đi */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 320px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+    }
+
+    /* Định dạng các thẻ a là các menu con */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Thay đổi màu nền khi các menu con được hover */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+
+    /* Hiển thị menu, ta sẽ dùng javascript để thêm class này vào các nôi dung cần được hiển thị */
+    .show {
+      display: block;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div style="margin-left: 550px; margin-top: -62px;" class="container">
+      <div class="dropdown">
+        <button value="laptrinh" style="width: 40px; height: 40px;" class="dropbtn fa fa-shopping-cart"></button>
+        <div id="laptrinh" class="dropdown-content">
+          <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
+            <img src="/Images/69867m.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px; ">
+            <a href="product1.html" style="font-size: 12px; margin-left: 12px ;text-align: center;">Versace Eros Cologne
+              (5ml)</a>
+            <input type="text" value="1"
+              style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
+            <p style="margin-top: 20px; font-size: 12px;">$24.99</p>
+            <i class="fa fa-times" style="margin-right: 5px"></i>
+          </div>
+          <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
+            <img src="/Images/men-versage1.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px;">
+            <a href="product2.html" style="font-size: 12px; margin-left: 35px ;text-align: center;">Versace (5ml)</a>
+            <input type="text" value="1"
+              style="height: 25px; width: 25px; margin: auto; margin-right: 24px; text-align: center; font-size: 12px;">
+            <p style="margin-top: 20px; font-size: 12px;">$19.99</p>
+            <i class="fa fa-times" style="margin-right: 5px"></i>
+          </div>
+          <div style="display:flex; border-collapse:collapse; border-bottom:2px solid gray;">
+            <img src="/Images/cool water.jpg" style="width: 30px; height: 30px; margin-left: 12px; margin-top: 15px;">
+            <a href="product3.html" style="font-size: 12px; margin-left: 30px ;text-align: center;">Cool Water (5ml)</a>
+            <input type="text" value="1"
+              style="height: 25px; width: 25px; margin: auto; margin-right: 20px; text-align: center; font-size: 12px;">
+            <p style="margin-top: 20px; font-size: 12px;">$20.50</p>
+            <i class="fa fa-times" style="margin-right: 5px"></i>
+          </div>
+          <div style="display:flex;">
+            <p style="font-size: 14px; font-weight: bolder; text-align: left; margin-left: 35px;">Your Total : </p>
+            <p style="font-size:14px; font-weight: bolder; margin-left: 150px;">$65.48</p>
+          </div>
+          <div class="cart-button" style="display: flex; margin-bottom: 10px;">
+            <div style="margin-left: 10px; background-color: gray;"><a href="cart.html" class="btn-cart">VIEW CART</a>
+            </div>
+            <div style="margin-left: 60px; background-color: red;">
+              <a class="btn-check-out" onclick="check()">CHECKOUT</a>
+              <script>
+                function check(){
+                  alert('Please login to continue.')
+                  window.open("Login.html","_self");
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    /* Thêm hoặc xóa class show ra khỏi phần tử */
+    function myFunction(id) {
+      document.getElementById(id).classList.toggle("show");
+    }
+    //lấy tất cả các button menu
+    var buttons = document.getElementsByClassName('dropbtn');
+    //lấy tất cả các thẻ chứa menu con
+    var contents = document.getElementsByClassName('dropdown-content');
+    //lặp qua tất cả các button menu và gán sự kiện
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function () {
+        //lấy value của button
+        var id = this.value;
+        //ẩn tất cả các menu con đang được hiển thị
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].classList.remove("show");
+        }
+        //hiển thị menu vừa được click
+        myFunction(id);
+      });
+    }
+    //nếu click ra ngoài các button thì ẩn tất cả các menu con
+    window.addEventListener("click", function () {
+      if (!event.target.matches('.dropbtn')) {
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].classList.remove("show");
+        }
+      }
+    });
+  </script>
   <br>
+<br>
 
     <div class="w3-container w3-black " style="background-color: rgb(42, 50, 60,0.2);">
       <h1>Dolce Rosa Excelsa</h1>
@@ -348,7 +488,12 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
             <option>200 ml</option>
           </select>
           <input aria-label="quantity" class="input-qty" max="10" min="0" name="" type="number" value="1">
-          <a href="payment.html" class="btn"><button class="w3-button w3-red"> TO CART<i class="fa fa-shopping-cart"></i></button></a>
+          <button class="w3-button w3-red" onclick="addcart()"> TO CART<i class="fa fa-shopping-cart"></i></button>
+        <script>
+          function addcart() {
+            alert('Add to cart successfully');
+          }
+          </script>
           <h3>Product Details</h3>
           <p>Dolce Rosa Excelsas by Versace Cologne. There's nothing wrong with dinner at a fancy place or an expensive piece of jewelry when you are trying to impress someone and win her heart.</p>
       </div>
