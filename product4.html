@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 <link rel="stylesheet" href="CSS/Style.css">
+<link rel="stylesheet" href="css/bootstrap4.scc">
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
@@ -301,32 +302,36 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Top header -->
-  <header class="w3-container w3-xlarge">
-    <p class="w3-left">Perfume</p>
-    <p class="w3-right">
-      <i class="fa fa-shopping-cart w3-margin-right w3-hover-opacity w3-large"></i>
-    </p>
-    <div class="w3-container">
-      <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-      <button class="w3-button w3-right">GO</button>
-    </div>
-  </header>
+    <header class="w3-container w3-xlarge w3-row w3-bar">
+        <div class="w3-cotainter w3-bar w3-round" style="background-color: rgb(0, 0, 0,0.2);margin-top: 20px;">
+            <p class="w3-col" style="width: 10%;">Perfume</p>
+            <div class="w3-container w3-col" style="width: 90%;margin-top: 20px;">
+                <form action="Search.html" style="margin-left: 45%;" class="w3-half">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <button onclick="window.location.href='payempty.html'" type="button"><i
+                        class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </header>
+    <br>
 
     <div class="w3-container w3-black " style="background-color: rgb(42, 50, 60,0.2);">
-      <h1>Eternity Cologne</h1>
+      <h1>Versace Eros Cologne</h1>
     </div>
   <!-- single product detail -->
   <div class="w3-container single-product">
     <div class="w3-row">
       <div class="w3-col s6">
-        <img src="/Images/cool water.jpg" width="100%" style="padding-right: 20px;padding-bottom: 5px;" id="productImg">
+        <img src="/Images/women-dolce1.jpg" width="100%" style="padding-right: 20px;padding-bottom: 5px;" id="productImg">
 
         <div class="small-img-row ">
           <div class="small-img-col s6">
-            <img src="Images/cool water.jpg" width="100%" class="smallImg">
+            <img src="Images/women-dolce1.jpg" width="100%" class="smallImg">
           </div>
           <div class="small-img-col s6">
-            <img src="Images/cool water 1.jpg" width="90%" class="smallImg">
+            <img src="Images/women-dolce1-1.jpg" width="100%" class="smallImg">
           </div>
           <div class="small-img-col s6">
             <img src="Images/69867m.jpg" width="100%" class="smallImg">
@@ -339,63 +344,24 @@ large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="m
       </div>
       <div class="w3-col s6">
           <p>HOME/For men</p>
-          <h1>Eternity Cologne</h1>
+          <h1>Versace Eros Cologne</h1>
           <h4>$24.99</h4>
           <select>
             <option>Select Size</option>
             <option>5 ml</option>
             <option>100 ml</option>
+            <option>200 ml</option>
           </select>
-          <input type="number" value="1">
+          <input aria-label="quantity" class="input-qty" max="10" min="0" name="" type="number" value="1">
           <a href="payment.html" class="btn"><button class="w3-button w3-red"> TO CART<i class="fa fa-shopping-cart"></i></button></a>
           <h3>Product Details</h3>
-          <p>Cool Water by Davidoff Cologne. Splash on a bit of refreshment with Davidoff Cool Water for men. Launched in 1988 by the design house of Davidoff, this top selling fragrance sports crisp, green notes of sea water, mint, lavender, and coriander for a perfectly balanced scent you can wear anywhere. Cool Water cologne is a versatile, manly scent that can be worn by all different types of men on any occasion. For fans of Davidoff, Cool Water is the perfect signature fragrance. Whether you're busy at work or out on the town until the wee hours of the morning, Cool Water perfume is the perfect well-rounded scent for you.
-          </p>
+          <p>Versace Eros by Versace Cologne. There's nothing wrong with dinner at a fancy place or an expensive piece of jewelry when you are trying to impress someone and win her heart.</p>
       </div>
       </div>
   </div>
 <!---RELATED PRODUCTS-->
-  <div class="small-container">
-    <h2>Featured Product</h2>
-    <div class="w3-row">
-      <div class="w3-col s3 ">
-        <img src="Images/gallery-1.jpg" >
-        <h4>Product 1</h4>
-        <div class="rating">
-          <i class="fa fa-start"></i>
-          <i class="fa fa-start"></i>
-          <i class="fa fa-start"></i>
-          <i class="fa fa-start"></i>
-          <i class="fa fa-start-o"></i>
-        </div>
-        <p>$24.99</p>
-        </div>
-        <div class=" w3-col s3">
-          <img src="Images/gallery-1.jpg" >
-          <h4>Product 1</h4>
-          <div class="rating">
-            <i class="fa fa-start"></i>
-            <i class="fa fa-start"></i>
-            <i class="fa fa-start"></i>
-            <i class="fa fa-start"></i>
-            <i class="fa fa-start-o"></i>
-          </div>
-          <p>$24.99</p>
-          </div>
-          <div class=" w3-col s3">
-            <img src="Images/gallery-1.jpg" >
-            <h4>Product 1</h4>
-            <div class="rating">
-              <i class="fa fa-start"></i>
-              <i class="fa fa-start"></i>
-              <i class="fa fa-start"></i>
-              <i class="fa fa-start"></i>
-              <i class="fa fa-start-o"></i>
-            </div>
-            <p>$24.99</p>
-            </div>
-    </div>
-  </div>
+ 
+  
 
     
  
@@ -516,6 +482,8 @@ function w3_close() {
       {
         productImg.src=smallImg[2].src;
       }
+//miniproduct
+
 </script>
 </body>
 </html>
