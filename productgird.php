@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,13 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
-</script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js">
-</script>
-<![endif]-->
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper">
@@ -28,7 +21,7 @@
           <div class="row">
             <div class="col-md-2 col-sm-2">
               <div class="logo">
-                <a href="index.html">
+                <a href="index.php">
                   <img src="images/logo.png" alt="FlatShop">
                 </a>
               </div>
@@ -126,12 +119,12 @@
                   <div class="col-md-3">
                     <ul class="usermenu">
                       <li>
-                        <a href="checkout.html" class="log">
+                        <a href="checkout.php" class="log">
                           Login
                         </a>
                       </li>
                       <li>
-                        <a href="checkout2.html" class="reg">
+                        <a href="checkout2.php" class="reg">
                           Register
                         </a>
                       </li>
@@ -226,7 +219,7 @@
                             $60.00
                           </strong>
                         </span>
-                        <button class="checkout" onClick="location.href='checkout.html'">
+                        <button class="checkout" onClick="location.href='checkout.php'">
                           CheckOut
                         </button>
                       </li>
@@ -255,52 +248,52 @@
                       <div class="dropdown-menu">
                         <ul class="mega-menu-links">
                           <li>
-                            <a href="index.html">
+                            <a href="index.php">
                               home
                             </a>
                           </li>
                           <li>
-                            <a href="home2.html">
+                            <a href="home2.php">
                               home2
                             </a>
                           </li>
                           <li>
-                            <a href="home3.html">
+                            <a href="home3.php">
                               home3
                             </a>
                           </li>
                           <li>
-                            <a href="productlitst.html">
+                            <a href="productlitst.php">
                               Productlitst
                             </a>
                           </li>
                           <li>
-                            <a href="productgird.html">
+                            <a href="productgird.php">
                               Productgird
                             </a>
                           </li>
                           <li>
-                            <a href="details.html">
+                            <a href="details.php">
                               Details
                             </a>
                           </li>
                           <li>
-                            <a href="cart.html">
+                            <a href="cart.php">
                               Cart
                             </a>
                           </li>
                           <li>
-                            <a href="checkout.html">
+                            <a href="checkout.php">
                               CheckOut
                             </a>
                           </li>
                           <li>
-                            <a href="checkout2.html">
+                            <a href="checkout2.php">
                               CheckOut2
                             </a>
                           </li>
                           <li>
-                            <a href="contact.html">
+                            <a href="contact.php">
                               contact
                             </a>
                           </li>
@@ -308,12 +301,12 @@
                       </div>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         men
                       </a>
                     </li>
                     <li>
-                      <a href="productlitst.html">
+                      <a href="productlitst.php">
                         women
                       </a>
                     </li>
@@ -326,32 +319,32 @@
                           <div class="col-md-6 col-sm-6">
                             <ul class="mega-menu-links">
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   New Collection
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shirts & tops
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Laptop & Brie
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Dresses
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Blazers & Jackets
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shoulder Bags
                                 </a>
                               </li>
@@ -360,32 +353,32 @@
                           <div class="col-md-6 col-sm-6">
                             <ul class="mega-menu-links">
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   New Collection
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shirts & tops
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Laptop & Brie
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Dresses
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Blazers & Jackets
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shoulder Bags
                                 </a>
                               </li>
@@ -395,27 +388,27 @@
                       </div>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         gift
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         kids
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         blog
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         jewelry
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="contact.php">
                         contact us
                       </a>
                     </li>
@@ -425,15 +418,6 @@
             </div>
           </div>
         </div>
-        <div class="clearfix">
-        </div>
-        <div class="page-index">
-          <div class="container">
-            <p>
-              Home - CheckOut
-            </p>
-          </div>
-        </div>
       </div>
       <div class="clearfix">
       </div>
@@ -441,64 +425,173 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3">
-              <div class="special-deal leftbar" style="margin-top:0;">
-                <h4 class="title">
-                  Special 
-                  <strong>
-                    Deals
-                  </strong>
-                </h4>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-01.png" alt="">
+              <div class="category leftbar">
+                <h3 class="title">
+                  Categories
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#">
+                      Men
                     </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-02.png" alt="">
+                  </li>
+                  <li>
+                    <a href="#">
+                      Women
                     </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-03.png" alt="">
+                  </li>
+                  <li>
+                    <a href="#">
+                      Salon
                     </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
+                  </li>
+                  <li>
+                    <a href="#">
+                      New Trend
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Living room
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Bed room
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix">
+              </div>
+              <div class="branch leftbar">
+                <h3 class="title">
+                  Branch
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#">
+                      New
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Sofa
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Salon
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      New Trend
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Living room
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Bed room
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix">
+              </div>
+              <div class="price-filter leftbar">
+                <h3 class="title">
+                  Price
+                </h3>
+                <form class="pricing">
+                  <label>
+                    $ 
+                    <input type="number">
+                  </label>
+                  <span class="separate">
+                    - 
+                  </span>
+                  <label>
+                    $ 
+                    <input type="number">
+                  </label>
+                  <input type="submit" value="Go">
+                </form>
+              </div>
+              <div class="clearfix">
+              </div>
+              <div class="clolr-filter leftbar">
+                <h3 class="title">
+                  Color
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="red-bg">
+                      light red
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class=" yellow-bg">
+                      yellow"
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="black-bg ">
+                      black
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="pink-bg">
+                      pink
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dkpink-bg">
+                      dkpink
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="chocolate-bg">
+                      chocolate
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="orange-bg">
+                      orange-bg
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="off-white-bg">
+                      off-white
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="extra-lightgreen-bg">
+                      extra-lightgreen
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="lightgreen-bg">
+                      lightgreen
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="biscuit-bg">
+                      biscuit
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="chocolatelight-bg">
+                      chocolatelight
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix">
               </div>
               <div class="product-tag leftbar">
                 <h3 class="title">
@@ -550,20 +643,21 @@
                   </li>
                 </ul>
               </div>
-              <div class="get-newsletter leftbar">
+              <div class="clearfix">
+              </div>
+              <div class="others leftbar">
                 <h3 class="title">
-                  Get 
-                  <strong>
-                    newsletter
-                  </strong>
+                  Others
                 </h3>
-                <p>
-                  Casio G Shock Digital Dial Black.
-                </p>
-                <form>
-                  <input class="email" type="text" name="" placeholder="Your Email...">
-                  <input class="submit" type="submit" value="Submit">
-                </form>
+              </div>
+              <div class="clearfix">
+              </div>
+              <div class="others leftbar">
+                <h3 class="title">
+                  Others
+                </h3>
+              </div>
+              <div class="clearfix">
               </div>
               <div class="fbl-box leftbar">
                 <h3 class="title">
@@ -620,109 +714,423 @@
                   </a>
                 </div>
               </div>
+              <div class="clearfix">
+              </div>
+              <div class="leftbanner">
+                <img src="images/banner-small-01.png" alt="">
+              </div>
             </div>
             <div class="col-md-9">
-              <div class="checkout-page">
-                <ol class="checkout-steps">
-                  <li class="steps active">
-                    <a href="checkout.html" class="step-title">
-                      01. checkout opition
+              <div class="banner">
+                <div class="bannerslide" id="bannerslide">
+                  <ul class="slides">
+                    <li>
+                      <a href="#">
+                        <img src="images/banner-01.jpg" alt=""/>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="images/banner-02.jpg" alt=""/>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clearfix">
+              </div>
+              <div class="products-grid">
+                <div class="toolbar">
+                  <div class="sorter">
+                    <div class="view-mode">
+                      <a href="productlitst.php" class="list">
+                        List
+                      </a>
+                      <a href="#" class="grid active">
+                        Grid
+                      </a>
+                    </div>
+                    <div class="sort-by">
+                      Sort by : 
+                      <select name="" >
+                        <option value="Default" selected>
+                          Default
+                        </option>
+                        <option value="Name">
+                          Name
+                        </option>
+                        <option value="Price">
+                          Price
+                        </option>
+                      </select>
+                    </div>
+                    <div class="limiter">
+                      Show : 
+                      <select name="" >
+                        <option value="3" selected>
+                          3
+                        </option>
+                        <option value="6">
+                          6
+                        </option>
+                        <option value="9">
+                          9
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="pager">
+                    <a href="#" class="prev-page">
+                      <i class="fa fa-angle-left">
+                      </i>
                     </a>
-                    <div class="step-description">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                          <div class="new-customer">
-                            <h5>
-                              New Customer
-                            </h5>
-                            <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user">
-                              </span>
-                              <span class="text">
-                                I wish to subscribe to the Herbal Store newsletter.
-                              </span>
-                            </label>
-                            <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user">
-                              </span>
-                              <span class="text">
-                                My delivery and billing addresses are the same.
-                              </span>
-                            </label>
-                            <p class="requir">
-                              By creating an account you will be able to shop faste be up to date on an order's status, and keep track of the orders you have previously made.
-                            </p>
-                            <button>
-                              Continue
-                            </button>
-                          </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                          <div class="run-customer">
-                            <h5>
-                              Rerunning Customer
-                            </h5>
-                            <form>
-                              <div class="form-row">
-                                <label class="lebel-abs">
-                                  Email 
-                                  <strong class="red">
-                                    *
-                                  </strong>
-                                </label>
-                                <input type="text" class="input namefild" name="">
-                              </div>
-                              <div class="form-row">
-                                <label class="lebel-abs">
-                                  Password 
-                                  <strong class="red">
-                                    *
-                                  </strong>
-                                </label>
-                                <input type="text" class="input namefild" name="">
-                              </div>
-                              <p class="forgoten">
-                                <a href="#">
-                                  Forgoten your password?
-                                </a>
-                              </p>
-                              <button>
-                                Login
-                              </button>
-                            </form>
-                          </div>
-                        </div>
+                    <a href="#" class="active">
+                      1
+                    </a>
+                    <a href="#">
+                      2
+                    </a>
+                    <a href="#">
+                      3
+                    </a>
+                    <a href="#" class="next-page">
+                      <i class="fa fa-angle-right">
+                      </i>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-05.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
                       </div>
                     </div>
-                  </li>
-                  <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      02. billing information
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-06.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="offer">
+                        New
+                      </div>
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-07.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-05.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-06.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="offer">
+                        New
+                      </div>
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-07.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-05.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-06.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="products">
+                      <div class="offer">
+                        New
+                      </div>
+                      <div class="thumbnail">
+                        <a href="details.php">
+                          <img src="images/products/small/products-07.png" alt="Product Name">
+                        </a>
+                      </div>
+                      <div class="productname">
+                        Iphone 5s Gold 32 Gb 2013
+                      </div>
+                      <h4 class="price">
+                        $451.00
+                      </h4>
+                      <div class="button_group">
+                        <button class="button add-cart" type="button">
+                          Add To Cart
+                        </button>
+                        <button class="button compare" type="button">
+                          <i class="fa fa-exchange">
+                          </i>
+                        </button>
+                        <button class="button wishlist" type="button">
+                          <i class="fa fa-heart-o">
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="toolbar">
+                  <div class="sorter bottom">
+                    <div class="view-mode">
+                      <a href="productlitst.php" class="list">
+                        List
+                      </a>
+                      <a href="#" class="grid active">
+                        Grid
+                      </a>
+                    </div>
+                    <div class="sort-by">
+                      Sort by : 
+                      <select name="">
+                        <option value="Default" selected>
+                          Default
+                        </option>
+                        <option value="Name">
+                          Name
+                        </option>
+                        <option value="
+<strong>
+#
+</strong>
+">
+  Price
+                        </option>
+                      </select>
+                    </div>
+                    <div class="limiter">
+                      Show : 
+                      <select name="" >
+                        <option value="3" selected>
+                          3
+                        </option>
+                        <option value="6">
+                          6
+                        </option>
+                        <option value="9">
+                          9
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="pager">
+                    <a href="#" class="prev-page">
+                      <i class="fa fa-angle-left">
+                      </i>
                     </a>
-                  </li>
-                  <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      03. Shipping information
+                    <a href="#" class="active">
+                      1
                     </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      04. shipping method 
+                    <a href="#">
+                      2
                     </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      05. payment information 
+                    <a href="#">
+                      3
                     </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      06. oder review
+                    <a href="#" class="next-page">
+                      <i class="fa fa-angle-right">
+                      </i>
                     </a>
-                  </li>
-                </ol>
+                  </div>
+                </div>
+                <div class="clearfix">
+                </div>
               </div>
             </div>
           </div>
@@ -909,7 +1317,7 @@
             <div class="row">
               <div class="col-md-6">
                 <p>
-                  Copyright © 2012. Designed by 
+                  Copyright Â© 2012. Designed by 
                   <a href="#">
                     Michael Lee
                   </a>
@@ -941,12 +1349,15 @@
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript==================================================-->
     <script type="text/javascript" src="js/jquery-1.10.2.min.js">
+    </script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js">
     </script>
     <script type="text/javascript" src="js/bootstrap.min.js">
     </script>
     <script defer src="js/jquery.flexslider.js">
+    </script>
+    <script type="text/javascript" src="js/jquery.sequence-min.js">
     </script>
     <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js">
     </script>

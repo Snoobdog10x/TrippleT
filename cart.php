@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-md-2 col-sm-2">
               <div class="logo">
-                <a href="index.html">
+                <a href="index.php">
                   <img src="images/logo.png" alt="FlatShop">
                 </a>
               </div>
@@ -126,12 +126,12 @@
                   <div class="col-md-3">
                     <ul class="usermenu">
                       <li>
-                        <a href="checkout.html" class="log">
+                        <a href="checkout.php" class="log">
                           Login
                         </a>
                       </li>
                       <li>
-                        <a href="checkout2.html" class="reg">
+                        <a href="checkout2.php" class="reg">
                           Register
                         </a>
                       </li>
@@ -226,7 +226,7 @@
                             $60.00
                           </strong>
                         </span>
-                        <button class="checkout" onClick="location.href='checkout.html'">
+                        <button class="checkout" onClick="location.href='checkout.php'">
                           CheckOut
                         </button>
                       </li>
@@ -255,52 +255,52 @@
                       <div class="dropdown-menu">
                         <ul class="mega-menu-links">
                           <li>
-                            <a href="index.html">
+                            <a href="index.php">
                               home
                             </a>
                           </li>
                           <li>
-                            <a href="home2.html">
+                            <a href="home2.php">
                               home2
                             </a>
                           </li>
                           <li>
-                            <a href="home3.html">
+                            <a href="home3.php">
                               home3
                             </a>
                           </li>
                           <li>
-                            <a href="productlitst.html">
+                            <a href="productlitst.php">
                               Productlitst
                             </a>
                           </li>
                           <li>
-                            <a href="productgird.html">
+                            <a href="productgird.php">
                               Productgird
                             </a>
                           </li>
                           <li>
-                            <a href="details.html">
+                            <a href="details.php">
                               Details
                             </a>
                           </li>
                           <li>
-                            <a href="cart.html">
+                            <a href="cart.php">
                               Cart
                             </a>
                           </li>
                           <li>
-                            <a href="checkout.html">
+                            <a href="checkout.php">
                               CheckOut
                             </a>
                           </li>
                           <li>
-                            <a href="checkout2.html">
+                            <a href="checkout2.php">
                               CheckOut2
                             </a>
                           </li>
                           <li>
-                            <a href="contact.html">
+                            <a href="contact.php">
                               contact
                             </a>
                           </li>
@@ -308,12 +308,12 @@
                       </div>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         men
                       </a>
                     </li>
                     <li>
-                      <a href="productlitst.html">
+                      <a href="productlitst.php">
                         women
                       </a>
                     </li>
@@ -326,32 +326,32 @@
                           <div class="col-md-6 col-sm-6">
                             <ul class="mega-menu-links">
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   New Collection
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shirts & tops
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Laptop & Brie
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Dresses
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Blazers & Jackets
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shoulder Bags
                                 </a>
                               </li>
@@ -360,32 +360,32 @@
                           <div class="col-md-6 col-sm-6">
                             <ul class="mega-menu-links">
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   New Collection
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shirts & tops
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Laptop & Brie
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Dresses
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Blazers & Jackets
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shoulder Bags
                                 </a>
                               </li>
@@ -395,27 +395,27 @@
                       </div>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         gift
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         kids
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         blog
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         jewelry
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="contact.php">
                         contact us
                       </a>
                     </li>

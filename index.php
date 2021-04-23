@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+      <meta http-equiv="Content-Type" content="text/php;charset=utf-8"/>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="shortcut icon" href="images/favicon.png">
@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
       <link href="css/sequence-looptheme.css" rel="stylesheet" media="all"/>
       <link href="css/style.css" rel="stylesheet">
-      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/php5shiv/3.7.0/php5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
    </head>
    <body id="home">
       <div class="wrapper">
@@ -20,7 +20,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-2 col-sm-2">
-                     <div class="logo"><a href="index.html"><img src="images/logo.png" alt="FlatShop"></a></div>
+                     <div class="logo"><a href="index.php"><img src="images/logo.png" alt="FlatShop"></a></div>
                   </div>
                   <div class="col-md-10 col-sm-10">
                      <div class="header_top">
@@ -58,8 +58,8 @@
                            </div>
                            <div class="col-md-3">
                               <ul class="usermenu">
-                                 <li><a href="checkout.html" class="log">Login</a></li>
-                                 <li><a href="checkout2.html" class="reg">Register</a></li>
+                                 <li><a href="checkout.php" class="log">Login</a></li>
+                                 <li><a href="checkout2.php" class="reg">Register</a></li>
                               </ul>
                            </div>
                         </div>
@@ -99,7 +99,7 @@
                                        </div>
                                     </div>
                                  </li>
-                                 <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.html'">CheckOut</button></li>
+                                 <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.php'">CheckOut</button></li>
                               </ul>
                            </li>
                         </ul>
@@ -110,53 +110,53 @@
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
                                  <div class="dropdown-menu">
                                     <ul class="mega-menu-links">
-                                       <li><a href="index.html">home</a></li>
-                                       <li><a href="home2.html">home2</a></li>
-                                       <li><a href="home3.html">home3</a></li>
-                                       <li><a href="productlitst.html">Productlitst</a></li>
-                                       <li><a href="productgird.html">Productgird</a></li>
-                                       <li><a href="details.html">Details</a></li>
-                                       <li><a href="cart.html">Cart</a></li>
-                                       <li><a href="checkout.html">CheckOut</a></li>
-                                       <li><a href="checkout2.html">CheckOut2</a></li>
-                                       <li><a href="contact.html">contact</a></li>
+                                       <li><a href="index.php">home</a></li>
+                                       <li><a href="home2.php">home2</a></li>
+                                       <li><a href="home3.php">home3</a></li>
+                                       <li><a href="productlitst.php">Productlitst</a></li>
+                                       <li><a href="productgird.php">Productgird</a></li>
+                                       <li><a href="details.php">Details</a></li>
+                                       <li><a href="cart.php">Cart</a></li>
+                                       <li><a href="checkout.php">CheckOut</a></li>
+                                       <li><a href="checkout2.php">CheckOut2</a></li>
+                                       <li><a href="contact.php">contact</a></li>
                                     </ul>
                                  </div>
                               </li>
-                              <li><a href="productgird.html">men</a></li>
-                              <li><a href="productlitst.html">women</a></li>
+                              <li><a href="productgird.php">men</a></li>
+                              <li><a href="productlitst.php">women</a></li>
                               <li class="dropdown">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fashion</a>
                                  <div class="dropdown-menu mega-menu">
                                     <div class="row">
                                        <div class="col-md-6 col-sm-6">
                                           <ul class="mega-menu-links">
-                                             <li><a href="productgird.html">New Collection</a></li>
-                                             <li><a href="productgird.html">Shirts & tops</a></li>
-                                             <li><a href="productgird.html">Laptop & Brie</a></li>
-                                             <li><a href="productgird.html">Dresses</a></li>
-                                             <li><a href="productgird.html">Blazers & Jackets</a></li>
-                                             <li><a href="productgird.html">Shoulder Bags</a></li>
+                                             <li><a href="productgird.php">New Collection</a></li>
+                                             <li><a href="productgird.php">Shirts & tops</a></li>
+                                             <li><a href="productgird.php">Laptop & Brie</a></li>
+                                             <li><a href="productgird.php">Dresses</a></li>
+                                             <li><a href="productgird.php">Blazers & Jackets</a></li>
+                                             <li><a href="productgird.php">Shoulder Bags</a></li>
                                           </ul>
                                        </div>
                                        <div class="col-md-6 col-sm-6">
                                           <ul class="mega-menu-links">
-                                             <li><a href="productgird.html">New Collection</a></li>
-                                             <li><a href="productgird.html">Shirts & tops</a></li>
-                                             <li><a href="productgird.html">Laptop & Brie</a></li>
-                                             <li><a href="productgird.html">Dresses</a></li>
-                                             <li><a href="productgird.html">Blazers & Jackets</a></li>
-                                             <li><a href="productgird.html">Shoulder Bags</a></li>
+                                             <li><a href="productgird.php">New Collection</a></li>
+                                             <li><a href="productgird.php">Shirts & tops</a></li>
+                                             <li><a href="productgird.php">Laptop & Brie</a></li>
+                                             <li><a href="productgird.php">Dresses</a></li>
+                                             <li><a href="productgird.php">Blazers & Jackets</a></li>
+                                             <li><a href="productgird.php">Shoulder Bags</a></li>
                                           </ul>
                                        </div>
                                     </div>
                                  </div>
                               </li>
-                              <li><a href="productgird.html">gift</a></li>
-                              <li><a href="productgird.html">kids</a></li>
-                              <li><a href="productgird.html">blog</a></li>
-                              <li><a href="productgird.html">jewelry</a></li>
-                              <li><a href="contact.html">contact us</a></li>
+                              <li><a href="productgird.php">gift</a></li>
+                              <li><a href="productgird.php">kids</a></li>
+                              <li><a href="productgird.php">blog</a></li>
+                              <li><a href="productgird.php">jewelry</a></li>
+                              <li><a href="contact.php">contact us</a></li>
                            </ul>
                         </div>
                      </div>
@@ -233,7 +233,7 @@
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
                                  <div class="offer">- %20</div>
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-01.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-01.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -241,7 +241,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-02.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-02.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -250,7 +250,7 @@
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
                                  <div class="offer">New</div>
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-03.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-03.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -258,7 +258,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -271,7 +271,7 @@
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
                                  <div class="offer">- %20</div>
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-01.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-01.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -279,7 +279,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-02.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-02.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -288,7 +288,7 @@
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
                                  <div class="offer">New</div>
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-03.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-03.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -296,7 +296,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -315,7 +315,7 @@
                         <div class="row">
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-05.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-05.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -323,7 +323,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-06.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-06.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -332,7 +332,7 @@
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
                                  <div class="offer">New</div>
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-07.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-07.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -340,7 +340,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -352,7 +352,7 @@
                         <div class="row">
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-01.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-01.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -360,7 +360,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-02.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-02.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -368,7 +368,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-03.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-03.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -376,7 +376,7 @@
                            </div>
                            <div class="col-md-3 col-sm-6">
                               <div class="products">
-                                 <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
+                                 <div class="thumbnail"><a href="details.php"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
                                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
                                  <h4 class="price">$451.00</h4>
                                  <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -515,4 +515,4 @@
 	  <script defer src="js/jquery.flexslider.js"></script>
 	  <script type="text/javascript" src="js/script.min.js" ></script>
    </body>
-</html>
+      </html>

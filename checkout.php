@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,7 +28,7 @@
           <div class="row">
             <div class="col-md-2 col-sm-2">
               <div class="logo">
-                <a href="index.html">
+                <a href="index.php">
                   <img src="images/logo.png" alt="FlatShop">
                 </a>
               </div>
@@ -125,12 +126,12 @@
                   <div class="col-md-3">
                     <ul class="usermenu">
                       <li>
-                        <a href="checkout.html" class="log">
+                        <a href="checkout.php" class="log">
                           Login
                         </a>
                       </li>
                       <li>
-                        <a href="checkout2.html" class="reg">
+                        <a href="checkout2.php" class="reg">
                           Register
                         </a>
                       </li>
@@ -225,7 +226,7 @@
                             $60.00
                           </strong>
                         </span>
-                        <button class="checkout" onClick="location.href='checkout.html'">
+                        <button class="checkout" onClick="location.href='checkout.php'">
                           CheckOut
                         </button>
                       </li>
@@ -254,52 +255,52 @@
                       <div class="dropdown-menu">
                         <ul class="mega-menu-links">
                           <li>
-                            <a href="index.html">
+                            <a href="index.php">
                               home
                             </a>
                           </li>
                           <li>
-                            <a href="home2.html">
+                            <a href="home2.php">
                               home2
                             </a>
                           </li>
                           <li>
-                            <a href="home3.html">
+                            <a href="home3.php">
                               home3
                             </a>
                           </li>
                           <li>
-                            <a href="productlitst.html">
+                            <a href="productlitst.php">
                               Productlitst
                             </a>
                           </li>
                           <li>
-                            <a href="productgird.html">
+                            <a href="productgird.php">
                               Productgird
                             </a>
                           </li>
                           <li>
-                            <a href="details.html">
+                            <a href="details.php">
                               Details
                             </a>
                           </li>
                           <li>
-                            <a href="cart.html">
+                            <a href="cart.php">
                               Cart
                             </a>
                           </li>
                           <li>
-                            <a href="checkout.html">
+                            <a href="checkout.php">
                               CheckOut
                             </a>
                           </li>
                           <li>
-                            <a href="checkout2.html">
+                            <a href="checkout2.php">
                               CheckOut2
                             </a>
                           </li>
                           <li>
-                            <a href="contact.html">
+                            <a href="contact.php">
                               contact
                             </a>
                           </li>
@@ -307,12 +308,12 @@
                       </div>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         men
                       </a>
                     </li>
                     <li>
-                      <a href="productlitst.html">
+                      <a href="productlitst.php">
                         women
                       </a>
                     </li>
@@ -325,32 +326,32 @@
                           <div class="col-md-6 col-sm-6">
                             <ul class="mega-menu-links">
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   New Collection
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shirts & tops
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Laptop & Brie
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Dresses
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Blazers & Jackets
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shoulder Bags
                                 </a>
                               </li>
@@ -359,32 +360,32 @@
                           <div class="col-md-6 col-sm-6">
                             <ul class="mega-menu-links">
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   New Collection
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shirts & tops
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Laptop & Brie
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Dresses
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Blazers & Jackets
                                 </a>
                               </li>
                               <li>
-                                <a href="productgird.html">
+                                <a href="productgird.php">
                                   Shoulder Bags
                                 </a>
                               </li>
@@ -394,27 +395,27 @@
                       </div>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         gift
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         kids
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         blog
                       </a>
                     </li>
                     <li>
-                      <a href="productgird.html">
+                      <a href="productgird.php">
                         jewelry
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html">
+                      <a href="contact.php">
                         contact us
                       </a>
                     </li>
@@ -429,7 +430,7 @@
         <div class="page-index">
           <div class="container">
             <p>
-              Home - Contact us
+              Home - CheckOut
             </p>
           </div>
         </div>
@@ -439,105 +440,289 @@
       <div class="container_fullwidth">
         <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <h5 class="title contact-title">
-                Contact Us
-              </h5>
-              <div class="clearfix">
-              </div>
-              <div class="map">
-                <iframe width="600" height="350" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vietnam&amp;aq=&amp;sll=14.058324,108.277199&amp;sspn=21.827722,43.286133&amp;ie=UTF8&amp;hq=&amp;hnear=Vietnam&amp;ll=14.058324,108.277199&amp;spn=8.883583,21.643066&amp;t=m&amp;z=6&amp;output=embed">
-                </iframe>
-              </div>
-              <div class="clearfix">
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="contact-infoormation">
-                    <h5>
-                      Contact Info
-                    </h5>
+            <div class="col-md-3">
+              <div class="special-deal leftbar" style="margin-top:0;">
+                <h4 class="title">
+                  Special 
+                  <strong>
+                    Deals
+                  </strong>
+                </h4>
+                <div class="special-item">
+                  <div class="product-image">
+                    <a href="details.php">
+                      <img src="images/products/thum/products-01.png" alt="">
+                    </a>
+                  </div>
+                  <div class="product-info">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur ad ipis cing elit. Suspendisse at sapien mascsa. Lorem ipsum dolor sit amet, consectetur se adipiscing elit. Sed fermentum, sapien scele risque volutp at tempor, lacus est sodales massa, a hendrerit dolor slase turpis non mi. 
+                      <a href="details.php">
+                        Licoln Corner Unit
+                      </a>
                     </p>
-                    <ul>
-                      <li>
-                        <span class="icon">
-                          <img src="images/message.png" alt="">
-                        </span>
-                        <p>
-                          contact@michaeldesign.me
-                          <br>
-                          support@michaeldesign.me
-                        </p>
-                      </li>
-                      <li>
-                        <span class="icon">
-                          <img src="images/phone.png" alt="">
-                        </span>
-                        <p>
-                          084. 93 668 2236
-                          <br>
-                          084. 93 668 6789
-                        </p>
-                      </li>
-                      <li>
-                        <span class="icon">
-                          <img src="images/address.png" alt="">
-                        </span>
-                        <p>
-                          No.86 ChuaBoc St, DongDa Dt,
-                          <br>
-                          Hanoi, Vietnam
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="ContactForm">
-                    <h5>
-                      Contact Form
+                    <h5 class="price">
+                      $300.00
                     </h5>
-                    <form>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>
-                            Your Name 
-                            <strong class="red">
-                              *
-                            </strong>
-                          </label>
-                          <input class="inputfild" type="text" name="">
-                        </div>
-                        <div class="col-md-6">
-                          <label>
-                            Your Email
-                            <strong class="red">
-                              *
-                            </strong>
-                          </label>
-                          <input class="inputfild" type="email" name="">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <label>
-                            Your Message 
-                            <strong class="red">
-                              *
-                            </strong>
-                          </label>
-                          <textarea class="inputfild" rows="8" name="">
-                          </textarea>
-                        </div>
-                      </div>
-                      <button class="pull-right">
-                        Send Message
-                      </button>
-                    </form>
                   </div>
                 </div>
+                <div class="special-item">
+                  <div class="product-image">
+                    <a href="details.php">
+                      <img src="images/products/thum/products-02.png" alt="">
+                    </a>
+                  </div>
+                  <div class="product-info">
+                    <p>
+                      <a href="details.php">
+                        Licoln Corner Unit
+                      </a>
+                    </p>
+                    <h5 class="price">
+                      $300.00
+                    </h5>
+                  </div>
+                </div>
+                <div class="special-item">
+                  <div class="product-image">
+                    <a href="details.php">
+                      <img src="images/products/thum/products-03.png" alt="">
+                    </a>
+                  </div>
+                  <div class="product-info">
+                    <p>
+                      <a href="details.php">
+                        Licoln Corner Unit
+                      </a>
+                    </p>
+                    <h5 class="price">
+                      $300.00
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="product-tag leftbar">
+                <h3 class="title">
+                  Products 
+                  <strong>
+                    Tags
+                  </strong>
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#">
+                      Lincoln us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      SDress for Girl
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Corner
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Window
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      PG
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Oscar
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Bath room
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      PSD
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="get-newsletter leftbar">
+                <h3 class="title">
+                  Get 
+                  <strong>
+                    newsletter
+                  </strong>
+                </h3>
+                <p>
+                  Casio G Shock Digital Dial Black.
+                </p>
+                <form>
+                  <input class="email" type="text" name="" placeholder="Your Email...">
+                  <input class="submit" type="submit" value="Submit">
+                </form>
+              </div>
+              <div class="fbl-box leftbar">
+                <h3 class="title">
+                  Facebook
+                </h3>
+                <span class="likebutton">
+                  <a href="#">
+                    <img src="images/fblike.png" alt="">
+                  </a>
+                </span>
+                <p>
+                  12k people like Flat Shop.
+                </p>
+                <ul>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    </a>
+                  </li>
+                </ul>
+                <div class="fbplug">
+                  <a href="#">
+                    <span>
+                      <img src="images/fbicon.png" alt="">
+                    </span>
+                    Facebook social plugin
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="checkout-page">
+                <ol class="checkout-steps">
+                  <li class="steps active">
+                    <a href="checkout.php" class="step-title">
+                      01. checkout opition
+                    </a>
+                    <div class="step-description">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <div class="new-customer">
+                            <h5>
+                              New Customer
+                            </h5>
+                            <label>
+                              <span class="input-radio">
+                                <input type="radio" name="user">
+                              </span>
+                              <span class="text">
+                                I wish to subscribe to the Herbal Store newsletter.
+                              </span>
+                            </label>
+                            <label>
+                              <span class="input-radio">
+                                <input type="radio" name="user">
+                              </span>
+                              <span class="text">
+                                My delivery and billing addresses are the same.
+                              </span>
+                            </label>
+                            <p class="requir">
+                              By creating an account you will be able to shop faste be up to date on an order's status, and keep track of the orders you have previously made.
+                            </p>
+                            <button>
+                              Continue
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <div class="run-customer">
+                            <h5>
+                              Rerunning Customer
+                            </h5>
+                            <form>
+                              <div class="form-row">
+                                <label class="lebel-abs">
+                                  Email 
+                                  <strong class="red">
+                                    *
+                                  </strong>
+                                </label>
+                                <input type="text" class="input namefild" name="">
+                              </div>
+                              <div class="form-row">
+                                <label class="lebel-abs">
+                                  Password 
+                                  <strong class="red">
+                                    *
+                                  </strong>
+                                </label>
+                                <input type="text" class="input namefild" name="">
+                              </div>
+                              <p class="forgoten">
+                                <a href="#">
+                                  Forgoten your password?
+                                </a>
+                              </p>
+                              <button>
+                                Login
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="steps">
+                    <a href="checkout2.php" class="step-title">
+                      02. billing information
+                    </a>
+                  </li>
+                  <li class="steps">
+                    <a href="checkout2.php" class="step-title">
+                      03. Shipping information
+                    </a>
+                  </li>
+                  <li class="steps">
+                    <a href="#" class="step-title">
+                      04. shipping method 
+                    </a>
+                  </li>
+                  <li class="steps">
+                    <a href="#" class="step-title">
+                      05. payment information 
+                    </a>
+                  </li>
+                  <li class="steps">
+                    <a href="#" class="step-title">
+                      06. oder review
+                    </a>
+                  </li>
+                </ol>
               </div>
             </div>
           </div>
@@ -724,7 +909,7 @@
             <div class="row">
               <div class="col-md-6">
                 <p>
-                  Copyright © 2012. Designed by 
+                  Copyright � 2012. Designed by 
                   <a href="#">
                     Michael Lee
                   </a>
