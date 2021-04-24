@@ -161,7 +161,7 @@
                     <li>
                       <div class="cart-item">
                         <div class="image">
-                          <img src="Images1/products/Men/1-1.png" alt="">
+                          <img src="images/products/Men/1-1.png" alt="">
                         </div>
                         <div class="item-description">
                           <p class="name">
@@ -445,16 +445,16 @@
             <div class="products-details">
               <div class="preview_image">
                 <div class="preview-small">
-                  <img id="zoom_03" src="Images1\products\men\product-11.png" data-zoom-image="Images1\products\men\product-11.png" alt="">
+                  <img id="zoom_03" src="1-1.jpg" data-zoom-image="1-1.jpg" alt="">
                 </div>
                 <div class="thum-image">
                   <ul id="gallery_01" class="prev-thum">
                     <li>
-                      <a href="#" data-image="Images1\products\Men\product-11.png" data-zoom-image="Images1\products\Men\product-11.png">
-                        <img src="Images1\products\Men\product-11.png" alt="">
+                      <a href="#" data-image="images\products\Men\product-11.png" data-zoom-image="images\products\Men\product-11.png">
+                        <img src="images\products\Men\product-11.png" alt="">
                       </a>
-                      <a href="#" data-image="Images1\products\Men\product-12.png" data-zoom-image="Images1\products\Men\product-12.png">
-                        <img src="Images1\products\Men\product-12.png" alt="">
+                      <a href="#" data-image="images\products\Men\product-12.png" data-zoom-image="images\products\Men\product-12.png">
+                        <img src="images\products\Men\product-12.png" alt="">
                       </a>
                     </li>
                   </ul>
