@@ -161,7 +161,7 @@
                     <li>
                       <div class="cart-item">
                         <div class="image">
-                          <img src="images/products/thum/products-01.png" alt="">
+                          <img src="Images1/products/Men/1-1.png" alt="">
                         </div>
                         <div class="item-description">
                           <p class="name">
@@ -445,33 +445,16 @@
             <div class="products-details">
               <div class="preview_image">
                 <div class="preview-small">
-                  <img id="zoom_03" src="images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg" alt="">
+                  <img id="zoom_03" src="Images1\products\men\product-11.png" data-zoom-image="Images1\products\men\product-11.png" alt="">
                 </div>
                 <div class="thum-image">
                   <ul id="gallery_01" class="prev-thum">
                     <li>
-                      <a href="#" data-image="images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg">
-                        <img src="images/products/thum/products-01.png" alt="">
+                      <a href="#" data-image="Images1\products\Men\product-11.png" data-zoom-image="Images1\products\Men\product-11.png">
+                        <img src="Images1\products\Men\product-11.png" alt="">
                       </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-02.jpg" data-zoom-image="images/products/Large/products-02.jpg">
-                        <img src="images/products/thum/products-02.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-03.jpg" data-zoom-image="images/products/Large/products-03.jpg">
-                        <img src="images/products/thum/products-03.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-04.jpg" data-zoom-image="images/products/Large/products-04.jpg">
-                        <img src="images/products/thum/products-04.png" alt="">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" data-image="images/products/medium/products-05.jpg" data-zoom-image="images/products/Large/products-05.jpg">
-                        <img src="images/products/thum/products-05.png" alt="">
+                      <a href="#" data-image="Images1\products\Men\product-12.png" data-zoom-image="Images1\products\Men\product-12.png">
+                        <img src="Images1\products\Men\product-12.png" alt="">
                       </a>
                     </li>
                   </ul>
