@@ -139,7 +139,7 @@
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
                      </div>
                      <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">More Details</a></div>
-                     <div class=" formLeft delay200" data-duration="5" data-bottom="true"><img src="Images1/slider/slider1.jpg" alt=""></div>
+                     <div class=" formLeft delay200" data-duration="5" data-bottom="true"><img src="images/slider/slider1.jpg" alt=""></div>
                   </li>
                   <li>
                      <div class="flat-caption caption2 formLeft delay400">
@@ -149,7 +149,7 @@
                         <h2>Etiam velit purus, luctus vitae velit sedauctor<br>egestas diam, Etiam velit purus.</h2>
                      </div>
                      <div class="flat-button caption5 formLeft delay600"><a class="more" href="#">More Details</a></div>
-                     <div class="formLeft delay200" data-bottom="true"><img src="Images1/slider/slider2.jpg" alt=""></div>
+                     <div class="formLeft delay200" data-bottom="true"><img src="images/slider/slider2.jpg" alt=""></div>
                   </li>
                   <li>
                      <div class="flat-caption caption2 formLeft delay400 text-center">

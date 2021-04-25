@@ -445,27 +445,19 @@
             <div class="products-details">
               <div class="preview_image">
                 <div class="preview-small">
-                  <img id="zoom_03" src="1-1.jpg" data-zoom-image="1-1.jpg" alt="">
+                  <img id="zoom_03" src="images\products\men\1-1.png">
                 </div>
                 <div class="thum-image">
                   <ul id="gallery_01" class="prev-thum">
                     <li>
-                      <a href="#" data-image="images\products\Men\product-11.png" data-zoom-image="images\products\Men\product-11.png">
-                        <img src="images\products\Men\product-11.png" alt="">
+                      <a href="#" data-image="images\products\Men\1-2.png">
+                        <img src="images\products\Men\1-2.png" alt="">
                       </a>
-                      <a href="#" data-image="images\products\Men\product-12.png" data-zoom-image="images\products\Men\product-12.png">
-                        <img src="images\products\Men\product-12.png" alt="">
+                      <a href="#" data-image="images\products\Men\1-1.png">
+                        <img src="images\products\Men\1-1.png" alt="">
                       </a>
                     </li>
                   </ul>
-                  <a class="control-left" id="thum-prev" href="javascript:void(0);">
-                    <i class="fa fa-chevron-left">
-                    </i>
-                  </a>
-                  <a class="control-right" id="thum-next" href="javascript:void(0);">
-                    <i class="fa fa-chevron-right">
-                    </i>
-                  </a>
                 </div>
               </div>
               <div class="products-description">
@@ -1456,7 +1448,7 @@
   </script>
   <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js">
   </script>
-  <script type="text/javascript" src='js/jquery.elevatezoom.js'>
+  <script type="text/javascript" src='js/jquery.elevatezoom.js'>  
   </script>
   <script type="text/javascript" src="js/script.min.js">
   </script>
