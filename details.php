@@ -10,9 +10,7 @@
         Welcome to FlatShop
     </title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link
-        href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
-        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -25,420 +23,8 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-sm-2">
-                        <div class="logo">
-                            <a href="index.php">
-                                <img src="images/logo.png" alt="FlatShop">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-10 col-sm-10">
-                        <div class="header_top">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <ul class="option_nav">
-                                        <li class="dorpdown">
-                                            <a href="#">
-                                                Eng
-                                            </a>
-                                            <ul class="subnav">
-                                                <li>
-                                                    <a href="#">
-                                                        Eng
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        Vns
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        Fer
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        Gem
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dorpdown">
-                                            <a href="#">
-                                                USD
-                                            </a>
-                                            <ul class="subnav">
-                                                <li>
-                                                    <a href="#">
-                                                        USD
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        UKD
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        FER
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <ul class="topmenu">
-                                        <li>
-                                            <a href="#">
-                                                About Us
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                News
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Service
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Recruiment
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Media
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Support
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3">
-                                    <ul class="usermenu">
-                                        <li>
-                                            <a href="checkout.php" class="log">
-                                                Login
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="checkout2.php" class="reg">
-                                                Register
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="header_bottom">
-                            <ul class="option">
-                                <li id="search" class="search">
-                                    <form>
-                                        <input class="search-submit" type="submit" value="">
-                                        <input class="search-input" placeholder="Enter your search term..." type="text"
-                                            value="" name="search">
-                                    </form>
-                                </li>
-                                <li class="option-cart">
-                                    <a href="#" class="cart-icon">
-                                        cart
-                                        <span class="cart_no">
-                                            02
-                                        </span>
-                                    </a>
-                                    <ul class="option-cart-item">
-                                        <li>
-                                            <div class="cart-item">
-                                                <div class="image">
-                                                    <img src="images/products/Men/1-1.png" alt="">
-                                                </div>
-                                                <div class="item-description">
-                                                    <p class="name">
-                                                        Lincoln chair
-                                                    </p>
-                                                    <p>
-                                                        Size:
-                                                        <span class="light-red">
-                                                            One size
-                                                        </span>
-                                                        <br>
-                                                        Quantity:
-                                                        <span class="light-red">
-                                                            01
-                                                        </span>
-                                                    </p>
-                                                </div>
-                                                <div class="right">
-                                                    <p class="price">
-                                                        $30.00
-                                                    </p>
-                                                    <a href="#" class="remove">
-                                                        <img src="images/remove.png" alt="remove">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="cart-item">
-                                                <div class="image">
-                                                    <img src="images/products/thum/products-02.png" alt="">
-                                                </div>
-                                                <div class="item-description">
-                                                    <p class="name">
-                                                        Lincoln chair
-                                                    </p>
-                                                    <p>
-                                                        Size:
-                                                        <span class="light-red">
-                                                            One size
-                                                        </span>
-                                                        <br>
-                                                        Quantity:
-                                                        <span class="light-red">
-                                                            01
-                                                        </span>
-                                                    </p>
-                                                </div>
-                                                <div class="right">
-                                                    <p class="price">
-                                                        $30.00
-                                                    </p>
-                                                    <a href="#" class="remove">
-                                                        <img src="images/remove.png" alt="remove">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="total">
-                                                Total
-                                                <strong>
-                                                    $60.00
-                                                </strong>
-                                            </span>
-                                            <button class="checkout" onClick="location.href='checkout.php'">
-                                                CheckOut
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                    data-target=".navbar-collapse">
-                                    <span class="sr-only">
-                                        Toggle navigation
-                                    </span>
-                                    <span class="icon-bar">
-                                    </span>
-                                    <span class="icon-bar">
-                                    </span>
-                                    <span class="icon-bar">
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="active dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            Home
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu-links">
-                                                <li>
-                                                    <a href="index.php">
-                                                        home
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="home2.php">
-                                                        home2
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="home3.php">
-                                                        home3
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="productlitst.php">
-                                                        Productlitst
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="productgird.php">
-                                                        Productgird
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="details.php">
-                                                        Details
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="cart.php">
-                                                        Cart
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout.php">
-                                                        CheckOut
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout2.php">
-                                                        CheckOut2
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="contact.php">
-                                                        contact
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="productgird.php">
-                                            men
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="productlitst.php">
-                                            women
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            Fashion
-                                        </a>
-                                        <div class="dropdown-menu mega-menu">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6">
-                                                    <ul class="mega-menu-links">
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                New Collection
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Shirts & tops
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Laptop & Brie
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Dresses
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Blazers & Jackets
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Shoulder Bags
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6">
-                                                    <ul class="mega-menu-links">
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                New Collection
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Shirts & tops
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Laptop & Brie
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Dresses
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Blazers & Jackets
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="productgird.php">
-                                                                Shoulder Bags
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="productgird.php">
-                                            gift
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="productgird.php">
-                                            kids
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="productgird.php">
-                                            blog
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="productgird.php">
-                                            jewelry
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.php">
-                                            contact us
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix">
-            </div>
-            <div class="page-index">
-                <div class="container">
-                    <p>
-                        Home - Products Details
-                    </p>
-                </div>
-            </div>
+        <div class="wrapper">
+            <?= require("HeaderProduct.php") ?>
         </div>
         <div class="clearfix">
         </div>
@@ -446,20 +32,20 @@
             <div class="container">
                 <div class="row">
                     <?php
-        require_once("lib.php");
-        $sql = "SELECT * FROM product where PID=".$_REQUEST['pid'];
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        closeDB();
-        ?>
+                    require_once("lib.php");
+                    $sql = "SELECT * FROM product where PID=" . $_REQUEST['pid'];
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    closeDB();
+                    ?>
                     <div class="col-md-9">
                         <div class="products-details">
                             <div class="preview_image">
-                                <img id="" src="<?=$row['IMG'];?>">
+                                <img id="" src="<?= $row['IMG']; ?>">
                             </div>
                             <div class="products-description">
                                 <h5 class="name">
-                                    <?=$row['NAME'];?>
+                                    <?= $row['NAME']; ?>
                                 </h5>
                                 <p>
                                     <img alt="" src="images/star.png">
@@ -474,19 +60,19 @@
                                     </span>
                                 </p>
                                 <p>
-                                    <?=$row['DETAIL'];?>
+                                    <?= $row['DETAIL']; ?>
                                 </p>
                                 <hr class="border">
                                 <div class="price">
                                     Price :
                                     <span class="new_price">
-                                        <?=$row['PRICE'];?>
+                                        <?= $row['PRICE']; ?>
                                         <sup>
                                             $
                                         </sup>
                                     </span>
                                     <span class="old_price">
-                                        <?=$row['PRICE']+10?>
+                                        <?= $row['PRICE'] + 10 ?>
                                         <sup>
                                             $
                                         </sup>
@@ -551,7 +137,7 @@
                             <div class="tab-content-wrap">
                                 <div class="tab-content" id="Description">
                                     <p>
-                                        <?=$row['DETAIL'];?>
+                                        <?= $row['DETAIL']; ?>
                                     </p>
                                 </div>
                                 <div class="tab-content" id="Reviews">
