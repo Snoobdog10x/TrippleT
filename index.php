@@ -199,7 +199,7 @@
                   $sql = "SELECT * FROM product WHERE Type='HOTPRODUCT'";
                   $result = $conn->query($sql);
                   $end = $result->num_rows;
-                  $limit = $end / 4;
+                  $limit = ($end%4==0) ? intval($end/4) : intval($end/4)+1;
                   $start=0;
                   for ($i = 0; $i < $limit; $i++) {
                   ?>
@@ -244,7 +244,8 @@
                   $sql = "SELECT * FROM product WHERE Type='FEATUREDPRODUCT'";
                   $result = $conn->query($sql);
                   $end = $result->num_rows;
-                  $limit = $end / 4;
+                  $limit = ($end%4==0) ? intval($end/4) : intval($end/4)+1;
+                  
                   $start=0;
                   for ($i = 0; $i < $limit; $i++) {
                   ?>
