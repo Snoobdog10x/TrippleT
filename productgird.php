@@ -13,9 +13,7 @@ require_once("lib.php");
         Welcome to FlatShop
     </title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link
-        href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100'
-        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <link href="css/style.css" rel="stylesheet">
@@ -23,7 +21,7 @@ require_once("lib.php");
 
 <body>
     <div class="wrapper">
-        <?=require("HeaderProduct.php")?>
+        <?= require("HeaderProduct.php") ?>
         <div class="clearfix">
         </div>
         <div class="container_fullwidth">
@@ -347,14 +345,6 @@ require_once("lib.php");
                         <div class="products-grid">
                             <div class="toolbar">
                                 <div class="sorter">
-                                    <div class="view-mode">
-                                        <a href="productlitst.php" class="list">
-                                            List
-                                        </a>
-                                        <a href="#" class="grid active">
-                                            Grid
-                                        </a>
-                                    </div>
                                     <div class="sort-by">
                                         Sort by :
                                         <select name="">
@@ -369,338 +359,341 @@ require_once("lib.php");
                                             </option>
                                         </select>
                                     </div>
-                                    <div class="limiter">
-                                        Show :
-                                        <select name="">
-                                            <option value="3" selected>
-                                                3
-                                            </option>
-                                            <option value="6">
-                                                6
-                                            </option>
-                                            <option value="9">
-                                                9
-                                            </option>
-                                        </select>
+                                    <div class="pager">
+                                        <a href="#" class="prev-page">
+                                            <i class="fa fa-angle-left">
+                                            </i>
+                                        </a>
+                                        <?php
+                                        if ($_REQUEST['Type'] != '')
+                                            $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'";
+                                        else
+                                            $sql = "SELECT * FROM product";
+                                        $result = $conn->query($sql);
+                                        $row = $result->num_rows;
+                                        $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
+                                        for ($i = 0; $i < $pages; $i++) {
+                                        ?>
+                                            <a href="productgird.php?Type=<?= $_REQUEST['Type'] ?>&Page=<?= $i ?>" class="active">
+                                                <?= ($i + 1) ?>
+                                            </a>
+                                        <?php
+                                        }
+                                        ?>
+                                        <a href="#" class="next-page">
+                                            <i class="fa fa-angle-right">
+                                            </i>
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="pager">
-                                    <a href="#" class="prev-page">
-                                        <i class="fa fa-angle-left">
-                                        </i>
-                                    </a>
-                                    <a href="#" class="active">
-                                        1
-                                    </a>
-                                    <a href="#">
-                                        2
-                                    </a>
-                                    <a href="#">
-                                        3
-                                    </a>
-                                    <a href="#" class="next-page">
-                                        <i class="fa fa-angle-right">
-                                        </i>
-                                    </a>
                                 </div>
                             </div>
                             <div class="row">
                                 <?php
-                if(isset($_REQUEST['Type']))
-                $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'";
-                else
-                $sql = "SELECT * FROM product";
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                ?>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="products">
-                                        <div class="thumbnail">
-                                            <a href="details.php?pid=<?= $row['PID']; ?>">
-                                                <img src="<?= $row['IMG']; ?>" style="max-width:100%;max-height:100%;"
-                                                    alt="Product Name">
-                                            </a>
-                                        </div>
-                                        <div class="productname">
-                                            <?= $row['NAME']; ?>
-                                        </div>
-                                        <h4 class="price">
-                                            <?= $row['PRICE']; ?>$
-                                        </h4>
-                                        <div class="button_group">
-                                            <button class="button add-cart" type="button">
-                                                Add To Cart
-                                            </button>
-                                            <button class="button compare" type="button">
-                                                <i class="fa fa-exchange">
-                                                </i>
-                                            </button>
-                                            <button class="button wishlist" type="button">
-                                                <i class="fa fa-heart-o">
-                                                </i>
-                                            </button>
+                                if ($_REQUEST['Type'] != '') {
+                                    $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'". " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                } else {
+                                    $sql = "SELECT * FROM product". " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                }
+                                $result = $conn->query($sql);
+                                while ($row = $result->fetch_assoc()) {
+                                ?>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="products">
+                                            <div class="thumbnail">
+                                                <a href="details.php?pid=<?= $row['PID']; ?>">
+                                                    <img src="<?= $row['IMG']; ?>" style="max-width:100%;max-height:100%;" alt="Product Name">
+                                                </a>
+                                            </div>
+                                            <div class="productname">
+                                                <?= $row['NAME']; ?>
+                                            </div>
+                                            <h4 class="price">
+                                                <?= $row['PRICE']; ?>$
+                                            </h4>
+                                            <div class="button_group">
+                                                <button class="button add-cart" type="button">
+                                                    Add To Cart
+                                                </button>
+                                                <button class="button compare" type="button">
+                                                    <i class="fa fa-exchange">
+                                                    </i>
+                                                </button>
+                                                <button class="button wishlist" type="button">
+                                                    <i class="fa fa-heart-o">
+                                                    </i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php
-                }
-                closeDB();
-                ?>
+                                }
+                                closeDB();
+                                ?>
                             </div>
-                            <div class="limiter">
-                                Show :
-                                <select name="">
-                                    <option value="3" selected>
-                                        3
-                                    </option>
-                                    <option value="6">
-                                        6
-                                    </option>
-                                    <option value="9">
-                                        9
-                                    </option>
-                                </select>
+                            <div class="products-grid">
+                            <div class="toolbar">
+                                <div class="sorter">
+                                    <div class="sort-by">
+                                        Sort by :
+                                        <select name="">
+                                            <option value="Default" selected>
+                                                Default
+                                            </option>
+                                            <option value="Name">
+                                                Name
+                                            </option>
+                                            <option value="Price">
+                                                Price
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="pager">
+                                        <a href="#" class="prev-page">
+                                            <i class="fa fa-angle-left">
+                                            </i>
+                                        </a>
+                                        <?php
+                                        if ($_REQUEST['Type'] != '')
+                                            $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'";
+                                        else
+                                            $sql = "SELECT * FROM product";
+                                        $result = $conn->query($sql);
+                                        $row = $result->num_rows;
+                                        $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
+                                        for ($i = 0; $i < $pages; $i++) {
+                                        ?>
+                                            <a href="productgird.php?Type=<?= $_REQUEST['Type'] ?>&Page=<?= $i ?>" class="active">
+                                                <?= ($i + 1) ?>
+                                            </a>
+                                        <?php
+                                        }
+                                        ?>
+                                        <a href="#" class="next-page">
+                                            <i class="fa fa-angle-right">
+                                            </i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
                             </div>
                         </div>
-                        <div class="pager">
-                            <a href="#" class="prev-page">
-                                <i class="fa fa-angle-left">
-                                </i>
-                            </a>
-                            <a href="#" class="active">
-                                1
-                            </a>
-                            <a href="#">
-                                2
-                            </a>
-                            <a href="#">
-                                3
-                            </a>
-                            <a href="#" class="next-page">
-                                <i class="fa fa-angle-right">
-                                </i>
-                            </a>
-                        </div>
                     </div>
-                    <div class="clearfix">
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="our-brand">
+                    <h3 class="title">
+                        <strong>
+                            Our
+                        </strong>
+                        Brands
+                    </h3>
+                    <div class="control">
+                        <a id="prev_brand" class="prev" href="#">
+                            &lt;
+                        </a>
+                        <a id="next_brand" class="next" href="#">
+                            &gt;
+                        </a>
                     </div>
+                    <ul id="braldLogo">
+                        <li>
+                            <ul class="brand_item">
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/themeforest.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/photodune.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/activeden.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="brand_item">
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/themeforest.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/photodune.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/activeden.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="clearfix">
         </div>
-        <div class="our-brand">
-            <h3 class="title">
-                <strong>
-                    Our
-                </strong>
-                Brands
-            </h3>
-            <div class="control">
-                <a id="prev_brand" class="prev" href="#">
-                    &lt;
-                </a>
-                <a id="next_brand" class="next" href="#">
-                    &gt;
-                </a>
-            </div>
-            <ul id="braldLogo">
-                <li>
-                    <ul class="brand_item">
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/envato.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/themeforest.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/photodune.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/activeden.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/envato.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <ul class="brand_item">
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/envato.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/themeforest.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/photodune.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/activeden.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="brand-logo">
-                                    <img src="images/envato.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </div>
-    <div class="clearfix">
-    </div>
-    <div class="footer">
-        <div class="footer-info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="footer-logo">
-                            <a href="#">
-                                <img src="images/logo.png" alt="">
-                            </a>
+        <div class="footer">
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer-logo">
+                                <a href="#">
+                                    <img src="images/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <h4 class="title">
+                                Contact
+                                <strong>
+                                    Info
+                                </strong>
+                            </h4>
+                            <p>
+                                No. 08, Nguyen Trai, Hanoi , Vietnam
+                            </p>
+                            <p>
+                                Call Us : (084) 1900 1008
+                            </p>
+                            <p>
+                                Email : michael@leebros.us
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <h4 class="title">
+                                Customer
+                                <strong>
+                                    Support
+                                </strong>
+                            </h4>
+                            <ul class="support">
+                                <li>
+                                    <a href="#">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Payment Option
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Booking Tips
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Infomation
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="title">
+                                Get Our
+                                <strong>
+                                    Newsletter
+                                </strong>
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor ipsum dolor.
+                            </p>
+                            <form class="newsletter">
+                                <input type="text" name="" placeholder="Type your email....">
+                                <input type="submit" value="SignUp" class="button">
+                            </form>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
-                        <h4 class="title">
-                            Contact
-                            <strong>
-                                Info
-                            </strong>
-                        </h4>
-                        <p>
-                            No. 08, Nguyen Trai, Hanoi , Vietnam
-                        </p>
-                        <p>
-                            Call Us : (084) 1900 1008
-                        </p>
-                        <p>
-                            Email : michael@leebros.us
-                        </p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <h4 class="title">
-                            Customer
-                            <strong>
-                                Support
-                            </strong>
-                        </h4>
-                        <ul class="support">
-                            <li>
+                </div>
+            </div>
+            <div class="copyright-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                Copyright © 2012. Designed by
                                 <a href="#">
-                                    FAQ
+                                    Michael Lee
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Payment Option
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Booking Tips
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Infomation
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="title">
-                            Get Our
-                            <strong>
-                                Newsletter
-                            </strong>
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor ipsum dolor.
-                        </p>
-                        <form class="newsletter">
-                            <input type="text" name="" placeholder="Type your email....">
-                            <input type="submit" value="SignUp" class="button">
-                        </form>
+                                . All rights reseved
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="social-icon">
+                                <li>
+                                    <a href="#" class="linkedin">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="google-plus">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="facebook">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="copyright-info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>
-                            Copyright © 2012. Designed by
-                            <a href="#">
-                                Michael Lee
-                            </a>
-                            . All rights reseved
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="social-icon">
-                            <li>
-                                <a href="#" class="linkedin">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="google-plus">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="facebook">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js">
     </script>

@@ -110,11 +110,11 @@
                      <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                            <li><a href="index.php">home</a></li>
-                           <li><a href="productgird.php?Type=MEN">men</a></li>
-                           <li><a href="productgird.php?Type=MEN">women</a></li>
-                           <li><a href="productgird.php?Type=UNISEX">unisex</a></li>
-                           <li><a href="productgird.php?">Productgird</a></li>
-                           <li><a href="productgird.php">blog</a></li>
+                           <li><a href="productgird.php?Type=MEN&Page=0">men</a></li>
+                           <li><a href="productgird.php?Type=MEN&Page=0">women</a></li>
+                           <li><a href="productgird.php?Type=UNISEX&Page=0">unisex</a></li>
+                           <li><a href="productgird.php?Type=&Page=0">Productgird</a></li>
+                           <li><a href="#">blog</a></li>
                            <li><a href="contact.php">contact us</a></li>
                         </ul>
                      </div>
