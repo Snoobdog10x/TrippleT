@@ -218,8 +218,8 @@
                                     <img src="<?=$row['IMG']?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
                                     </a>
                                     </div>
-                                    <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                                    <h4 class="price">$451.00</h4>
+                                    <div class="productname"><?=$row['NAME']?></div>
+                                    <h4 class="price"><?=$row['PRICE']?></h4>
                                     <div class="button_group"><button class="button add-cart" type="button">Add To
                                           Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                                  </div>
@@ -263,8 +263,8 @@
                                     <img src="<?=$row['IMG']?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
                                     </a>
                                     </div>
-                                    <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                                    <h4 class="price">$451.00</h4>
+                                    <div class="productname"><?=$row['NAME']?></div>
+                                    <h4 class="price"><?=$row['PRICE']?></h4>
                                     <div class="button_group"><button class="button add-cart" type="button">Add To
                                           Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                                  </div>
