@@ -23,7 +23,7 @@ if (!isset($_REQUEST['Username'])) {
         <div class="container" style="width: 30%; margin-top: 5%;">
             <form>
                 <div class="input-group">
-                    <img src="../images/logo.gif" alt="">
+                    <img src="../images/logobig.png" alt="">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
