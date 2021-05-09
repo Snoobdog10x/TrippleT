@@ -22,7 +22,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-2 col-sm-2">
-                  <div class="logo"><a href="index.php"><img src="images/logo1.png" alt="FlatShop"></a></div>
+                  <div class="logo"><a href="index.php"><img src="images/logo.png" alt="FlatShop"></a></div>
                </div>
                <div class="col-md-10 col-sm-10">
                   <div class="header_top">
@@ -354,7 +354,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-3">
-                     <div class="footer-logo"><a href="#"><img src="images/logo1.png" alt=""></a></div>
+                     <div class="footer-logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
                   </div>
                   <div class="col-md-3 col-sm-6">
                      <h4 class="title">Contact <strong>Info</strong></h4>
