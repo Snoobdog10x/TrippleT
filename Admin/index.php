@@ -20,37 +20,104 @@ if (!isset($_REQUEST['Username'])) {
 ?>
 
     <body id="home">
-        <div class="container" style="width: 30%; margin-top: 5%;">
-            <form>
-                <div class="input-group">
-                    <img src="../images/logobig.png" alt="">
+        <div class="container" style="width: 30%; margin-top: 15%;">
+            <form action="index.php" method="GET">
+                <div class="text-center">
+                    <h1>Admin login</h1>
                 </div>
+                <br>
+                <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                    <input id="Username" type="text" class="form-control" name="Username" placeholder="Username">
                 </div>
                 <br>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
                 </div>
                 <br>
                 <br>
-                <div class="input-group text-center">
-                    <input type="submit" class="btn btn-default" style=";" value="Login">
-                </div>
+                <button type="submit" class="large btn btn-default center-block">
+                    <h4>Login</h4>
+                </button>
             </form>
         </div>
     </body>
-<?php
-} else {
-?>
     <?php
-    require('HeaderAdmin.php')
+} else {
+    require_once('Sessionadmin.php');
+    $log=login($_REQUEST['Username'], $_REQUEST['Password']);
+    if (islogin()) {
+    ?>
+        <body id="home">
+            <div class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2">
+                            <div class="logo"><a href="index.php"><img src="../images/logo.png" alt="FlatShop"></a></div>
+                        </div>
+                        <div class="col-md-10 col-sm-10">
+                            <div class="clearfix"></div>
+                            <div class="header_bottom">
+                                <ul class="option">
+                                    <h3 style="color: white;">Hello <?=$_SESSION['USERNAME']?></h3>
+                                    <a href="logout.php"><h3>logout</h3></a>
+                                </ul>
+                                <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle
+                                            navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="index.php">home</a></li>
+                                        <li><a href="productgird.php?Type=MEN&Page=0">men</a></li>
+                                        <li><a href="productgird.php?Type=MEN&Page=0">women</a></li>
+                                        <li><a href="productgird.php?Type=UNISEX&Page=0">unisex</a></li>
+                                        <li><a href="productgird.php?Type=&Page=0">Productgird</a></li>
+                                        <li><a href="#">blog</a></li>
+                                        <li><a href="contact.php">contact us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    <?php
+    } else {
     ?>
 
+        <body id="home">
+            <div class="container" style="width: 30%; margin-top: 15%;">
+                <form action="index.php" method="POST">
+                    <div class="text-center">
+                        <h1>Admin login</h1>
+                    </div>
+                    <br><br>
+                    <h5 style="color: red;">* <?=$log?></h5>
+                    <br>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="Username" type="text" class="form-control" name="Username" placeholder="Username">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" class="large btn btn-default center-block">
+                        <h4>Login</h4>
+                    </button>
+                </form>
+            </div>
+        </body>
 <?php
+    }
 }
 ?>
 
