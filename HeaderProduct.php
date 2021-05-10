@@ -157,7 +157,7 @@ if (islogin()) {
               <div class="col-md-3">
                 <ul class="usermenu">
                   <li><a href="login.php" class="log">Login</a></li>
-                  <li><a href="checkout2.php" class="reg">Register</a></li>
+                  <li><a href="Regist.php" class="reg">Register</a></li>
                 </ul>
               </div>
             </div>

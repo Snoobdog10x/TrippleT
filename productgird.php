@@ -19,8 +19,8 @@ require_once("lib.php");
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="wrapper">
+<body id="home">
+    <div class="wrapper" id="home">
         <?= require("HeaderProduct.php") ?>
         <div class="clearfix">
         </div>
