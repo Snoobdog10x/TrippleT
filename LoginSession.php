@@ -12,17 +12,17 @@ function connectDb()
     }
     return $conn;
 }
-
 function login($username, $password)
 {
     $conn = connectDb();
-    $sql = "select * from admin where USERNAME='" . $username . "'";
+    $sql = "select * from customer where USERNAME='" . $username . "'";
     $result = $conn->query($sql);
     $conn->close();
     if ($result->num_rows > 0) {
         if ($row = $result->fetch_assoc()) {
             if ($row['PASSWORD'] == $password) {
-                $_SESSION['USERNAME'] = $username;
+                $_SESSION['Username'] = $username;
+                $_SESSION['Name']=$row['NAME'];
                 return "Login succeed";
             } else {
                 return "Wrong password";
@@ -33,10 +33,10 @@ function login($username, $password)
     }
 }
 function islogin(){
-    return isset($_SESSION['USERNAME']);
+    return isset($_SESSION['Username']);
 }
 function logout()
 {
-    unset($_SESSION['username']);
+    unset($_SESSION['Username']);
 }
 ?>
