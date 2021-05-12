@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?= require_once('lib.php') ?>
+<?= require_once('Sessionadmin.php') ?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/php;charset=utf-8" />
@@ -13,112 +15,129 @@
     <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
     <link href="../css/sequence-looptheme.css" rel="stylesheet" media="all" />
     <link href="../css/style.css" rel="stylesheet">
-    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/php5shiv/3.7.0/php5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<script>
+    function changePage() {
+
+    }
+</script>
+<script>
+    function wannadelete(pid) {
+        if (confirm("Do you want to delete it?"))
+            window.location.href = 'delete.php?id=' + pid
+    }
+</script>
 <?php
-if (!isset($_REQUEST['Username'])) {
+if (islogin()) {
 ?>
 
-    <body id="home">
-        <div class="container" style="width: 30%; margin-top: 15%;">
-            <form action="index.php" method="GET">
-                <div class="text-center">
-                    <h1>Admin login</h1>
-                </div>
-                <br>
-                <br>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="Username" type="text" class="form-control" name="Username" placeholder="Username">
-                </div>
-                <br>
-                <br>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
-                </div>
-                <br>
-                <br>
-                <button type="submit" class="large btn btn-default center-block">
-                    <h4>Login</h4>
-                </button>
-            </form>
-        </div>
-    </body>
-    <?php
-} else {
-    require_once('Sessionadmin.php');
-    $log=login($_REQUEST['Username'], $_REQUEST['Password']);
-    if (islogin()) {
-    ?>
-        <body id="home">
-            <div class="header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-2">
-                            <div class="logo"><a href="index.php"><img src="../images/logo.png" alt="FlatShop"></a></div>
-                        </div>
-                        <div class="col-md-10 col-sm-10">
-                            <div class="clearfix"></div>
-                            <div class="header_bottom">
-                                <ul class="option">
-                                    <h3 style="color: white;">Hello <?=$_SESSION['USERNAME']?></h3>
-                                    <a href="logout.php"><h3>logout</h3></a>
+    <body id="PManagement" style="background-color: white;">
+        <div class="navbar navbar-fixed-top" style="background-color: rgb(67, 67, 67,0.5);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2">
+                        <div class="logo"><a href="index.php"><img src="../images/logo.png" alt="FlatShop"></a></div>
+                    </div>
+                    <div class="col-md-10 col-sm-10">
+                        <div class="clearfix"></div>
+                        <div class="header_bottom">
+                            <ul class="option">
+                                <h3 style="color: white;">Hello <?= $_SESSION['USERNAME'] ?></h3>
+                                <a href="logout.php">
+                                    <h3>logout</h3>
+                                </a>
+                            </ul>
+                            <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle
+                                        navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a onclick="" href="#">product management</a></li>
+                                    <li><a onclick="" href="#">order management</a></li>
                                 </ul>
-                                <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle
-                                            navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-                                <div class="navbar-collapse collapse">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="index.php">home</a></li>
-                                        <li><a href="productgird.php?Type=MEN&Page=0">men</a></li>
-                                        <li><a href="productgird.php?Type=MEN&Page=0">women</a></li>
-                                        <li><a href="productgird.php?Type=UNISEX&Page=0">unisex</a></li>
-                                        <li><a href="productgird.php?Type=&Page=0">Productgird</a></li>
-                                        <li><a href="#">blog</a></li>
-                                        <li><a href="contact.php">contact us</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </body>
-    <?php
-    } else {
-    ?>
-
-        <body id="home">
-            <div class="container" style="width: 30%; margin-top: 15%;">
-                <form action="index.php" method="POST">
-                    <div class="text-center">
-                        <h1>Admin login</h1>
-                    </div>
-                    <br><br>
-                    <h5 style="color: red;">* <?=$log?></h5>
-                    <br>
-                    <br>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="Username" type="text" class="form-control" name="Username" placeholder="Username">
-                    </div>
-                    <br>
-                    <br>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
-                    </div>
-                    <br>
-                    <br>
-                    <button type="submit" class="large btn btn-default center-block">
-                        <h4>Login</h4>
-                    </button>
-                </form>
+        </div>
+        <div class="container" style="background-color: white; width: 99%;margin-top: 5%;">
+            <br>
+            <br>
+            <br>
+            <h3>Product Management</h3>
+            <br>
+            <br>
+            <div class="row">
+                <button class="col-md-6" onclick="location.href = 'add.php'" style="width: 10%;" data-toggle="modal" data-target="#addModal">Add</button>
+                <div class="pager col-md-6">
+                    <a href="#" class="prev-page">
+                        <i class="fa fa-angle-left">
+                        </i>
+                    </a>
+                    <?php
+                    $sql = "SELECT * FROM product";
+                    $result = $conn->query($sql);
+                    $row = $result->num_rows;
+                    $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
+                    for ($i = 0; $i < $pages; $i++) {
+                    ?>
+                        <a href="index.php?Page=<?= $i ?>" class="active">
+                            <?= ($i + 1) ?>
+                        </a>
+                    <?php
+                    }
+                    ?>
+                    <a href="#" class="next-page">
+                        <i class="fa fa-angle-right">
+                        </i>
+                    </a>
+                </div>
             </div>
-        </body>
+        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Pid</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Img</th>
+                    <th>Brand</th>
+                    <th>Detail</th>
+                    <th>Edit product</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "select* from product Limit " . ($_REQUEST['Page'] * 4) . ",4";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $count = $row['PID'];
+                ?>
+                    <tr>
+                        <td name="<?= $count ?>"><?= $row['PID'] ?></td>
+                        <td name="<?= $count ?>"><?= $row['TYPE'] ?></td>
+                        <td name="<?= $count ?>"><?= $row['NAME'] ?></td>
+                        <td name="<?= $count ?>"><?= $row['PRICE'] ?></td>
+                        <td><img name="<?= $count ?>" src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
+                        <td name="<?= $count ?>"><?= $row['BRAND'] ?></td>
+                        <td name="<?= $count ?>"><?= $row['DETAIL'] ?></td>
+                        <td>
+                            <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
+                            <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </body>
 <?php
-    }
-}
+} else
+    header('location: login.php');
 ?>
-
-</html>
+< /html>
