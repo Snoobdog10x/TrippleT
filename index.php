@@ -39,7 +39,7 @@
                            Ipsum is simply dummy text of the printing and typesetting</p>
                      </div>
                      <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">More Details</a></div>
-                     <div class=" formLeft delay200" data-duration="5" data-bottom="true"><img src="images/slider/slider1.jpg" alt=""></div>
+                     <div class=" formLeft delay200" data-duration="5" data-bottom="true"><img src="images/slider/slider1.png" alt=""></div>
                   </li>
                   <li>
                      <div class="flat-caption caption2 formLeft delay400">
@@ -51,7 +51,7 @@
                      </div>
                      <div class="flat-button caption5 formLeft delay600"><a class="more" href="#">More
                            Details</a></div>
-                     <div class="formLeft delay200" data-bottom="true"><img src="images/slider/slider2.jpg" alt=""></div>
+                     <div class="formLeft delay200" data-bottom="true"><img src="images/slider/slider2.png" alt=""></div>
                   </li>
                   <li>
                      <div class="flat-caption caption2 formLeft delay400 text-center">
