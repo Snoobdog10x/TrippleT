@@ -15,12 +15,12 @@ while ($row = $result->fetch_assoc()) {
         echo "Error updating record: " . $conn->error;
     }
 }
-$sql = "select * from product where TYPE='MEN'";
+$sql = "select * from product where TYPE='WOMEN'";
 $result = $conn->query($sql);
 $count=1;
 while ($row = $result->fetch_assoc()) {
     $a=explode("/",$row['IMG']);
-    $img=$a[0]."/products/M-".$count++.".png";
+    $img=$a[0]."/products/W-".$count++.".png";
 
     $sql = sprintf("UPDATE product SET IMG='%s' WHERE PID=%s",$img,$row["PID"]);
 
