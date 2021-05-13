@@ -45,11 +45,13 @@ if (islogin()) {
               </div>
               <div class="col-md-3 topmenu">
                 <div class=''>
-                    <h3 style="color: white;" class='text-center'>Hello <?=$_SESSION['Username'] ?></h3>
+                  <h3 style="color: white;" class='text-center'>Hello <?= $_SESSION['Username'] ?></h3>
                 </div>
                 <br>
-                <div >
-                  <a class='text-center' href="Logout.php"> <h4>Logout</h4></a>
+                <div>
+                  <a class='text-center' href="Logout.php">
+                    <h4>Logout</h4>
+                  </a>
                 </div>
               </div>
             </div>
@@ -110,11 +112,10 @@ if (islogin()) {
       </div>
     </div>
   </div>
-  </div>
 <?php
 } else {
 ?>
-<div class="header">
+  <div class="header">
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-2">
@@ -217,7 +218,6 @@ if (islogin()) {
         </div>
       </div>
     </div>
-  </div>
   </div>
 <?php
 }
