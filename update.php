@@ -49,7 +49,7 @@ $sql = "select * from product where TYPE='HOTPRODUCT' or TYPE='FEATUREDPRODUCT'"
 $result = $conn->query($sql);
 $count=1;
 while ($row = $result->fetch_assoc()) {
-    $a=explode("\\",$row['IMG']);
+    $a=explode("/",$row['IMG']);
     $img=$a[0]."/products/".$a[count($a)-1];
 
     $sql = sprintf("UPDATE product SET IMG='%s' WHERE PID=%s",$img,$row["PID"]);
