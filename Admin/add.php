@@ -23,7 +23,6 @@ if (islogin()) {
 ?>
     <?php
     if (!isset($_REQUEST['name'])) {
-
     ?>
 
         <body id="PManagement" style="background-color: white;">
@@ -52,66 +51,66 @@ if (islogin()) {
                     </div>
                 </div>
             </div>
-
-
-            <form class="border border-danger" action="add.php">
-                <div class="container" style="margin-top: 3%;">
-                    <a href="index.php" class="btn btn-light mb-3" style="margin-top: 10%;">
-                        << Go Back</a>
-                            <div class="panel panel-danger">
-                                <div class="panel bg-danger text-white" style="background-color: red;">
-                                    <strong><i class="fa fa-plus"></i> Add New Product</strong>
-                                </div>
-                                <br>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="PID" class="col-form-label">PID</label>
-                                        <input type="text" class="form-control" id="PID" name="PID" placeholder="PID" required>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="Type" class="col-form-label">Type</label>
-                                        <input type="text" class="form-control" id="Type" name="Type" placeholder="Type" required>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="name" class="col-form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="price" class="col-form-label">Price</label>
-                                        <input type="number" class="form-control" id="price" name="price" placeholder="Price" required>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="Brand" class="col-form-label">Brand</label>
-                                        <input type="text" class="form-control" name="Brand" id="Brand" placeholder="Brand">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="image" class="col-form-label">Image</label>
-                                        <input type="text" class="form-control" name="image" id="image" placeholder="Image URL">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-12">
-                                        <label for="note" class="col-form-label">Description</label>
-                                        <textarea name="description" id="" rows="5" class="form-control" placeholder="Description"></textarea>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Save</button>
-
-                            </div>
+            <form class="panel panel-danger container" style="margin-top: 10%; width: 70%;" action="add.php">
+                <div class="form-group" style="margin-top: 1%; width: 100%;background-color: red;">
+                    <Strong>
+                        <h3>+ Add New Product</h3>
+                    </Strong>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="PID">Pid:</label>
+                        <input type="text" name="pid" class="form-control" id="pwd">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pwd">Type:</label>
+                        <input type="text" name="type" class="form-control" id="pwd">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pwd">Name:</label>
+                        <input type="text" name="name" class="form-control" id="pwd">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="PID">Price:</label>
+                        <input type="number" name="price" class="form-control" id="pwd">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pwd">Brand:</label>
+                        <input type="text" name="brand" class="form-control" id="pwd">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pwd">Image:</label>
+                        <input type="FILE" name="fileToUpload" id="fileToUpload" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Description:</label>
+                    <textarea class="form-control" name="des" style="resize: none;" rows="5" id="comment"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success">Add</button>
                 </div>
             </form>
-
         </body>
 <?php
     } else {
-        $sql = sprintf("INSERT INTO product
+        $target_dir = "../";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $sql = sprintf(
+            "INSERT INTO product
                     VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",
-                    $_REQUEST['PID'], $_REQUEST['Type'],
-                    $_REQUEST['name'], $_REQUEST['price'],
-                    $_REQUEST['image'], $_REQUEST['Brand'],
-                    $_REQUEST['description']);
+            $_REQUEST['PID'],
+            $_REQUEST['Type'],
+            $_REQUEST['name'],
+            $_REQUEST['price'],
+            $_REQUEST['image'],
+            $_REQUEST['Brand'],
+            $_REQUEST['description']
+        );
         var_dump($sql);
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
