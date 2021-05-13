@@ -1,3 +1,4 @@
+
 <?php
 require_once('LoginSession.php');
 if (islogin()) {
@@ -60,7 +61,11 @@ if (islogin()) {
           <div class="header_bottom">
             <ul class="option">
               <li id="search" class="search">
-                <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"></form>
+              <form action="productgird.php?Page=0" method="GET">
+              <input type="hidden" name="Page" value="0">
+                  <input class="search-submit" type="submit" value="">
+                  <input class="search-input" placeholder="Enter your search term..." type="text" name="name">
+              </form>              
               </li>
               <li class="option-cart">
                 <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
@@ -167,7 +172,11 @@ if (islogin()) {
           <div class="header_bottom">
             <ul class="option">
               <li id="search" class="search">
-                <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"></form>
+                <form action="productgird.php" method="GET">
+                  <input type="hidden" name="Page" value="0">
+                  <input class="search-submit" type="submit" value="">
+                  <input class="search-input" placeholder="Enter your search term..." type="text" name="name">
+                </form>
               </li>
               <li class="option-cart">
                 <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>

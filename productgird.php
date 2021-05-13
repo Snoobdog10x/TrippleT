@@ -289,13 +289,18 @@ require_once("lib.php");
                                             </i>
                                         </a>
                                         <?php
+                                        if (isset($_GET['name']))
+                                            $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['name'] . "%'";  
+                                        else
                                         if ($_REQUEST['Type'] != '')
                                             $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'";
                                         else
                                             $sql = "SELECT * FROM product";
+                                        
                                         $result = $conn->query($sql);
                                         $row = $result->num_rows;
                                         $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
+                                        /*
                                         for ($i = 0; $i < $pages; $i++) {
                                         ?>
                                             <a href="productgird.php?Type=<?= $_REQUEST['Type'] ?>&Page=<?= $i ?>" class="active">
@@ -304,6 +309,15 @@ require_once("lib.php");
                                         <?php
                                         }
                                         ?>
+                                        */
+                                        for ($i = 0; $i < $pages; $i++) {
+                                            ?>                                            
+                                                <a href="productgird.php?name=<?=$_REQUEST['name']?>&Page=<?= $i ?>" class="active">
+                                                    <?= ($i + 1) ?>
+                                                </a>
+                                            <?php
+                                            }
+                                            ?>
                                         <a href="#" class="next-page">
                                             <i class="fa fa-angle-right">
                                             </i>
@@ -313,6 +327,11 @@ require_once("lib.php");
                             </div>
                             <div class="row">
                                 <?php
+                                if (isset($_REQUEST['name'])) {
+//                                    print_r($_REQUEST['Page']); exit;
+                                    $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['name'] . "%'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                }
+                                else
                                 if ($_REQUEST['Type'] != '') {
                                     $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
                                 } else {
@@ -332,7 +351,7 @@ require_once("lib.php");
                                                 <?= $row['NAME']; ?>
                                             </div>
                                             <h4 class="price">
-                                                <?= $row['PRICE']; ?>$
+                                                <?= $row['PRICE']; ?>
                                             </h4>
                                             <div class="button_group">
                                                 <button class="button add-cart" type="button">
@@ -377,16 +396,22 @@ require_once("lib.php");
                                                 </i>
                                             </a>
                                             <?php
+                                            if (isset($_REQUEST['name'])) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_REQUEST['name'] . "%'";                      
+                                            }
+                                            else
                                             if ($_REQUEST['Type'] != '')
                                                 $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'";
                                             else
                                                 $sql = "SELECT * FROM product";
+                                            
+                                            
                                             $result = $conn->query($sql);
                                             $row = $result->num_rows;
                                             $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
                                             for ($i = 0; $i < $pages; $i++) {
                                             ?>
-                                                <a href="productgird.php?Type=<?= $_REQUEST['Type'] ?>&Page=<?= $i ?>" class="active">
+                                                <a href="productgird.php?name=<?=$_REQUEST['name']?>&Page=<?= $i ?>" class="active">
                                                     <?= ($i + 1) ?>
                                                 </a>
                                             <?php
