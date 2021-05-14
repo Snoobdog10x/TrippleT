@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2021 at 06:42 PM
+-- Generation Time: May 14, 2021 at 01:37 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `orderdetail` (
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
-  `PID` int(11) NOT NULL,
+  `PID` int(11) NOT NULL AUTO_INCREMENT,
   `TYPE` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `NAME` text COLLATE utf8mb4_bin NOT NULL,
   `PRICE` decimal(20,3) NOT NULL,
@@ -117,55 +117,56 @@ CREATE TABLE IF NOT EXISTS `product` (
   `DETAIL` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`PID`) USING BTREE,
   KEY `TYPE` (`TYPE`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`PID`, `TYPE`, `NAME`, `PRICE`, `IMG`, `BRAND`, `DETAIL`) VALUES
-(5, 'HOTPRODUCT', '', '0.000', 'images/products/D8-1.png', '', ''),
-(6, 'HOTPRODUCT', '', '0.000', 'images/products/D6-1.png', '', ''),
-(7, 'HOTPRODUCT', '', '0.000', 'images/products/D5-1.png', '', ''),
-(8, 'HOTPRODUCT', '', '0.000', 'images/products/D4-1.png', '', ''),
-(9, 'HOTPRODUCT', '', '0.000', 'images/products/D3-1.png', '', ''),
-(10, 'HOTPRODUCT', '', '0.000', 'images/products/D2-1.png', '', ''),
-(11, 'HOTPRODUCT', '', '0.000', 'images/products/B6-1.png', '', ''),
-(12, 'HOTPRODUCT', '', '0.000', 'images/products/B5-1.png', '', ''),
-(13, 'HOTPRODUCT', '', '0.000', 'images/products/B4-1.png', '', ''),
-(14, 'HOTPRODUCT', '', '0.000', 'images/products/B3-1.png', '', ''),
-(15, 'HOTPRODUCT', '', '0.000', 'images/products/B2-1.png', '', ''),
-(16, 'HOTPRODUCT', '', '0.000', 'images/products/B1-1.png', '', ''),
-(17, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N6-1.png', '', ''),
-(18, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N5-1.png', '', ''),
-(19, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N4-1.png', '', ''),
-(20, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N3.png', '', ''),
-(21, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N2-1.png', '', ''),
-(22, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N1-1.png', '', ''),
-(23, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D9-1.png', '', ''),
-(24, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D7-1.png', '', ''),
-(25, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D12-1.png', '', ''),
-(26, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D11-1.png', '', ''),
-(27, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D10-1.png', '', ''),
-(28, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D1-1.png', '', ''),
-(29, 'MEN', '', '0.000', 'images/products/M-1.png', '', ''),
-(30, 'MEN', '', '0.000', 'images/products/M-2.png', '', ''),
-(31, 'MEN', '', '0.000', 'images/products/M-3.png', '', ''),
-(32, 'MEN', '', '0.000', 'images/products/M-4.png', '', ''),
-(33, 'MEN', '', '0.000', 'images/products/M-5.png', '', ''),
-(34, 'MEN', '', '0.000', 'images/products/M-6.png', '', ''),
-(35, 'UNISEX', '', '0.000', 'images/products/U-1.png', '', ''),
-(36, 'UNISEX', '', '0.000', 'images/products/U-2.png', '', ''),
-(37, 'UNISEX', '', '0.000', 'images/products/U-3.png', '', ''),
-(38, 'UNISEX', '', '0.000', 'images/products/U-4.png', '', ''),
-(39, 'UNISEX', '', '0.000', 'images/products/U-5.png', '', ''),
-(40, 'UNISEX', '', '0.000', 'images/products/U-6.png', '', ''),
-(41, 'WOMEN', '', '0.000', 'images/products/W-1.png', '', ''),
-(42, 'WOMEN', '', '0.000', 'images/products/W-2.png', '', ''),
-(43, 'WOMEN', '', '0.000', 'images/products/W-3.png', '', ''),
-(44, 'WOMEN', '', '0.000', 'images/products/W-4.png', '', ''),
-(45, 'WOMEN', '', '0.000', 'images/products/W-5.png', '', ''),
-(46, 'WOMEN', '', '0.000', 'images/products/W-6.png', '', '');
+(1, 'HOTPRODUCT', 'adssa', '213.000', 'images/products/D6-1.png', 'sdasd', 'dsasad11111'),
+(2, 'HOTPRODUCT', '', '0.000', 'images/products/D5-1.png', '', ''),
+(3, 'HOTPRODUCT', '', '0.000', 'images/products/D4-1.png', '', ''),
+(4, 'HOTPRODUCT', '', '0.000', 'images/products/D3-1.png', '', ''),
+(5, 'HOTPRODUCT', '', '0.000', 'images/products/D2-1.png', '', ''),
+(6, 'HOTPRODUCT', '', '0.000', 'images/products/B6-1.png', '', ''),
+(7, 'HOTPRODUCT', '', '0.000', 'images/products/B5-1.png', '', ''),
+(8, 'HOTPRODUCT', '', '0.000', 'images/products/B4-1.png', '', ''),
+(9, 'HOTPRODUCT', '', '0.000', 'images/products/B3-1.png', '', ''),
+(10, 'HOTPRODUCT', '', '0.000', 'images/products/B2-1.png', '', ''),
+(11, 'HOTPRODUCT', '', '0.000', 'images/products/B1-1.png', '', ''),
+(12, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N6-1.png', '', ''),
+(13, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N5-1.png', '', ''),
+(14, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N4-1.png', '', ''),
+(15, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N3.png', '', ''),
+(16, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N2-1.png', '', ''),
+(17, 'FEATUREDPRODUCT', '', '0.000', 'images/products/N1-1.png', '', ''),
+(18, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D9-1.png', '', ''),
+(19, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D7-1.png', '', ''),
+(20, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D12-1.png', '', ''),
+(21, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D11-1.png', '', ''),
+(22, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D10-1.png', '', ''),
+(23, 'FEATUREDPRODUCT', '', '0.000', 'images/products/D1-1.png', '', ''),
+(24, 'MEN', '', '0.000', 'images/products/M-1.png', '', ''),
+(25, 'MEN', '', '0.000', 'images/products/M-2.png', '', ''),
+(26, 'MEN', '', '0.000', 'images/products/M-3.png', '', ''),
+(27, 'MEN', '', '0.000', 'images/products/M-4.png', '', ''),
+(28, 'MEN', '', '0.000', 'images/products/M-5.png', '', ''),
+(29, 'MEN', '', '0.000', 'images/products/M-6.png', '', ''),
+(30, 'UNISEX', '', '0.000', 'images/products/U-1.png', '', ''),
+(31, 'UNISEX', '', '0.000', 'images/products/U-2.png', '', ''),
+(32, 'UNISEX', '', '0.000', 'images/products/U-3.png', '', ''),
+(33, 'UNISEX', '', '0.000', 'images/products/U-4.png', '', ''),
+(34, 'UNISEX', '', '0.000', 'images/products/U-5.png', '', ''),
+(35, 'UNISEX', '', '0.000', 'images/products/U-6.png', '', ''),
+(36, 'WOMEN', '', '0.000', 'images/products/W-1.png', '', ''),
+(37, 'WOMEN', '', '0.000', 'images/products/W-2.png', '', ''),
+(38, 'WOMEN', '', '0.000', 'images/products/W-3.png', '', ''),
+(39, 'WOMEN', '', '0.000', 'images/products/W-4.png', '', ''),
+(40, 'WOMEN', '', '0.000', 'images/products/W-5.png', '', ''),
+(41, 'WOMEN', '', '0.000', 'images/products/W-6.png', '', ''),
+(42, 'HOTPRODUCT', '', '0.000', 'images/products/D8-1.png', '', ''),
+(43, 'MEN', 'dasda', '21321.000', 'images/products/a.png', 'dsadas', 'asdsa');
 
 -- --------------------------------------------------------
 
