@@ -3,6 +3,8 @@
 
 <?php
 if (islogin()) {
+    if(!isset($_REQUEST['Page']))
+    $_REQUEST['Page']=0;
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -28,7 +30,7 @@ if (islogin()) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-2">
-                        <div class="logo"><a href="index.php"><img src="../images/logo.png" alt="FlatShop"></a></div>
+                        <div class="logo"><a href="index.php?Page=0"><img src="../images/logo.png" alt="FlatShop"></a></div>
                     </div>
                     <div class="col-md-10 col-sm-10">
                         <div class="clearfix"></div>
@@ -106,13 +108,13 @@ if (islogin()) {
                             $count = $row['PID'];
                         ?>
                             <tr>
-                                <td ><?= $row['PID'] ?></td>
-                                <td ><?= $row['TYPE'] ?></td>
-                                <td ><?= $row['NAME'] ?></td>
-                                <td ><?= $row['PRICE'] ?></td>
-                                <td><img  src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
-                                <td ><?= $row['BRAND'] ?></td>
-                                <td ><?= $row['DETAIL'] ?></td>
+                                <td><?= $row['PID'] ?></td>
+                                <td><?= $row['TYPE'] ?></td>
+                                <td><?= $row['NAME'] ?></td>
+                                <td><?= $row['PRICE'] ?></td>
+                                <td><img src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
+                                <td><?= $row['BRAND'] ?></td>
+                                <td><?= $row['DETAIL'] ?></td>
                                 <td>
                                     <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
                                     <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
@@ -179,13 +181,13 @@ if (islogin()) {
                             $count = $row['PID'];
                         ?>
                             <tr>
-                                <td ><?= $row['PID'] ?></td>
-                                <td ><?= $row['TYPE'] ?></td>
-                                <td ><?= $row['NAME'] ?></td>
-                                <td ><?= $row['PRICE'] ?></td>
-                                <td><img  src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
-                                <td ><?= $row['BRAND'] ?></td>
-                                <td ><?= $row['DETAIL'] ?></td>
+                                <td><?= $row['PID'] ?></td>
+                                <td><?= $row['TYPE'] ?></td>
+                                <td><?= $row['NAME'] ?></td>
+                                <td><?= $row['PRICE'] ?></td>
+                                <td><img src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
+                                <td><?= $row['BRAND'] ?></td>
+                                <td><?= $row['DETAIL'] ?></td>
                                 <td>
                                     <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
                                     <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
@@ -205,8 +207,6 @@ if (islogin()) {
             OM.style.display = "none";
 
             function changePage(idpage) {
-                var PM = document.getElementById('PManagement')
-                var OM = document.getElementById('OManagement')
                 var x = document.getElementById(idpage)
                 PM.style.display = "none";
                 OM.style.display = "none";

@@ -15,8 +15,44 @@
     <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
     <link href="../css/sequence-looptheme.css" rel="stylesheet" media="all" />
     <link href="../css/style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function fileValidation() {
+            var fileInput =
+                document.getElementById('fileToUpload');
+
+            var filePath = fileInput.value;
+
+            // Allowing file type
+            var allowedExtensions =
+                /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } else {
+
+                // Image preview
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById(
+                                'imagePreview').innerHTML =
+                            '<img style="width:100%; height:70%;" src="' + e.target.result +
+                            '"/>';
+                    };
+
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+        }
+
+        function check() {
+            var x = document.getElementById("");
+        }
+    </script>
 </head>
 <?php
 if (islogin()) {
@@ -51,75 +87,78 @@ if (islogin()) {
                     </div>
                 </div>
             </div>
-            <form class="panel panel-danger container" style="margin-top: 10%; width: 70%;" action="add.php">
+            <form class="panel panel-danger container" style="margin-top: 10%; width: 70%;" method="post" enctype="multipart/form-data" action="add.php">
                 <div class="form-group" style="margin-top: 1%; width: 100%;background-color: red;">
                     <Strong>
                         <h3>+ Add New Product</h3>
                     </Strong>
                 </div>
-                <div class="form-group row">
-                    <div class="col-md-4">
-                        <label for="PID">Pid:</label>
-                        <input type="text" name="pid" class="form-control" id="pwd">
+                <div class="row">
+                    <div class=" col-md-5 form-group row">
+                        <div class="col-md-12">
+                            <label for="pwd">Image:</label>
+                            <input type="FILE" name="fileToUpload" onchange="return fileValidation()" id="fileToUpload" id="imageFile" accept="image/*" class="form-control" required>
+                        </div>
+                        <div id="imagePreview" class="col-md-12">
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="pwd">Type:</label>
-                        <input type="text" name="type" class="form-control" id="pwd">
+                    <div class=" col-md-7 row">
+                        <div class="col-md-6 form-group">
+                            <label for="pwd">Type:</label>
+                            <input type="text" name="type" class="form-control" id="pwd" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="pwd">Name:</label>
+                            <input type="text" name="name" class="form-control" id="pwd" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="pwd">Brand:</label>
+                            <input type="text" name="brand" class="form-control" id="pwd" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="PID">Price:</label>
+                            <input type="number" name="price" class="form-control" id="pwd" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="comment">Description:</label>
+                            <textarea class="form-control" name="des" style="resize: none;" rows="5" id="comment" required></textarea>
+                        </div>
+                        <div class="col-md-12 row form-group center-block">
+                            <div class="col-md-6">
+                                <button class="btn btn-success" style="width: 100%;" value="Upload Image" type="submit" onclick="return check()" name="submit">Add</button>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-success col-md-6" href="index.php" style="width: 100%;">Cancel</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="pwd">Name:</label>
-                        <input type="text" name="name" class="form-control" id="pwd">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-4">
-                        <label for="PID">Price:</label>
-                        <input type="number" name="price" class="form-control" id="pwd">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="pwd">Brand:</label>
-                        <input type="text" name="brand" class="form-control" id="pwd">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="pwd">Image:</label>
-                        <input type="FILE" name="fileToUpload" id="fileToUpload" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="comment">Description:</label>
-                    <textarea class="form-control" name="des" style="resize: none;" rows="5" id="comment"></textarea>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-success">Add</button>
                 </div>
             </form>
         </body>
-<?php
+    <?php
     } else {
-        $target_dir = "../";
+    ?>
+    <?php
+        $target_dir = "../images/products/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $sql = sprintf(
             "INSERT INTO product
-                    VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",
-            $_REQUEST['PID'],
-            $_REQUEST['Type'],
+                    VALUES ('%s', '%s', '%s', '%s', '%s', '%s')",
+            $_REQUEST['type'],
             $_REQUEST['name'],
             $_REQUEST['price'],
-            $_REQUEST['image'],
-            $_REQUEST['Brand'],
-            $_REQUEST['description']
+            $target_file,
+            $_REQUEST['brand'],
+            $_REQUEST['des']
         );
-        var_dump($sql);
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-            //header('location: index.php?Page=0');
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
         }
         $conn->close();
+        header('location: index.php');
     }
+    ?>
+<?php
 } else
     header('location: login.php');
 ?>
