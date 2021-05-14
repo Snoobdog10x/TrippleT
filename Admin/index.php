@@ -23,6 +23,25 @@ if (islogin()) {
         <link href="../css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+            var PM = document.getElementById('PManagement')
+            var OM = document.getElementById('OManagement')
+            PM.style.display = "block";
+            OM.style.display = "none";
+
+            function changePage(idpage) {
+                var x = document.getElementById(idpage)
+                PM.style.display = "none";
+                OM.style.display = "none";
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+            }
+            function wannadelete(pid) {
+                if (confirm("Do you want to delete it?"))
+                    window.location.href = 'delete.php?id=' + pid
+            }
+        </script>   
     </head>
 
     <body style="background-color: white;">
@@ -200,26 +219,6 @@ if (islogin()) {
                 </table>
             </div>
         </div>
-        <script>
-            var PM = document.getElementById('PManagement')
-            var OM = document.getElementById('OManagement')
-            PM.style.display = "block";
-            OM.style.display = "none";
-
-            function changePage(idpage) {
-                var x = document.getElementById(idpage)
-                PM.style.display = "none";
-                OM.style.display = "none";
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                }
-            }
-
-            function wannadelete(pid) {
-                if (confirm("Do you want to delete it?"))
-                    window.location.href = 'delete.php?id=' + pid
-            }
-        </script>
     </body>
 
     </html>

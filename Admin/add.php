@@ -9,14 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/favicon.png">
     <title>Welcome to FlatShop</title>
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
-    <link href="../css/sequence-looptheme.css" rel="stylesheet" media="all" />
-    <link href="../css/style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         function fileValidation() {
             var fileInput =
@@ -40,7 +36,7 @@
                     reader.onload = function(e) {
                         document.getElementById(
                                 'imagePreview').innerHTML =
-                            '<img style="width:100%; height:70%;" src="' + e.target.result +
+                            '<img class="img-thumbnail" src="' + e.target.result +
                             '"/>';
                     };
 
@@ -60,34 +56,8 @@ if (islogin()) {
     <?php
     if (!isset($_REQUEST['name'])) {
     ?>
-
-        <body id="PManagement" style="background-color: white;">
-            <div class="navbar navbar-fixed-top" style="background-color: rgb(67, 67, 67,0.5);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-2">
-                            <div class="logo"><a href="index.php"><img src="../images/logo.png" alt="FlatShop"></a></div>
-                        </div>
-                        <div class="col-md-10 col-sm-10">
-                            <div class="clearfix"></div>
-                            <div class="header_bottom">
-                                <ul class="option">
-                                    <h3 style="color: white;">Hello <?= $_SESSION['USERNAME'] ?></h3>
-                                    <a href="logout.php">
-                                        <h3>logout</h3>
-                                    </a>
-                                </ul>
-                                <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle
-                                            navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-                                <div class="navbar-collapse collapse">
-                                    <h2>ADD PRODUCT PAGE </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <form class="panel panel-danger container" style="margin-top: 10%; width: 70%;" method="post" enctype="multipart/form-data" action="add.php">
+        <div style="background-color: white;">
+            <form class="border border-danger container" style="margin-top: 3%; width: 70%;height: 80;" method="POST" enctype="multipart/form-data" action="add.php">
                 <div class="form-group" style="margin-top: 1%; width: 100%;background-color: red;">
                     <Strong>
                         <h3>+ Add New Product</h3>
@@ -97,7 +67,7 @@ if (islogin()) {
                     <div class=" col-md-5 form-group row">
                         <div class="col-md-12">
                             <label for="pwd">Image:</label>
-                            <input type="FILE" name="fileToUpload" onchange="return fileValidation()" id="fileToUpload" id="imageFile" accept="image/*" class="form-control" required>
+                            <input type="FILE" name="fileToUpload" onchange="return fileValidation()" id="fileToUpload" accept="image/*" class="form-control-file" required>
                         </div>
                         <div id="imagePreview" class="col-md-12">
                         </div>
@@ -105,7 +75,14 @@ if (islogin()) {
                     <div class=" col-md-7 row">
                         <div class="col-md-6 form-group">
                             <label for="pwd">Type:</label>
-                            <input type="text" name="type" class="form-control" id="pwd" required>
+                            <select class="form-control" name="type" id="exampleFormControlSelect1">
+                                <option value="MEN">MEN</option>
+                                <option value="WOMEN">WOMEN</option>
+                                <option value="UNISEX">UNISEX</option>
+                                <option value="HOTPRODUCT">HOTPRODUCT</option>
+                                <option value="FEATUREDPRODUCT">FEATUREDPRODUCT</option>
+                            </select>
+
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="pwd">Name:</label>
@@ -123,39 +100,45 @@ if (islogin()) {
                             <label for="comment">Description:</label>
                             <textarea class="form-control" name="des" style="resize: none;" rows="5" id="comment" required></textarea>
                         </div>
-                        <div class="col-md-12 row form-group center-block">
+                        <div class="col-md-12 row form-group mx-auto">
                             <div class="col-md-6">
-                                <button class="btn btn-success" style="width: 100%;" value="Upload Image" type="submit" onclick="return check()" name="submit">Add</button>
+                                <button class="btn btn-success btn-block" value="Upload Image" type="submit" onclick="return check()" name="submit">Add</button>
                             </div>
                             <div class="col-md-6">
-                                <a class="btn btn-success col-md-6" href="index.php" style="width: 100%;">Cancel</a>
+                                <a class="btn btn-success btn-block" href="index.php">Cancel</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-        </body>
+        </div>
     <?php
     } else {
     ?>
-    <?php
+        <?php
         $target_dir = "../images/products/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $sql = sprintf(
-            "INSERT INTO product
+            "INSERT INTO product (TYPE,NAME,PRICE,IMG,BRAND,DETAIL)
                     VALUES ('%s', '%s', '%s', '%s', '%s', '%s')",
             $_REQUEST['type'],
             $_REQUEST['name'],
             $_REQUEST['price'],
-            $target_file,
+            substr($target_file,3,strlen($target_file)-1),
             $_REQUEST['brand'],
             $_REQUEST['des']
         );
         if ($conn->query($sql) === TRUE) {
-            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            $bool=move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
         }
+        else
+        echo ($conn->error);
         $conn->close();
-        header('location: index.php');
+        ?><script>
+            alert('Succes')
+            window.location.href='index.php'
+        </script>
+    <?php
     }
     ?>
 <?php

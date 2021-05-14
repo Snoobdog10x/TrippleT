@@ -12,7 +12,6 @@ function connectDb()
     }
     return $conn;
 }
-
 function login($username, $password)
 {
     $conn = connectDb();
