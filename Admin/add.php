@@ -105,7 +105,7 @@ if (islogin()) {
                                 <button class="btn btn-success btn-block" value="Upload Image" type="submit" onclick="return check()" name="submit">Add</button>
                             </div>
                             <div class="col-md-6">
-                                <a class="btn btn-success btn-block" href="index.php">Cancel</a>
+                                <a class="btn btn-success btn-block" href="javascript:history.go(-1)">Cancel</a>
                             </div>
                         </div>
                     </div>

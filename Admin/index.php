@@ -2,6 +2,7 @@
 <?= require_once('Sessionadmin.php') ?>
 
 <?php
+
 if (islogin()) {
     if (!isset($_REQUEST['Page']))
         $_REQUEST['Page'] = 0;
@@ -73,17 +74,58 @@ if (islogin()) {
             </thead>
             <tbody>
                 <?php
-                if (isset($_REQUEST['search1'])) {
-                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '' && $_REQUEST['price'] != '')
-                        $sql = "select* from product";
-                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['price'] != '')
-                        $sql = sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
-                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
-                        $sql = sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
-                    else if ($_REQUEST['type'] != '')
-                        $sql = sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
-                } else
-                    $sql = "select* from product";
+                function getSQL()
+                {
+                    if (!isset($_REQUEST['search1']))
+                        return  "select* from product";
+                    if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
+                        $a = explode('-', $_REQUEST['price']);
+                        return sprintf(
+                            "select* 
+                        from product 
+                        where name like '%%%s%%' and TYPE='%s' and price>=%s and price<%s",
+                            $_REQUEST['search'],
+                            $_REQUEST['type'],
+                            $a[0],
+                            $a[1]
+                        );
+                    }
+                    if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
+                        return sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
+                    if ($_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
+                        $a = explode('-', $_REQUEST['price']);
+                        return sprintf(
+                            "select* from product where TYPE='%s' and price>=%s and price<%s ",
+                            $_REQUEST['type'],
+                            $a[0],
+                            $a[1]
+                        );
+                    }
+                    if ($_REQUEST['search'] != '' && $_REQUEST['price'] != '') {
+                        $a = explode('-', $_REQUEST['price']);
+                        return sprintf(
+                            "select* from product where name like '%%%s%%' and price>=%s and price<%s ",
+                            $_REQUEST['search'],
+                            $a[0],
+                            $a[1]
+                        );
+                    }
+                    if ($_REQUEST['type'] != '')
+                        return sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
+                    if ($_REQUEST['search'] != '')
+                        return sprintf("select* from product where name like '%%%s%%'", $_REQUEST['name']);
+                    if ($_REQUEST['price'] != '') {
+                        $a = explode('-', $_REQUEST['price']);
+                        return sprintf(
+                            "select* from product where price>=%s and price<%s",
+                            $a[0],
+                            $a[1]
+                        );
+                    }
+                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '' && $_REQUEST['price'] == '')
+                        return  "select* from product";
+                }
+                $sql = getSQL();
                 $sql = $sql . " Limit " . ($_REQUEST['Page'] * 4) . ",4";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
@@ -114,22 +156,12 @@ if (islogin()) {
                     </i>
                 </a>
                 <?php
-                if (isset($_REQUEST['search1'])) {
-                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '')
-                        $sql = "select* from product";
-                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
-                        $sql = sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
-                    else if ($_REQUEST['search'] != '')
-                        $sql = sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
-                    else if ($_REQUEST['type'] != '')
-                        $sql = sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
-                } else
-                    $sql = "select* from product";
+                $sql = getSQL();
                 $result = $conn->query($sql);
                 $row = $result->num_rows;
                 $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
                 for ($i = 0; $i < $pages; $i++) {
-                    $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "from=" . $_REQUEST['price'] . "&" . "search1=search") : "");
+                    $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "price=" . $_REQUEST['price'] . "&" . "search1=search") : "");
                 ?>
                     <a href="index.php?<?= $search ?>" class="active">
                         <?= ($i + 1) ?>
