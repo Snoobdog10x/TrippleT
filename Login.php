@@ -44,13 +44,20 @@ if (isset($_REQUEST['Username'])) {
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="Username" type="text" class="form-control" name="Username" placeholder="Username">
+                        <input id="Username" type="text" class="form-control" name="Username" placeholder="Username" required>
                     </div>
                     <br>
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
+                        <input id="password" type="password" class="form-control" name="Password" placeholder="Password" required>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="input-group">
+                        <a href="Regist.php" class="">
+                            <h5>Don't have account? Regist now!</h5>
+                        </a>
                     </div>
                     <br>
                     <br>
@@ -63,12 +70,12 @@ if (isset($_REQUEST['Username'])) {
     <?php
     }
 } else {
-    if($_REQUEST['Sign']=="Success"){
+    if ($_REQUEST['Sign'] == "Success") {
     ?>
-    <script>
-    alert('Sign Up Success')
-    </script>
-    <?php    
+        <script>
+            alert('Sign Up Success')
+        </script>
+    <?php
     }
     ?>
 
@@ -82,19 +89,37 @@ if (isset($_REQUEST['Username'])) {
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="Username" type="text" class="form-control" name="Username" placeholder="Username">
+                    <input id="Username" type="text" class="form-control" name="Username" placeholder="Username" required>
                 </div>
                 <br>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
+                    <input id="password" type="password" class="form-control" name="Password" placeholder="Password" required>
                 </div>
                 <br>
                 <br>
-                <button type="submit" class="large btn btn-default center-block">
-                    <h4>Login</h4>
-                </button>
+                <div class="input-group">
+                    <a href="Regist.php" class="">
+                        <h5>Don't have account? Regist now!</h5>
+                    </a>
+                </div>
+                <br>
+                <br>
+                <div class="">
+                    <div class="row center-block">
+                        <div class="col-md-6 ">
+                            <button type="submit" style="width: 100%;" class="btn btn-default ">
+                                <h4>Login</h4>
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" style="width: 100%;" onclick="window.location.href='index.php'" class="btn btn-default center-block">
+                                <h4>cancel</h4>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </body>

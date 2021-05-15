@@ -25,13 +25,14 @@
 if (!isset($_REQUEST['Username'])) {
 ?>
   <script>
-  function checkUsername(){
-    console.log('hello');
-    <?php
-    echo ("hello");
-    ?>
-  }
+    function checkUsername() {
+      console.log('hello');
+      <?php
+      echo ("hello");
+      ?>
+    }
   </script>
+
   <body id="home">
     <div class="container rounded" style="width: 40%; margin-top: 3%;">
       <form action="Regist.php" method="GET">
@@ -44,7 +45,7 @@ if (!isset($_REQUEST['Username'])) {
         </label>
         <br>
         <br>
-        <input class="" style="width: 100%;" type="text" id="name" name="Name" placeholder="Full name">
+        <input class="" style="width: 100%;" type="text" id="name" name="Name" placeholder="Full name" required>
         <br>
         <br>
         <div class="row">
@@ -54,7 +55,7 @@ if (!isset($_REQUEST['Username'])) {
             </label>
             <br>
             <br>
-            <input id="username" class="" style="width: 100%;" type="text" name="Username" onblur="checkUsername()" placeholder="Username">
+            <input id="username" class="" style="width: 100%;" type="text" name="Username" onblur="checkUsername()" placeholder="Username" required>
           </div>
           <div class="col-md-6">
             <label class="" style="width: 100%;color: white;" for="">
@@ -62,7 +63,7 @@ if (!isset($_REQUEST['Username'])) {
             </label>
             <br>
             <br>
-            <input class="" style="width: 100%;" type="password" name="Password" id="password" placeholder="Password">
+            <input class="" style="width: 100%;" type="password" name="Password" id="password" placeholder="Password" required>
           </div>
         </div>
         <br>
@@ -73,7 +74,7 @@ if (!isset($_REQUEST['Username'])) {
             </label>
             <br>
             <br>
-            <input type="date" style="font-size: 1.3rem;width: 100%;" name="Birthday" id="birthday">
+            <input type="date" style="font-size: 1.3rem;width: 100%;" name="Birthday" id="birthday" required>
           </div>
           <div class="col-md-6">
             <label class="" style="width: 100%;color: white;" for="">
@@ -82,11 +83,11 @@ if (!isset($_REQUEST['Username'])) {
             <br>
             <div class="row">
               <div class="col-md-6">
-                <input type="radio" name="Sex" id="sex" value="MEN">
+                <input type="radio" name="Sex" id="sex" value="MEN" required>
                 <h5>MEN</h5>
               </div>
               <div class="col-md-6">
-                <input type="radio" name="Sex" id="sex" value="WOMEN">
+                <input type="radio" name="Sex" id="sex" value="WOMEN" required>
                 <h5>WOMEN</h5>
               </div>
             </div>
@@ -95,12 +96,12 @@ if (!isset($_REQUEST['Username'])) {
         </div>
         <div class="row">
           <div class="col-md-6">
-            <label class="" style="width: 100%;color: white;" for="">
+            <label class="" style="width: 100%;color: white;" for="" required>
               <h4>PHONE:</h4>
             </label>
             <br>
             <br>
-            <input class="" style="width: 100%;" type="text" id="phone" name="Phone" placeholder="Phone">
+            <input class="" style="width: 100%;" type="text" id="phone" name="Phone" placeholder="Phone" required>
             <br>
             <br>
           </div>
@@ -110,7 +111,7 @@ if (!isset($_REQUEST['Username'])) {
             </label>
             <br>
             <br>
-            <input class="" style="width: 100%;" type="text" name="Email" id="email" placeholder="Email">
+            <input class="" style="width: 100%;" type="text" name="Email" id="email" placeholder="Email" required>
             <br>
             <br>
           </div>
@@ -120,57 +121,31 @@ if (!isset($_REQUEST['Username'])) {
         </label>
         <br>
         <br>
-        <input class="" style="width: 100%;" type="text" name="Address" id="address" placeholder="Address">
+        <input class="" style="width: 100%;" type="text" name="Address" id="address" placeholder="Address" required>
         <br>
         <br>
-        <button type="submit" onclick="return check()" class="large btn btn-default" style="width: 100%;">
-          <h5>Register</h5>
-        </button>
-        <br><br>
-        <button type="button" class="large btn btn-default" onclick="document.location.href='Login.php'" style="width: 100%;">
-          <h5>Login</h5>
-        </button>
-    </div>
-    </form>
+        <div class="">
+          <div class="row center-block">
+            <div class="col-md-6">
+              <button type="submit" style="width: 100%;" onclick="" class=" btn btn-default">
+                <h5>Regist</h5>
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" style="width: 100%;" class="btn btn-default col-md-4" onclick="document.location.href='Login.php'" ">
+                <h5>Login</h5>
+              </button>
+            </div>
+          </div>
+          <br><br>
+        </div>
+              <button type=" button" class="btn btn-default center-block" onclick="document.location.href='index.php'" style="width: 50%;">
+                <h5>Cancel</h5>
+              </button>
+      </form>
     </div>
   </body>
-  <script>
-    function check() {
-      if (document.getElementById('name').value.trim() == "") {
-        alert("fill in name!")
-        return false;
-      }
-      if (document.getElementById('username').value.trim() == "") {
-        alert("fill in username!")
-        return false;
-      }
-      if (document.getElementById('password').value.trim() == "") {
-        alert("fill in password!")
-        return false;
-      }
-      if (document.getElementById('phone').value.trim() == "") {
-        alert("fill in phone!")
-        return false;
-      }
-      if (document.getElementById('email').value.trim() == "") {
-        alert("fill in email!")
-        return false;
-      }
-      if (document.getElementById('address').value.trim() == "") {
-        alert("fill in address!")
-        return false;
-      }
-      if (document.getElementById('birthday').value.trim() == "") {
-        alert("fill in birthday!")
-        return false;
-      }
-      var radios = document.getElementsByName('Sex');
-      if (radios[0].checked || radios[1].checked)
-        return true;
-      alert("choose your sex!")
-      return false;
-    }
-  </script>
+
 <?php
 } else {
   require_once('lib.php');
@@ -186,9 +161,9 @@ if (!isset($_REQUEST['Username'])) {
   $Address = $_REQUEST['Address'];
   $Email = $_REQUEST['Email'];
   $rc = $stmt->execute();
-    $stmt->close();
-    $conn->close();
-    header('location: Login.php?Sign=Success');
+  $stmt->close();
+  $conn->close();
+  header('location: Login.php?Sign=Success');
 }
 ?>
 

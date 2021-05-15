@@ -85,8 +85,8 @@ if (islogin()) {
                                 <option id="men" value="MEN">MEN</option>
                                 <option id="women" value="WOMEN">WOMEN</option>
                                 <option id="uni" value="UNISEX">UNISEX</option>
-                                <option id="hot" value="HOTPRODUCT">HOTPRODUCT</option>
-                                <option id="feat" value="FEATUREDPRODUCT">FEATUREDPRODUCT</option>
+                                <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
+                                <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
                             </select>
 
                         </div>
@@ -144,12 +144,12 @@ if (islogin()) {
     } else {
     ?>
         <?php
-        if (isset($_REQUEST['fileToUpload'])) {
+        if (isset($_FILES["fileToUpload"]["name"])) {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $sql = sprintf(
                 "UPDATE product 
-                    SET TYPE='%s',NAME='%s',PRICE='%s',BRAND='%s',DETAIL='%s'
+                    SET TYPE='%s',NAME='%s',PRICE='%s',IMG='%s',BRAND='%s',DETAIL='%s'
                     WHERE PID=%s",
                 $_REQUEST['type'],
                 $_REQUEST['name'],
@@ -161,6 +161,7 @@ if (islogin()) {
             );
             var_dump($sql);
              if ($conn->query($sql) === TRUE) {
+                unlink('../'.$_REQUEST['oldimg']);
                 $bool = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
             }
         } else {
