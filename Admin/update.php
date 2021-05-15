@@ -184,7 +184,7 @@ if (islogin()) {
         ?>
         <script>
             alert("success");
-            window.location.href = 'index.php';
+            window.location.href='index.php';
         </script>
     <?php
     }
