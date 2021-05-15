@@ -34,6 +34,11 @@ function login($username, $password)
 function islogin(){
     return isset($_SESSION['USERNAME']);
 }
+function closeDB($conn)
+{
+  if (isset($conn))
+    $conn->close();
+}
 function logout()
 {
     unset($_SESSION['username']);

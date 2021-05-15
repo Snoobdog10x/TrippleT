@@ -1,4 +1,3 @@
-<?= require_once('lib.php') ?>
 <?= require_once('Sessionadmin.php') ?>
 
 <?php
@@ -127,6 +126,7 @@ if (islogin()) {
                 }
                 $sql = getSQL();
                 $sql = $sql . " Limit " . ($_REQUEST['Page'] * 4) . ",4";
+                $conn = connectDb();
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     $count = $row['PID'];
@@ -168,6 +168,7 @@ if (islogin()) {
                     </a>
                 <?php
                 }
+                closeDB($conn);
                 ?>
                 <a href="#" class="next-page">
                     <i class="fa fa-angle-right">

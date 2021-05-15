@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?= require_once('lib.php') ?>
-<?= require_once('Sessionadmin.php') ?>
-
+<?= require_once('Sessionadmin.php') ?> 
 <head>
     <meta http-equiv="Content-Type" content="text/php;charset=utf-8" />
     <meta name="description" content="">
@@ -116,6 +114,7 @@ if (islogin()) {
     } else {
     ?>
         <?php
+        $conn=connectDb();
         $target_dir = "../images/products/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $sql = sprintf(
@@ -133,7 +132,7 @@ if (islogin()) {
         }
         else
         echo ($conn->error);
-        $conn->close();
+        closeDB($conn);
         ?><script>
             alert('Succes')
             window.location.href='index.php'

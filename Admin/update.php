@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?= require_once('lib.php') ?>
 <?= require_once('Sessionadmin.php') ?>
 
 <head>
@@ -55,6 +54,7 @@ if (islogin()) {
 ?>
     <?php
     if (!isset($_REQUEST['name'])) {
+        $conn=connectDb();
         $sql = "select * from product where PID=" . $_REQUEST['id'];
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
@@ -177,9 +177,9 @@ if (islogin()) {
                 $_REQUEST['des'],
                 $_REQUEST['pid']
             );
-            var_dump($sql);
             if ($conn->query($sql) === TRUE) {
             }
+            closeDB($conn);
         }
         ?>
         <script>
