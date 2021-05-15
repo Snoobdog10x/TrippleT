@@ -94,7 +94,7 @@ if (islogin()) {
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="PID">Price:</label>
-                            <input type="number" name="price" class="form-control" id="pwd" required>
+                            <input type="number" name="price" step="0.001" class="form-control" id="pwd" required>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="comment">Description:</label>
