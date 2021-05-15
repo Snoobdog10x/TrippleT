@@ -61,8 +61,8 @@ if (islogin()) {
     ?>
         <div style="background-color: white;">
             <form class="border border-danger container" style="margin-top: 3%; width: 70%;height: 80;" method="POST" enctype="multipart/form-data" action="update.php">
-                <input type="hidden" value="<?=$row['PID']?>" name="pid">
-                <input type="hidden" value="<?=$row['IMG']?>" name="oldimg">
+                <input type="hidden" value="<?= $row['PID'] ?>" name="pid">
+                <input type="hidden" value="<?= $row['IMG'] ?>" name="oldimg">
                 <div class="form-group" style="margin-top: 1%; width: 100%;background-color: red;">
                     <Strong>
                         <h3>+ Update New Product</h3>
@@ -144,7 +144,7 @@ if (islogin()) {
     } else {
     ?>
         <?php
-        if ($_FILES["fileToUpload"]["name"]!='') {
+        if ($_FILES["fileToUpload"]["name"] != '') {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $sql = sprintf(
@@ -160,8 +160,8 @@ if (islogin()) {
                 $_REQUEST['pid']
             );
             var_dump($sql);
-             if ($conn->query($sql) === TRUE) {
-                unlink('../'.$_REQUEST['oldimg']);
+            if ($conn->query($sql) === TRUE) {
+                unlink('../' . $_REQUEST['oldimg']);
                 $bool = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
             }
         } else {
@@ -178,15 +178,14 @@ if (islogin()) {
                 $_REQUEST['pid']
             );
             var_dump($sql);
-            if ($conn->query($sql) === TRUE) 
-            $con{
-            } 
+            if ($conn->query($sql) === TRUE) {
+            }
         }
         ?>
-    <script>
-        //alert("success");
-        //window.location.href='index.php';
-    </script>
+        <script>
+            //alert("success");
+            //window.location.href='index.php';
+        </script>
     <?php
     }
     ?>

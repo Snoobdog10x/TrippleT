@@ -40,13 +40,13 @@ if (islogin()) {
                             </div>
                             <div class="col-md-3">
                                 <label for="sel1">Select price :</label>
-                                <select class="form-control" class="" name="type" id="sel1">
+                                <select class="form-control" class="" name="price" id="sel1">
                                     <option id="none" value=""></option>
-                                    <option id="men" value="MEN">MEN</option>
-                                    <option id="women" value="WOMEN">WOMEN</option>
-                                    <option id="uni" value="UNISEX">UNISEX</option>
-                                    <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
-                                    <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
+                                    <option id="men" value="10-30">10$-30$</option>
+                                    <option id="women" value="30-50">30$-50$</option>
+                                    <option id="uni" value="50-60">50$-70$</option>
+                                    <option id="hot" value="70-90">70$-90$</option>
+                                    <option id="feat" value="90-1000">>=90$</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
@@ -74,11 +74,11 @@ if (islogin()) {
             <tbody>
                 <?php
                 if (isset($_REQUEST['search1'])) {
-                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '')
+                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '' && $_REQUEST['price'] != '')
                         $sql = "select* from product";
-                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['from'] != '')
+                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['price'] != '')
                         $sql = sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
-                    else if ($_REQUEST['search'] != '')
+                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
                         $sql = sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
                     else if ($_REQUEST['type'] != '')
                         $sql = sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
@@ -129,7 +129,7 @@ if (islogin()) {
                 $row = $result->num_rows;
                 $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
                 for ($i = 0; $i < $pages; $i++) {
-                    $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "from=" . $_REQUEST['from'] . "&" . "to=" . $_REQUEST['to'] . "&" . "search1=search") : "");
+                    $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "from=" . $_REQUEST['price'] . "&" . "search1=search") : "");
                 ?>
                     <a href="index.php?<?= $search ?>" class="active">
                         <?= ($i + 1) ?>
