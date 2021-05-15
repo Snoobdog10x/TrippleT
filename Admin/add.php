@@ -119,8 +119,8 @@ if (islogin()) {
         $target_dir = "../images/products/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $sql = sprintf(
-            "INSERT INTO product (TYPE,NAME,PRICE,IMG,BRAND,DETAIL)
-                    VALUES ('%s', '%s', '%s', '%s', '%s', '%s')",
+            'INSERT INTO product (TYPE,NAME,PRICE,IMG,BRAND,DETAIL)
+                    VALUES ("%s", "%s", "%s", "%s", "%s", "%s")',
             $_REQUEST['type'],
             $_REQUEST['name'],
             $_REQUEST['price'],

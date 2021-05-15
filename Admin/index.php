@@ -9,99 +9,140 @@ if (islogin()) {
 ?>
     <!--product management-->
     <div id="PManagement" class="container_fullwidth">
-        <div class="container" style="background-color: white;width: 90%;margin-top: 5%;">
+        <div class="container" style="background-color: white;width: 100%;margin-top: 5%;">
             <br>
             <h3>Product Management</h3>
             <br>
             <br>
             <div class="row">
                 <div class="col-md-2">
-                    <button onclick="location.href = 'add.php'" class="btn-lg" style="width: 100%;" data-toggle="modal" data-target="#addModal">Add</button>
+                <br>
+                    <button onclick="location.href = 'add.php'" class="form-control" style="width: 100%;" data-toggle="modal" data-target="#addModal">Add</button>
                 </div>
                 <div class="col-md-10 ">
-                    <form class="pull-right navbar-form navbar-left form-inline" action="index.php">
-                        <div class="form-group">
-                            <label for="sel1">Select type:</label>
-                            <select class="form-control" name="type" id="sel1">
-                                <option id="men" value="MEN">MEN</option>
-                                <option id="women" value="WOMEN">WOMEN</option>
-                                <option id="uni" value="UNISEX">UNISEX</option>
-                                <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
-                                <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="search" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Search</button>
+                    <form class="" action="index.php">
+                        <div class="row pull-right">
+                            <input type="hidden" name="search1" value="search">
+                            <div class="col-md-3">
+                                <label for="search">Name:</label>
+                                <input type="text" id="search" name="search" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="sel1">Select type :</label>
+                                <select class="form-control" class="" name="type" id="sel1">
+                                    <option id="none" value=""></option>
+                                    <option id="men" value="MEN">MEN</option>
+                                    <option id="women" value="WOMEN">WOMEN</option>
+                                    <option id="uni" value="UNISEX">UNISEX</option>
+                                    <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
+                                    <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 row">
+                                <div class="col-md-6">
+                                    <label for="price">Price from: </label>
+                                    <input type="text" class="form-control" name="from" id="price">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="price">Price to: </label>
+                                    <input type="text" class="form-control" name="to" id="price">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <br>
+                                <button type="submit"  class="btn btn-default" >Search</button>
+                            </div>
                     </form>
                 </div>
             </div>
-            <br>
-            <table class="table table-hover">
-                <thead>
+        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Pid</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Img</th>
+                    <th>Brand</th>
+                    <th>Detail</th>
+                    <th>Edit product</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if (isset($_REQUEST['search1'])) {
+                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '')
+                        $sql = "select* from product";
+                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
+                        $sql = sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
+                    else if ($_REQUEST['search'] != '')
+                        $sql = sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
+                    else if ($_REQUEST['type'] != '')
+                        $sql = sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
+                } else
+                    $sql = "select* from product";
+                $sql = $sql . " Limit " . ($_REQUEST['Page'] * 4) . ",4";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $count = $row['PID'];
+                ?>
                     <tr>
-                        <th>Pid</th>
-                        <th>Type</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Img</th>
-                        <th>Brand</th>
-                        <th>Detail</th>
-                        <th>Edit product</th>
+                        <td><?= $row['PID'] ?></td>
+                        <td><?= $row['TYPE'] ?></td>
+                        <td><?= $row['NAME'] ?></td>
+                        <td><?= $row['PRICE'] ?></td>
+                        <td><img src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
+                        <td><?= $row['BRAND'] ?></td>
+                        <td><?= $row['DETAIL'] ?></td>
+                        <td>
+                            <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
+                            <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $sql = "select* from product Limit " . ($_REQUEST['Page'] * 4) . ",4";
-                    $result = $conn->query($sql);
-                    while ($row = $result->fetch_assoc()) {
-                        $count = $row['PID'];
-                    ?>
-                        <tr>
-                            <td><?= $row['PID'] ?></td>
-                            <td><?= $row['TYPE'] ?></td>
-                            <td><?= $row['NAME'] ?></td>
-                            <td><?= $row['PRICE'] ?></td>
-                            <td><img src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
-                            <td><?= $row['BRAND'] ?></td>
-                            <td><?= $row['DETAIL'] ?></td>
-                            <td>
-                                <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
-                                <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
-                            </td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-            <div class="row">
-                <div class="pager col-md-6">
-                    <a href="#" class="prev-page">
-                        <i class="fa fa-angle-left">
-                        </i>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="pager col-md-6">
+                <a href="#" class="prev-page">
+                    <i class="fa fa-angle-left">
+                    </i>
+                </a>
+                <?php
+                if (isset($_REQUEST['search1'])) {
+                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '')
+                        $sql = "select* from product";
+                    else if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
+                        $sql = sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
+                    else if ($_REQUEST['search'] != '')
+                        $sql = sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
+                    else if ($_REQUEST['type'] != '')
+                        $sql = sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
+                } else
+                    $sql = "select* from product";
+                $result = $conn->query($sql);
+                $row = $result->num_rows;
+                $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
+                for ($i = 0; $i < $pages; $i++) {
+                    $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "search1=search") : "");
+                ?>
+                    <a href="index.php?<?= $search ?>" class="active">
+                        <?= ($i + 1) ?>
                     </a>
-                    <?php
-                    $sql = "SELECT * FROM product";
-                    $result = $conn->query($sql);
-                    $row = $result->num_rows;
-                    $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
-                    for ($i = 0; $i < $pages; $i++) {
-                    ?>
-                        <a href="index.php?Page=<?= $i ?>" class="active">
-                            <?= ($i + 1) ?>
-                        </a>
-                    <?php
-                    }
-                    ?>
-                    <a href="#" class="next-page">
-                        <i class="fa fa-angle-right">
-                        </i>
-                    </a>
-                </div>
+                <?php
+                }
+                ?>
+                <a href="#" class="next-page">
+                    <i class="fa fa-angle-right">
+                    </i>
+                </a>
             </div>
         </div>
+    </div>
     </div>
 
 

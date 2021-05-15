@@ -148,9 +148,9 @@ if (islogin()) {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $sql = sprintf(
-                "UPDATE product 
-                    SET TYPE='%s',NAME='%s',PRICE='%s',IMG='%s',BRAND='%s',DETAIL='%s'
-                    WHERE PID=%s",
+                'UPDATE product 
+                    SET TYPE="%s",NAME="%s",PRICE="%s",IMG="%s",BRAND="%s",DETAIL="%s"
+                    WHERE PID=%s',
                 $_REQUEST['type'],
                 $_REQUEST['name'],
                 $_REQUEST['price'],
@@ -166,9 +166,9 @@ if (islogin()) {
             }
         } else {
             $sql = sprintf(
-                "UPDATE product 
-                    SET TYPE='%s',NAME='%s',PRICE='%s',IMG='%s',BRAND='%s',DETAIL='%s'
-                    WHERE PID=%s",
+                'UPDATE product 
+                    SET TYPE="%s",NAME="%s",PRICE="%s",IMG="%s",BRAND="%s",DETAIL="%s"
+                    WHERE PID=%s',
                 $_REQUEST['type'],
                 $_REQUEST['name'],
                 $_REQUEST['price'],
@@ -178,13 +178,14 @@ if (islogin()) {
                 $_REQUEST['pid']
             );
             var_dump($sql);
-            if ($conn->query($sql) === TRUE) {
+            if ($conn->query($sql) === TRUE) 
+            $con{
             } 
         }
         ?>
     <script>
-        alert("success");
-        window.location.href='index.php';
+        //alert("success");
+        //window.location.href='index.php';
     </script>
     <?php
     }
