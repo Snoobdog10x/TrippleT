@@ -14,7 +14,6 @@ if (islogin()) {
             <br>
             <br>
             <div class="row">
-                <button class="col-md-6" onclick="location.href = 'add.php'" style="width: 10%;" data-toggle="modal" data-target="#addModal">Add</button>
                 <div class="pager col-md-6">
                     <a href="#" class="prev-page">
                         <i class="fa fa-angle-left">
@@ -49,6 +48,8 @@ if (islogin()) {
                         <th>Username</th>
                         <th>Date</th>
                         <th>Status</th>
+                        <th>Change Status</th>
+                        <th>Detail</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,14 +58,26 @@ if (islogin()) {
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                     ?>
-                        <tr>
+                        <tr data-toggle="tooltip" data-placement="top" title="Click to see order detail">
                             <td><?= $row['OID'] ?></td>
                             <td><?= $row['USERNAME'] ?></td>
                             <td><?= $row['DATE'] ?></td>
-                            <td><?= $row['Status'] ?></td>
+                            <td><?= $row['STATUS'] ?></td>
                             <td>
-                                <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
-                                <button onclick="">Delete</button>
+                                <?php
+                                if ($row['STATUS'] == "DONE") {
+                                ?>
+                                    <button data-toggle="modal" onclick="location.href = 'UpdateStt.php?oid=<?= $row['OID'] ?>&stt=<?= $row['STATUS'] ?>'" data-target="#updateModal">Processing</button>
+                                <?php
+                                } else {
+                                ?>
+                                    <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'UpdateStt.php?oid=<?= $row['OID'] ?>&stt=<?= $row['STATUS'] ?>'">Done</button>
+                                <?php
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'Orderdetail.php?oid=<?= $row['OID'] ?>'">Detail</button>
                             </td>
                         </tr>
                     <?php

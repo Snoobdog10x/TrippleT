@@ -1,7 +1,7 @@
 <?php
 require_once("lib.php");
-if(!isset($_REQUEST['Page']))
-$_REQUEST['Page']=0;
+if (!isset($_REQUEST['Page']))
+    $_REQUEST['Page'] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -306,13 +306,13 @@ $_REQUEST['Page']=0;
                                         ?>
                                         */
                                         for ($i = 0; $i < $pages; $i++) {
-                                            ?>                                            
-                                                <a href="productgird.php?Page=<?= $i ?>" class="active">
-                                                    <?= ($i + 1) ?>
-                                                </a>
-                                            <?php
-                                            }
-                                            ?>
+                                        ?>
+                                            <a href="productgird.php?Page=<?= $i ?>" class="active">
+                                                <?= ($i + 1) ?>
+                                            </a>
+                                        <?php
+                                        }
+                                        ?>
                                         <a href="#" class="next-page">
                                             <i class="fa fa-angle-right">
                                             </i>
@@ -322,8 +322,7 @@ $_REQUEST['Page']=0;
                             </div>
                             <div class="row">
                                 <?php
-
-                                    $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
                                 $result = $conn->query($sql);
                                 while ($row = $result->fetch_assoc()) {
                                 ?>
@@ -383,7 +382,7 @@ $_REQUEST['Page']=0;
                                                 </i>
                                             </a>
                                             <?php
-                                                $sql = "SELECT * FROM product";
+                                            $sql = "SELECT * FROM product";
                                             $result = $conn->query($sql);
                                             $row = $result->num_rows;
                                             $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
