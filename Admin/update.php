@@ -58,6 +58,7 @@ if (islogin()) {
         $sql = "select * from product where PID=" . $_REQUEST['id'];
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
+        closeDB($conn);
     ?>
         <div style="background-color: white;">
             <form class="border border-danger container" style="margin-top: 3%; width: 70%;height: 80;" method="POST" enctype="multipart/form-data" action="update.php">
@@ -144,6 +145,7 @@ if (islogin()) {
     } else {
     ?>
         <?php
+        $conn=connectDb();
         if ($_FILES["fileToUpload"]["name"] != '') {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -183,7 +185,7 @@ if (islogin()) {
         }
         ?>
         <script>
-            alert("success");
+           alert("success");
             window.location.href='index.php';
         </script>
     <?php
