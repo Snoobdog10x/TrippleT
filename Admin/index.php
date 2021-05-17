@@ -1,5 +1,4 @@
 <?= require_once('Sessionadmin.php') ?>
-
 <?php
 
 if (islogin()) {
@@ -9,7 +8,7 @@ if (islogin()) {
 ?>
     <!--product management-->
     <div id="PManagement" class="container_fullwidth">
-        <div class="container" style="background-color: white;width: 100%;margin-top: 5%;">
+        <div class="container" style="background-color: white;width: 90%;margin-top: 5%;">
             <br>
             <h3>Product Management</h3>
             <br>
@@ -49,136 +48,157 @@ if (islogin()) {
                                     <option id="feat" value="90-1000">>=90$</option>
                                 </select>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 pull-right">
                                 <br>
                                 <button type="submit" class="btn btn-default">Search</button>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
-        <br>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Pid</th>
-                    <th>Type</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Img</th>
-                    <th>Brand</th>
-                    <th>Detail</th>
-                    <th>Edit product</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                function getSQL()
-                {
-                    if (!isset($_REQUEST['search1']))
-                        return  "select* from product";
-                    if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
-                        $a = explode('-', $_REQUEST['price']);
-                        return sprintf(
-                            "select* 
+            <br>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Pid</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Img</th>
+                        <th>Brand</th>
+                        <th>Detail</th>
+                        <th>Edit product</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    function getSQL()
+                    {
+                        if (!isset($_REQUEST['search1']))
+                            return  "select* from product";
+                        if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
+                            $a = explode('-', $_REQUEST['price']);
+                            return sprintf(
+                                "select* 
                         from product 
                         where name like '%%%s%%' and TYPE='%s' and price>=%s and price<%s",
-                            $_REQUEST['search'],
-                            $_REQUEST['type'],
-                            $a[0],
-                            $a[1]
-                        );
+                                $_REQUEST['search'],
+                                $_REQUEST['type'],
+                                $a[0],
+                                $a[1]
+                            );
+                        }
+                        if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
+                            return sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
+                        if ($_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
+                            $a = explode('-', $_REQUEST['price']);
+                            return sprintf(
+                                "select* from product where TYPE='%s' and price>=%s and price<%s ",
+                                $_REQUEST['type'],
+                                $a[0],
+                                $a[1]
+                            );
+                        }
+                        if ($_REQUEST['search'] != '' && $_REQUEST['price'] != '') {
+                            $a = explode('-', $_REQUEST['price']);
+                            return sprintf(
+                                "select* from product where name like '%%%s%%' and price>=%s and price<%s ",
+                                $_REQUEST['search'],
+                                $a[0],
+                                $a[1]
+                            );
+                        }
+                        if ($_REQUEST['type'] != '')
+                            return sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
+                        if ($_REQUEST['search'] != '')
+                            return sprintf("select* from product where name like '%%%s%%'", $_REQUEST['name']);
+                        if ($_REQUEST['price'] != '') {
+                            $a = explode('-', $_REQUEST['price']);
+                            return sprintf(
+                                "select* from product where price>=%s and price<%s",
+                                $a[0],
+                                $a[1]
+                            );
+                        }
+                        if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '' && $_REQUEST['price'] == '')
+                            return  "select* from product";
                     }
-                    if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
-                        return sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
-                    if ($_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
-                        $a = explode('-', $_REQUEST['price']);
-                        return sprintf(
-                            "select* from product where TYPE='%s' and price>=%s and price<%s ",
-                            $_REQUEST['type'],
-                            $a[0],
-                            $a[1]
-                        );
+                    $sql = getSQL();
+                    $sql = $sql . " Limit " . ($_REQUEST['Page'] * 3) . ",3";
+                    $conn = connectDb();
+                    $result = $conn->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                        $count = $row['PID'];
+                    ?>
+                        <tr>
+                            <td><?= $row['PID'] ?></td>
+                            <td><?= $row['TYPE'] ?></td>
+                            <td><?= $row['NAME'] ?></td>
+                            <td><?= $row['PRICE'] ?></td>
+                            <td><img src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
+                            <td><?= $row['BRAND'] ?></td>
+                            <td><?= $row['DETAIL'] ?></td>
+                            <td>
+                                <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
+                                <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
+                            </td>
+                        </tr>
+                    <?php
                     }
-                    if ($_REQUEST['search'] != '' && $_REQUEST['price'] != '') {
-                        $a = explode('-', $_REQUEST['price']);
-                        return sprintf(
-                            "select* from product where name like '%%%s%%' and price>=%s and price<%s ",
-                            $_REQUEST['search'],
-                            $a[0],
-                            $a[1]
-                        );
-                    }
-                    if ($_REQUEST['type'] != '')
-                        return sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
-                    if ($_REQUEST['search'] != '')
-                        return sprintf("select* from product where name like '%%%s%%'", $_REQUEST['name']);
-                    if ($_REQUEST['price'] != '') {
-                        $a = explode('-', $_REQUEST['price']);
-                        return sprintf(
-                            "select* from product where price>=%s and price<%s",
-                            $a[0],
-                            $a[1]
-                        );
-                    }
-                    if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '' && $_REQUEST['price'] == '')
-                        return  "select* from product";
-                }
-                $sql = getSQL();
-                $sql = $sql . " Limit " . ($_REQUEST['Page'] * 4) . ",4";
-                $conn = connectDb();
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                    $count = $row['PID'];
-                ?>
-                    <tr>
-                        <td><?= $row['PID'] ?></td>
-                        <td><?= $row['TYPE'] ?></td>
-                        <td><?= $row['NAME'] ?></td>
-                        <td><?= $row['PRICE'] ?></td>
-                        <td><img src=" ../<?= $row['IMG'] ?>" width="10%" alt=""></td>
-                        <td><?= $row['BRAND'] ?></td>
-                        <td><?= $row['DETAIL'] ?></td>
-                        <td>
-                            <button data-toggle="modal" data-target="#updateModal" onclick="location.href = 'update.php?id=<?= $row['PID'] ?>'">Update</button>
-                            <button onclick="wannadelete('<?= $row['PID'] ?>')">Delete</button>
-                        </td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </tbody>
-        </table>
-        <div class="row">
-            <div class="pager col-md-6">
-                <a href="#" class="prev-page">
-                    <i class="fa fa-angle-left">
-                    </i>
-                </a>
+                    ?>
+                </tbody>
+            </table>
+            <div class="pager">
                 <?php
                 $sql = getSQL();
                 $result = $conn->query($sql);
                 $row = $result->num_rows;
-                $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
-                for ($i = 0; $i < $pages; $i++) {
-                    $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "price=" . $_REQUEST['price'] . "&" . "search1=search") : "");
+                $pages = $row % 4 == 0 ? intval($row / 3) : intval($row / 3) + 1;
+                if (isset($_REQUEST['search1']))
+                    $search = sprintf(
+                        "?Page=%s&search1=search&search=%s&type=%s&price=%s",
+                        ($_REQUEST['Page'] > 0) ? $_REQUEST['Page'] - 1 : $_REQUEST['Page'],
+                        $_REQUEST['search'],
+                        $_REQUEST['type'],
+                        $_REQUEST['price']
+                    );
+                else
+                    $search = '?Page=' . (($_REQUEST['Page'] > 0) ? $_REQUEST['Page'] - 1 : $_REQUEST['Page']);
+                if ($pages != 0) {
                 ?>
-                    <a href="index.php?<?= $search ?>" class="active">
-                        <?= ($i + 1) ?>
-                    </a>
+                    <ul class="pagination">
+
+                        <li><a href="index.php<?= $search ?>">Previous</a></li>
+                        <?php
+                        for ($i = 0; $i < $pages; $i++) {
+                            $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "price=" . $_REQUEST['price'] . "&" . "search1=search") : "");
+                        ?>
+                            <li><a href="index.php?<?= $search ?>" class="active">
+                                    <?= ($i + 1) ?>
+                                </a></li>
+                        <?php
+                        }
+                        closeDB($conn);
+                        if (isset($_REQUEST['search1']))
+                            $search = sprintf(
+                                "?Page=%s&search1=search&search=%s&type=%s&price=%s",
+                                ($_REQUEST['Page'] < $pages - 1) ? $_REQUEST['Page'] + 1 : $_REQUEST['Page'],
+                                $_REQUEST['search'],
+                                $_REQUEST['type'],
+                                $_REQUEST['price']
+                            );
+                        else
+                            $search = '?Page=' . (($_REQUEST['Page'] < $pages - 1) ? $_REQUEST['Page'] + 1 : $_REQUEST['Page']);
+                        ?>
+                        <li><a href="index.php<?= $search ?>">Next</a></li>
+                    </ul>
                 <?php
                 }
-                closeDB($conn);
                 ?>
-                <a href="#" class="next-page">
-                    <i class="fa fa-angle-right">
-                    </i>
-                </a>
             </div>
         </div>
-    </div>
-    </div>
 
+    </div>
 
     </html>
 <?php

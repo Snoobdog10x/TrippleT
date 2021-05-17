@@ -286,25 +286,17 @@ if (!isset($_REQUEST['Page']))
                                         </select>
                                     </div>
                                     <div class="pager">
-                                        <a href="#" class="prev-page">
-                                            <i class="fa fa-angle-left">
-                                            </i>
-                                        </a>
                                         <?php
                                         $sql = "SELECT * FROM product";
                                         $result = $conn->query($sql);
                                         $row = $result->num_rows;
                                         $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
-                                        /*
-                                        for ($i = 0; $i < $pages; $i++) {
                                         ?>
-                                            <a href="productgird.php?Type=<?= $_REQUEST['Type'] ?>&Page=<?= $i ?>" class="active">
-                                                <?= ($i + 1) ?>
-                                            </a>
+                                        <a href="productgird.php?Page=<?= $_REQUEST['Page'] > 0 ? $_REQUEST['Page'] - 1 : $_REQUEST['Page'] ?>" class="prev-page">
+                                            <i class="fa fa-angle-left">
+                                            </i>
+                                        </a>
                                         <?php
-                                        }
-                                        ?>
-                                        */
                                         for ($i = 0; $i < $pages; $i++) {
                                         ?>
                                             <a href="productgird.php?Page=<?= $i ?>" class="active">
@@ -313,7 +305,7 @@ if (!isset($_REQUEST['Page']))
                                         <?php
                                         }
                                         ?>
-                                        <a href="#" class="next-page">
+                                        <a href="productgird.php?Page=<?= $_REQUEST['Page'] < $pages - 1 ? $_REQUEST['Page'] + 1 : $_REQUEST['Page'] ?>" class="next-page">
                                             <i class="fa fa-angle-right">
                                             </i>
                                         </a>
@@ -377,15 +369,17 @@ if (!isset($_REQUEST['Page']))
                                             </select>
                                         </div>
                                         <div class="pager">
-                                            <a href="#" class="prev-page">
-                                                <i class="fa fa-angle-left">
-                                                </i>
-                                            </a>
                                             <?php
                                             $sql = "SELECT * FROM product";
                                             $result = $conn->query($sql);
                                             $row = $result->num_rows;
                                             $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
+                                            ?>
+                                            <a href="productgird.php?Page=<?= $_REQUEST['Page'] > 0 ? $_REQUEST['Page'] - 1 : $_REQUEST['Page'] ?>" class="prev-page">
+                                                <i class="fa fa-angle-left">
+                                                </i>
+                                            </a>
+                                            <?php
                                             for ($i = 0; $i < $pages; $i++) {
                                             ?>
                                                 <a href="productgird.php?Page=<?= $i ?>" class="active">
@@ -394,7 +388,7 @@ if (!isset($_REQUEST['Page']))
                                             <?php
                                             }
                                             ?>
-                                            <a href="#" class="next-page">
+                                            <a href="productgird.php?Page=<?= $_REQUEST['Page'] < $pages - 1 ? $_REQUEST['Page'] + 1 : $_REQUEST['Page'] ?>" class="next-page">
                                                 <i class="fa fa-angle-right">
                                                 </i>
                                             </a>

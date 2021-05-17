@@ -12,35 +12,6 @@ if (islogin()) {
             <br>
             <h3>Oder Management</h3>
             <br>
-            <br>
-            <div class="row">
-                <div class="pager col-md-6">
-                    <a href="#" class="prev-page">
-                        <i class="fa fa-angle-left">
-                        </i>
-                    </a>
-                    <?php
-                    $conn = connectDb();
-                    $sql = "SELECT * FROM `order`";
-                    $result = $conn->query($sql);
-                    $row = $result->num_rows;
-                    $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
-                    for ($i = 0; $i < $pages; $i++) {
-                    ?>
-                        <a href="ordermanager.php?Page=<?= $i ?>" class="active">
-                            <?= ($i + 1) ?>
-                        </a>
-                    <?php
-                    }
-                    ?>
-                    <a href="#" class="next-page">
-                        <i class="fa fa-angle-right">
-                        </i>
-                    </a>
-                </div>
-            </div>
-
-            <br>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -54,6 +25,7 @@ if (islogin()) {
                 </thead>
                 <tbody>
                     <?php
+                    $conn = connectDb();
                     $sql = "select* from `order` Limit " . ($_REQUEST['Page'] * 4) . ",4";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
@@ -85,6 +57,36 @@ if (islogin()) {
                     ?>
                 </tbody>
             </table>
+            <div class="pager">
+                <?php
+                $sql = "select* from `order`";
+                $result = $conn->query($sql);
+                $row = $result->num_rows;
+                $pages = $row % 4 == 0 ? intval($row / 3) : intval($row / 3) + 1;
+                $search = '?Page=' . (($_REQUEST['Page'] > 0) ? $_REQUEST['Page'] - 1 : $_REQUEST['Page']);
+                if ($pages !== 0) {
+                ?>
+                    <ul class="pagination">
+
+                        <li><a href="ordermanager.php<?= $search ?>">Previous</a></li>
+                        <?php
+                        for ($i = 0; $i < $pages; $i++) {
+                            $search = "Page=" . $i;
+                        ?>
+                            <li><a href="ordermanager.php?<?= $search ?>" class="active">
+                                    <?= ($i + 1) ?>
+                                </a></li>
+                        <?php
+                        }
+                        closeDB($conn);
+                        $search = '?Page=' . (($_REQUEST['Page'] < $pages - 1) ? $_REQUEST['Page'] + 1 : $_REQUEST['Page']);
+                        ?>
+                        <li><a href="ordermanager.php<?= $search ?>">Next</a></li>
+                    </ul>
+                <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
     </body>
