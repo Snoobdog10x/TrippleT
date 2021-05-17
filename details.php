@@ -412,7 +412,7 @@
                                     </p>
                                     <h5 class="price">
                                         <?= $row['PRICE'] ?>
-                                        <strike><?= number_format($row['PRICE'] + 30, 2) ?></strike>
+                                        <strike style="color: black;font-size: 13px;"><?= number_format($row['PRICE'] + 30, 2) ?></strike>
                                     </h5>
                                 </div>
                             </div>
