@@ -137,7 +137,7 @@ if (islogin()) {
                             ?>
                             <tr>
                                 <td colspan="3"> </td>
-                                <td class="text-right">Total Amount:</td>
+                                <td class="text-right">Total:</td>
                                 <td> <?= $total ?></td>
                             </tr>
                         </tbody>
