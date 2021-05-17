@@ -253,6 +253,12 @@ if (!isset($_REQUEST['Page']))
                                 } else {
                                     $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['brand_list'] * 6) . ",6";
                                 }*/
+                                                </script>';    
+                                            }
+                                        }
+                                        else {
+                                            $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                        }
                                 $result = $conn->query($sql);
                                 while ($row = $result->fetch_assoc()) {
                                 ?>
