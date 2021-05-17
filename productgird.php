@@ -1,7 +1,7 @@
 <?php
 require_once("lib.php");
-if (!isset($_REQUEST['Page']))
-    $_REQUEST['Page'] = 0;
+if(!isset($_REQUEST['Page']))
+$_REQUEST['Page']=0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,224 +30,74 @@ if (!isset($_REQUEST['Page']))
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
+                    <form action="productgird.php" method="GET">
+                    <div class="category leftbar">
+                            <h3 class="title">  
+                                Name
+                            </h3>
+                            <font face="Verdana" size="3">
+                                <input type="text" name="search_name"></input>
+                            </font>
+                        </div>
+                        <div class="clearfix">
+                        </div>
                         <div class="category leftbar">
-                            <h3 class="title">
-                                Categories
+                            <h3 class="title">  
+                                Brand
                             </h3>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Men
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Women
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Salon
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        New Trend
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Living room
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Bed room
-                                    </a>
-                                </li>
-                            </ul>
+                            <font face="Verdana" size="3">
+                                <select id="gender" name="brand_list">
+                                    <option value="">Choose a brand</option>
+                                    <?php
+                                    $result = $conn->query("SELECT DISTINCT BRAND FROM product WHERE BRAND IS NOT NULL");
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo "<option value='" . $row['BRAND'] . "'>" . $row['BRAND'] . "</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </font>
                         </div>
                         <div class="clearfix">
                         </div>
-                        <div class="branch leftbar">
-                            <h3 class="title">
-                                Branch
+                        <div class="category leftbar">
+                            <h3 class="title">  
+                                Type
                             </h3>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        New
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Sofa
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Salon
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        New Trend
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Living room
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Bed room
-                                    </a>
-                                </li>
-                            </ul>
+                            <font face="Verdana" size="3">
+                            <select id="gender" name="type_list">
+                                    <option value="">Choose a type</option>
+                                    <?php
+                                    $result = $conn->query("SELECT DISTINCT TYPE FROM product WHERE TYPE IS NOT NULL");
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo "<option value='" . $row['TYPE'] . "'>" . $row['TYPE'] . "</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </font>
                         </div>
                         <div class="clearfix">
                         </div>
-                        <div class="price-filter leftbar">
-                            <h3 class="title">
+                        <div class="category leftbar">
+                            <h3 class="title">  
                                 Price
                             </h3>
-                            <form class="pricing">
-                                <label>
-                                    $
-                                    <input type="number" min="0">
-                                </label>
-                                <span class="separate">
-                                    -
-                                </span>
-                                <label>
-                                    $
-                                    <input type="number" min="0">
-                                </label>
-                                <input type="submit" value="Go">
-                            </form>
+                            <font face="Verdana" size="3">
+                                <select id="gender" name="price_list">
+                                    <option value="">Select the price</option>
+                                    <option value="0-30">0$-30$</option>
+                                    <option value="31-50">30$-50$</option>
+                                    <option value="51-70">50$-70$</option>
+                                    <option value="71-99">70$-100$</option>
+                                    <option value="100-10000">>=100$</option>
+                                </select>
+                            </font>                            
                         </div>
                         <div class="clearfix">
                         </div>
-                        <div class="clolr-filter leftbar">
-                            <h3 class="title">
-                                Color
-                            </h3>
-                            <ul>
-                                <li>
-                                    <a href="#" class="red-bg">
-                                        light red
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class=" yellow-bg">
-                                        yellow"
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="black-bg ">
-                                        black
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pink-bg">
-                                        pink
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dkpink-bg">
-                                        dkpink
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="chocolate-bg">
-                                        chocolate
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="orange-bg">
-                                        orange-bg
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="off-white-bg">
-                                        off-white
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="extra-lightgreen-bg">
-                                        extra-lightgreen
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="lightgreen-bg">
-                                        lightgreen
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="biscuit-bg">
-                                        biscuit
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="chocolatelight-bg">
-                                        chocolatelight
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="pricing">
+                        <input type="submit" value="Go" name="button_go">
                         </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="product-tag leftbar">
-                            <h3 class="title">
-                                Products
-                                <strong>
-                                    Tags
-                                </strong>
-                            </h3>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Lincoln us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        SDress for Girl
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Corner
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Window
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        PG
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Oscar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Bath room
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        PSD
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        </form>
                     </div>
                     <div class="col-md-9">
                         <div class="banner">
@@ -286,8 +136,64 @@ if (!isset($_REQUEST['Page']))
                                         </select>
                                     </div>
                                     <div class="pager">
+                                        <a href="#" class="prev-page">
+                                            <i class="fa fa-angle-left">
+                                            </i>
+                                        </a>
                                         <?php
-                                        $sql = "SELECT * FROM product";
+                                        if (isset($_REQUEST['name'])) {
+                                            $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['name'] . "%'";
+                                        }
+                                        else if (isset($_REQUEST['button_go'])) {
+                                            $a = explode('-', $_REQUEST['price_list']);
+                                            if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."' AND TYPE ='" . $_GET['type_list'] . "'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."' AND TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND TYPE = '" . $_GET['type_list'] . "'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && $_REQUEST['price_list']) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['type_list']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['price_list'])) {
+                                                $sql = "SELECT * FROM product WHERE TYPE ='" . $_GET['type_list'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['price_list']!=''&& empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list'])){
+                                                $sql = "SELECT * FROM product WHERE PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";     
+                                            }     
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND TYPE ='" . $_GET['type_list'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['brand_list']) && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                echo '<script type="text/javascript">
+                                                window.location = "productgird.php?Type=&Page=0"
+                                                </script>';  
+                                            }
+                                        }
+                                        else {
+                                            $sql = "SELECT * FROM product";
+                                        }
                                         $result = $conn->query($sql);
                                         $row = $result->num_rows;
                                         $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
@@ -314,7 +220,65 @@ if (!isset($_REQUEST['Page']))
                             </div>
                             <div class="row">
                                 <?php
-                                $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                if (isset($_REQUEST['name'])) {
+                                    $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['name'] . "%'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                }
+                                        else if (isset($_REQUEST['button_go'])) {
+                                            $a = explode('-', $_REQUEST['price_list']);
+                                            if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."' AND TYPE ='" . $_GET['type_list'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."' AND TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND TYPE = '" . $_GET['type_list'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && $_REQUEST['price_list']) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['type_list']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['price_list'])) {
+                                                $sql = "SELECT * FROM product WHERE TYPE ='" . $_GET['type_list'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['price_list']!=''&& empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list'])){
+                                                $sql = "SELECT * FROM product WHERE PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";     
+                                            }     
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND TYPE ='" . $_GET['type_list'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['brand_list']) && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                echo '<script type="text/javascript">
+                                                window.location = "productgird.php?Type=&Page=0"
+                                                </script>';    
+                                            }
+                                        }
+                                        else {
+                                            $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                        }
+                                        /*
+                                if ($_REQUEST['brand_list'] != '') {
+                                    $sql = "SELECT * FROM product WHERE BRAND ='" . $_REQUEST['brand_list'] . "'" . " LIMIT " . ($_REQUEST['Page'] * 6) . ",6";
+                                } else {
+                                    $sql = "SELECT * FROM product" . " LIMIT " . ($_REQUEST['brand_list'] * 6) . ",6";
+                                }*/
                                 $result = $conn->query($sql);
                                 while ($row = $result->fetch_assoc()) {
                                 ?>
@@ -369,8 +333,74 @@ if (!isset($_REQUEST['Page']))
                                             </select>
                                         </div>
                                         <div class="pager">
+                                            <a href="#" class="prev-page">
+                                                <i class="fa fa-angle-left">
+                                                </i>
+                                            </a>
                                             <?php
+                                            /*
+                                            if (isset($_REQUEST['name'])) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_REQUEST['name'] . "%'";                      
+                                            }
+                                            else
+                                            if ($_REQUEST['Type'] != '')
+                                                $sql = "SELECT * FROM product where Type='" . $_REQUEST['Type'] . "'";
+                                            else
+                                                $sql = "SELECT * FROM product";
+                                            
+                                            */
+                                            if (isset($_REQUEST['name'])) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['name'] . "%'";
+                                            }
+                                            else if (isset($_REQUEST['button_go'])) {
+                                            $a = explode('-', $_REQUEST['price_list']);
+                                            if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."' AND TYPE ='" . $_GET['type_list'] . "'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND BRAND ='" . $_GET['brand_list'] ."' AND TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND TYPE = '" . $_GET['type_list'] . "'";
+                                            }
+                                            else if ($_REQUEST['search_name']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && $_REQUEST['price_list']) {
+                                                $sql = "SELECT * FROM product WHERE NAME LIKE '%" . $_GET['search_name'] . "%' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['type_list']!='' && empty($_REQUEST['brand_list']) && empty($_REQUEST['price_list'])) {
+                                                $sql = "SELECT * FROM product WHERE TYPE ='" . $_GET['type_list'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['price_list']!=''&& empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list'])){
+                                                $sql = "SELECT * FROM product WHERE PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";     
+                                            }     
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && empty($_REQUEST['price_list'])){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND TYPE ='" . $_GET['type_list'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && empty($_REQUEST['type_list']) && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['brand_list']) && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['search_name']) && $_REQUEST['brand_list']!='' && $_REQUEST['type_list']!='' && $_REQUEST['price_list']!=''){
+                                                $sql = "SELECT * FROM product WHERE BRAND ='" . $_GET['brand_list'] . "' AND TYPE ='" . $_GET['type_list'] . "' AND PRICE BETWEEN '" . $a['0'] . "' AND '" . $a['1'] . "'";
+                                            }
+                                            else if (empty($_REQUEST['brand_list']) && empty($_REQUEST['type_list']) && empty($_REQUEST['price_list'])){
+                                                echo '<script type="text/javascript">
+                                                window.location = "productgird.php?Type=&Page=0"
+                                                </script>';                                             }
+                                        }
+                                        else {
                                             $sql = "SELECT * FROM product";
+                                        }
                                             $result = $conn->query($sql);
                                             $row = $result->num_rows;
                                             $pages = $row % 6 == 0 ? intval($row / 6) : intval($row / 6) + 1;
@@ -562,7 +592,7 @@ if (!isset($_REQUEST['Page']))
                             </div>
                             <div class="col-md-3">
                                 <h4 class="title">
-                                    Get Our
+                                    REQUEST Our
                                     <strong>
                                         Newsletter
                                     </strong>
