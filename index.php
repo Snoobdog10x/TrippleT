@@ -163,7 +163,7 @@ require_once('LoginSession.php');
                                     </div>
                                     <div class="productname"><?= $row['NAME'] ?></div>
                                     <h4 class="price"><?= $row['PRICE'] ?></h4>
-                                    <div class="button_group"><button class="button add-cart" type="button">Add To
+                                    <div class="button_group"><button class="button add-cart" onclick="addtocart(<?=$row['PID']?>)" type="button">Add To
                                           Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                                  </div>
                               </div>

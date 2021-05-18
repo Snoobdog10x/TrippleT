@@ -22,7 +22,7 @@ function login($username, $password)
         if ($row = $result->fetch_assoc()) {
             if ($row['PASSWORD'] == $password) {
                 $_SESSION['Username'] = $username;
-                $_SESSION['Name']=$row['NAME'];
+                $_SESSION['Name'] = $row['NAME'];
                 return "Login succeed";
             } else {
                 return "Wrong password";
@@ -32,23 +32,36 @@ function login($username, $password)
         return "Username doesn't exists";
     }
 }
-function addnewitemID($id){
-    if(isset($_SESSION['cart']))
-    $_SESSION['cart']=$_SESSION['cart'].",".$id;
-    else
-    $_SESSION['cart']=$id;
+function addnewitemID($id)
+{
+    if (!isset($_SESSION['cart']))
+        $_SESSION['cart'] = array();
+    $_SESSION['cart'][$id] = intval($_SESSION['cart'][$id]) + 1;
 }
-function getlengcart(){
-    if(isset($_SESSION['cart']))
-    return count(explode(',',$_SESSION['cart']));
-    else
-    return 0;
+function deleteitemID($id)
+{
+    unset($_SESSION['cart'][$id]);
 }
-function islogin(){
+function updateitemID($id,$value)
+{
+    $_SESSION['cart'][$id] = $value;
+}
+function getlengcart()
+{
+    if (isset($_SESSION['cart'])) {
+        $count=0;
+        foreach ($_SESSION['cart'] as $x => $x_value) {
+            $count=$count+$x_value;
+        }
+        return $count;
+    } else
+        return 0;
+}
+function islogin()
+{
     return isset($_SESSION['Username']);
 }
 function logout()
 {
     unset($_SESSION['Username']);
 }
-?>
