@@ -1,3 +1,6 @@
+<?php
+require_once('LoginSession.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -97,35 +100,33 @@
                   $sql = "SELECT * FROM product WHERE Type='HOTPRODUCT'";
                   $result = $conn->query($sql);
                   $end = $result->num_rows;
-                  $limit = ($end%4==0) ? intval($end/4) : intval($end/4)+1;
-                  $start=0;
+                  $limit = ($end % 4 == 0) ? intval($end / 4) : intval($end / 4) + 1;
+                  $start = 0;
                   for ($i = 0; $i < $limit; $i++) {
                   ?>
                      <li>
-                     <div class="row">
-                        <?php
-                        $sql = "SELECT * FROM product WHERE Type='HOTPRODUCT' LIMIT ".$start.",4";
-                        $result = $conn->query($sql);
-                        while($row=$result->fetch_assoc())
-                        {
-                        ?>
-                           
+                        <div class="row">
+                           <?php
+                           $sql = "SELECT * FROM product WHERE Type='HOTPRODUCT' LIMIT " . $start . ",4";
+                           $result = $conn->query($sql);
+                           while ($row = $result->fetch_assoc()) {
+                           ?>
                               <div class="col-md-3 col-sm-6">
                                  <div class="products">
-                                    <div class="thumbnail"><a href="details.php?pid=<?=$row['PID']?>">
-                                    <img src="<?=$row['IMG']?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
-                                    </a>
+                                    <div class="thumbnail"><a href="details.php?pid=<?= $row['PID'] ?>">
+                                          <img src="<?= $row['IMG'] ?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
+                                       </a>
                                     </div>
-                                    <div class="productname"><?=$row['NAME']?></div>
-                                    <h4 class="price"><?=$row['PRICE']?></h4>
-                                    <div class="button_group"><button class="button add-cart" type="button">Add To
+                                    <div class="productname"><?= $row['NAME'] ?></div>
+                                    <h4 class="price"><?= $row['PRICE'] ?></h4>
+                                    <div class="button_group"><button class="button add-cart" onclick="addtocart(<?=$row['PID']?>)" type="button">Add To
                                           Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                                  </div>
                               </div>
-                        <?php
-                        }
-                        $start=$start+4;
-                        ?>
+                           <?php
+                           }
+                           $start = $start + 4;
+                           ?>
                         </div>
                      </li>
                   <?php
@@ -142,35 +143,34 @@
                   $sql = "SELECT * FROM product WHERE Type='FEATUREDPRODUCT'";
                   $result = $conn->query($sql);
                   $end = $result->num_rows;
-                  $limit = ($end%4==0) ? intval($end/4) : intval($end/4)+1;
-                  
-                  $start=0;
+                  $limit = ($end % 4 == 0) ? intval($end / 4) : intval($end / 4) + 1;
+
+                  $start = 0;
                   for ($i = 0; $i < $limit; $i++) {
                   ?>
                      <li>
-                     <div class="row">
-                        <?php
-                        $sql = "SELECT * FROM product WHERE Type='FEATUREDPRODUCT' LIMIT ".$start.",4";
-                        $result = $conn->query($sql);
-                        while($row=$result->fetch_assoc())
-                        {
-                        ?>
+                        <div class="row">
+                           <?php
+                           $sql = "SELECT * FROM product WHERE Type='FEATUREDPRODUCT' LIMIT " . $start . ",4";
+                           $result = $conn->query($sql);
+                           while ($row = $result->fetch_assoc()) {
+                           ?>
                               <div class="col-md-3 col-sm-6">
                                  <div class="products">
                                     <div class="thumbnail"><a href="details.php">
-                                    <img src="<?=$row['IMG']?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
-                                    </a>
+                                          <img src="<?= $row['IMG'] ?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
+                                       </a>
                                     </div>
-                                    <div class="productname"><?=$row['NAME']?></div>
-                                    <h4 class="price"><?=$row['PRICE']?></h4>
+                                    <div class="productname"><?= $row['NAME'] ?></div>
+                                    <h4 class="price"><?= $row['PRICE'] ?></h4>
                                     <div class="button_group"><button class="button add-cart" type="button">Add To
                                           Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                                  </div>
                               </div>
-                        <?php
-                        }
-                        $start=$start+4;
-                        ?>
+                           <?php
+                           }
+                           $start = $start + 4;
+                           ?>
                         </div>
                      </li>
                   <?php

@@ -32,6 +32,18 @@ function login($username, $password)
         return "Username doesn't exists";
     }
 }
+function addnewitemID($id){
+    if(isset($_SESSION['cart']))
+    $_SESSION['cart']=$_SESSION['cart'].",".$id;
+    else
+    $_SESSION['cart']=$id;
+}
+function getlengcart(){
+    if(isset($_SESSION['cart']))
+    return count(explode(',',$_SESSION['cart']));
+    else
+    return 0;
+}
 function islogin(){
     return isset($_SESSION['Username']);
 }

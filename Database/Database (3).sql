@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2021 at 06:02 PM
+-- Generation Time: May 18, 2021 at 06:40 AM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.5
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,86 @@ SET time_zone = "+00:00";
 --
 -- Database: `tripplet`
 --
+CREATE DATABASE IF NOT EXISTS `tripplet` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+USE `tripplet`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `USERNAME` varchar(64) COLLATE utf8mb4_bin NOT NULL,
+  `PASSWORD` text COLLATE utf8mb4_bin NOT NULL,
+  `NAME` text COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`USERNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`USERNAME`, `PASSWORD`, `NAME`) VALUES
+('duythanh', 'duythanh', 'Nguyễn Duy Thanh'),
+('huythong', 'huythong', 'Đỗ Huy Thông'),
+('minhtam', 'minhtam', 'Trần Đặng Minh Tâm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE IF NOT EXISTS `customer` (
+  `USERNAME` varchar(64) COLLATE utf8mb4_bin NOT NULL,
+  `PASSWORD` text COLLATE utf8mb4_bin NOT NULL,
+  `NAME` text COLLATE utf8mb4_bin NOT NULL,
+  `BIRTHDAY` date NOT NULL,
+  `PHONE` text COLLATE utf8mb4_bin NOT NULL,
+  `SEX` text COLLATE utf8mb4_bin NOT NULL,
+  `ADDRESS` text COLLATE utf8mb4_bin NOT NULL,
+  `EMAIL` text COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`USERNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`USERNAME`, `PASSWORD`, `NAME`, `BIRTHDAY`, `PHONE`, `SEX`, `ADDRESS`, `EMAIL`) VALUES
+('duythanh', 'duythanh', 'Nguyen Duy Thanh', '2001-08-28', '0858497861', 'MEN', '574/15/1/29 sinco binhtan', 'duythanh1565@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE IF NOT EXISTS `order` (
+  `OID` int(11) NOT NULL,
+  `USERNAME` varchar(64) COLLATE utf8mb4_bin NOT NULL,
+  `DATE` datetime NOT NULL,
+  `TOTAL` decimal(20,3) NOT NULL,
+  `STATUS` varchar(64) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`OID`,`USERNAME`),
+  KEY `USERNAME` (`USERNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderdetail`
+--
+
+CREATE TABLE IF NOT EXISTS `orderdetail` (
+  `OID` int(11) NOT NULL,
+  `PID` int(11) NOT NULL,
+  `AMOUNT` bigint(20) NOT NULL,
+  `UPRICE` decimal(20,3) NOT NULL,
+  `TOTAL` decimal(20,3) NOT NULL,
+  PRIMARY KEY (`OID`,`PID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -37,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `DETAIL` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`PID`) USING BTREE,
   KEY `TYPE` (`TYPE`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `product`
@@ -88,9 +168,43 @@ INSERT INTO `product` (`PID`, `TYPE`, `NAME`, `PRICE`, `IMG`, `BRAND`, `DETAIL`)
 (42, 'HOTPRODUCT', 'MB Woman ', '33.990', 'images/products/D8-1.png', 'Mercedes Benz', '..'),
 (43, 'MEN', 'Pure Xs', '74.790', 'images/products/a.png', 'Paco Rabanne', 'asdsa');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `producttype`
+--
+
+CREATE TABLE IF NOT EXISTS `producttype` (
+  `TYPE` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`TYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `producttype`
+--
+
+INSERT INTO `producttype` (`TYPE`) VALUES
+('FEATUREDPRODUCT'),
+('HOTPRODUCT'),
+('MEN'),
+('UNISEX'),
+('WOMEN');
+
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`USERNAME`) REFERENCES `customer` (`USERNAME`);
+
+--
+-- Constraints for table `orderdetail`
+--
+ALTER TABLE `orderdetail`
+  ADD CONSTRAINT `orderdetail_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `order` (`OID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `product`

@@ -91,7 +91,7 @@
                                     </select>
                                 </div>
                                 <div class="button_group">
-                                    <button class="button">
+                                    <button class="button" onclick="addtocart(<?= $row['PID'] ?>)">
                                         Add To Cart
                                     </button>
                                     <button class="button compare">

@@ -28,7 +28,7 @@ require_once('LoginSession.php');
 if (isset($_REQUEST['Username'])) {
     $log = login($_REQUEST['Username'], $_REQUEST['Password']);
     if (islogin()) {
-        header('Location: index.php');
+        header('location: index.php');
     } else {
 ?>
 

@@ -270,7 +270,7 @@ if (!isset($_REQUEST['Page']))
                                                 <?= $row['PRICE']; ?>
                                             </h4>
                                             <div class="button_group">
-                                                <button class="button add-cart" type="button">
+                                                <button class="button add-cart" onclick="addtocart(<?=$row['PID']?>)" type="button">
                                                     Add To Cart
                                                 </button>
                                                 <button class="button compare" type="button">

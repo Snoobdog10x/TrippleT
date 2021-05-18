@@ -60,43 +60,14 @@ if (islogin()) {
           <div class="header_bottom">
             <ul class="option">
               <li id="search" class="search">
-              <form action="productgird.php?Page=0" method="GET">
-              <input type="hidden" name="Page" value="0">
+                <form action="productgird.php?Page=0" method="GET">
+                  <input type="hidden" name="Page" value="0">
                   <input class="search-submit" type="submit" value="">
                   <input class="search-input" placeholder="Enter your search term..." type="text" name="name">
-              </form>              
+                </form>
               </li>
               <li class="option-cart">
-                <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
-                <ul class="option-cart-item">
-                  <li>
-                    <div class="cart-item">
-                      <div class="image"><img src="images/products/thum/products-01.png" alt=""></div>
-                      <div class="item-description">
-                        <p class="name">Lincoln chair</p>
-                        <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                      </div>
-                      <div class="right">
-                        <p class="price">$30.00</p>
-                        <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="cart-item">
-                      <div class="image"><img src="images/products/thum/products-02.png" alt=""></div>
-                      <div class="item-description">
-                        <p class="name">Lincoln chair</p>
-                        <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                      </div>
-                      <div class="right">
-                        <p class="price">$30.00</p>
-                        <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
-                      </div>
-                    </div>
-                  </li>
-                  <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.php'">CheckOut</button></li>
-                </ul>
+                <a href="cart.php" class="cart-icon">cart <span class="cart_no"><?= getlengcart() ?></span></a>
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
@@ -178,36 +149,7 @@ if (islogin()) {
                 </form>
               </li>
               <li class="option-cart">
-                <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
-                <ul class="option-cart-item">
-                  <li>
-                    <div class="cart-item">
-                      <div class="image"><img src="images/products/thum/products-01.png" alt=""></div>
-                      <div class="item-description">
-                        <p class="name">Lincoln chair</p>
-                        <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                      </div>
-                      <div class="right">
-                        <p class="price">$30.00</p>
-                        <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="cart-item">
-                      <div class="image"><img src="images/products/thum/products-02.png" alt=""></div>
-                      <div class="item-description">
-                        <p class="name">Lincoln chair</p>
-                        <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                      </div>
-                      <div class="right">
-                        <p class="price">$30.00</p>
-                        <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
-                      </div>
-                    </div>
-                  </li>
-                  <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.php'">CheckOut</button></li>
-                </ul>
+                <a href="#" onclick="isloginn()" class="cart-icon">cart <span class="cart_no">0</span></a>
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
@@ -230,3 +172,33 @@ if (islogin()) {
 <?php
 }
 ?>
+<?php
+if (islogin()) {
+?>
+  <script>
+    var islogin = true;
+  </script>
+<?php
+} else {
+?>
+  <script>
+    var islogin = false;
+  </script>
+<?php
+}
+?>
+<script>
+  function isloginn() {
+    if (islogin) {
+      return true;
+    } else {
+      alert("Please login to add item to cart!");
+      return false;
+    }
+  }
+  function addtocart(id) {
+    if (isloginn()) {
+      window.location.href = 'addcart.php?id=' + id;
+    }
+  }
+</script>
