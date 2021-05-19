@@ -60,7 +60,7 @@ if (islogin()) {
             <ul class="option">
               <li id="search" class="search">
                 <form action="productgird.php" method="GET">
-                  <input class="search-submit" type="submit">
+                  <input class="search-submit" type="submit" value>
                   <input class="search-input" placeholder="Enter your search term..." type="text" name="search_name">
                 </form>
               </li>
@@ -139,7 +139,7 @@ if (islogin()) {
             <ul class="option">
               <li id="search" class="search">
                 <form action="productgird.php" method="GET">
-                  <input class="search-submit" type="submit">
+                  <input class="search-submit" type="submit" value>
                   <input class="search-input" placeholder="Enter your search term..." type="text" name="search_name">
                 </form>
               </li>
