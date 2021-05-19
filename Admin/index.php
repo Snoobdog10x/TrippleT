@@ -8,7 +8,7 @@ if (islogin()) {
 ?>
     <!--product management-->
     <div id="PManagement" class="container_fullwidth">
-        <div class="container" style="background-color: white;width: 90%;margin-top: 5%;">
+        <div class="container" style="background-color: white;width: 100%;margin-top: 5%;">
             <br>
             <h3>Product Management</h3>
             <br>
@@ -124,7 +124,7 @@ if (islogin()) {
                             return  "select* from product";
                     }
                     $sql = getSQL();
-                    $sql = $sql . " Limit " . ($_REQUEST['Page'] * 3) . ",3";
+                    $sql = $sql . " Limit " . ($_REQUEST['Page'] * 4) . ",4";
                     $conn = connectDb();
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
@@ -153,7 +153,7 @@ if (islogin()) {
                 $sql = getSQL();
                 $result = $conn->query($sql);
                 $row = $result->num_rows;
-                $pages = $row % 4 == 0 ? intval($row / 3) : intval($row / 3) + 1;
+                $pages = $row % 4 == 0 ? intval($row / 4) : intval($row / 4) + 1;
                 if (isset($_REQUEST['search1']))
                     $search = sprintf(
                         "?Page=%s&search1=search&search=%s&type=%s&price=%s",
@@ -172,11 +172,19 @@ if (islogin()) {
                         <?php
                         for ($i = 0; $i < $pages; $i++) {
                             $search = "Page=" . $i . (isset($_REQUEST['search1']) ? ("&type=" . $_REQUEST['type'] . "&" . "search=" . $_REQUEST['search'] . "&" . "price=" . $_REQUEST['price'] . "&" . "search1=search") : "");
+                            if ($i == $_REQUEST['Page']) {
                         ?>
-                            <li><a href="index.php?<?= $search ?>" class="active">
-                                    <?= ($i + 1) ?>
-                                </a></li>
+                                <li><a href="index.php?<?= $search ?>" style="background-color: #eeeeee;" class="active">
+                                        <?= ($i + 1) ?>
+                                    </a></li>
+                            <?php
+                            } else {
+                            ?>
+                                <li><a href="index.php?<?= $search ?>" class="active">
+                                        <?= ($i + 1) ?>
+                                    </a></li>
                         <?php
+                            }
                         }
                         closeDB($conn);
                         if (isset($_REQUEST['search1']))

@@ -8,7 +8,7 @@ if (islogin()) {
 ?>
     <!--Oder management-->
     <div id="OManagement" class="container_fullwidth">
-        <div class="container" style="background-color: white;width: 90%;margin-top: 5%;">
+        <div class="container" style="background-color: white;width: 100%;margin-top: 5%;">
             <br>
             <h3>Oder Management</h3>
             <br>
