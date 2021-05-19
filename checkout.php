@@ -246,14 +246,15 @@ span.price {
                 <?php 
                 if (isset($_REQUEST['submit_order'])) {
                     $username = $_SESSION['Username'];
-                    $day = date("Y-m-d h:i:s");
-                    $sql = "INSERT INTO `order` (`USERNAME`,`DATE`,`TOTAL`,`STATUS`)
-                            VALUES ('duythanh', '2021-05-19 05:51:00.000000', '102.00', 'PROCESSING')";
-                    $result = $conn -> query($sql);
+                    $day = date("Y-m-d");
+                    $sql = "INSERT INTO `order` (`USERNAME`,`TOTAL`,`DATE`,`STATUS`) VALUES ('$username','$total','$day','PROCESSING')";
+                    $result = $conn->query($sql);
                 }
-                else 
-                    echo "ERROR";
-            ?>
+                else {
+                    echo($conn->error);
+                    closeDB($conn); 
+                }    
+                ?>    
                 <div class="clearfix">
                 </div>
                 <div class="our-brand">
