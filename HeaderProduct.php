@@ -71,13 +71,10 @@ if (islogin()) {
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="margin-left: 15%;">
               <ul class="nav navbar-nav">
                 <li><a href="index.php">home</a></li>
-                <li><a href="productgird.php?Type=MEN&Page=0">men</a></li>
-                <li><a href="productgird.php?Type=WOMEN&Page=0">women</a></li>
-                <li><a href="productgird.php?Type=UNISEX&Page=0">unisex</a></li>
-                <li><a href="productgird.php?Type=&Page=0">Productgird</a></li>
+                <li><a href="productgird.php">Productgird</a></li>
                 <li><a href="#">blog</a></li>
                 <li><a href="contact.php">contact us</a></li>
               </ul>
@@ -153,13 +150,10 @@ if (islogin()) {
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="margin-left: 15%;">
               <ul class="nav navbar-nav">
                 <li><a href="index.php">home</a></li>
-                <li><a href="productgird.php?Type=MEN&Page=0">men</a></li>
-                <li><a href="productgird.php?Type=WOMEN&Page=0">women</a></li>
-                <li><a href="productgird.php?Type=UNISEX&Page=0">unisex</a></li>
-                <li><a href="productgird.php?Type=&Page=0">Productgird</a></li>
+                <li><a href="productgird.php">Productgird</a></li>
                 <li><a href="#">blog</a></li>
                 <li><a href="contact.php">contact us</a></li>
               </ul>
