@@ -62,29 +62,18 @@
                         <table style="border-collapse: collapse; width: 100%; height: 36px;" border="1">
                             <tbody>
                             <tr style="height: 18px; font-family:Verdana; font-size:14px;">
-                                <td style="width: 20%; height: 18px; text-align: center;">ID&nbsp;</td>
+                                <td style="width: 20%; height: 18px; text-align: center;">OID&nbsp;</td>
                                 <td style="width: 20%; height: 18px; text-align: center;">Purchase Date</td>
                                 <td style="width: 20%; height: 18px; text-align: center;">Product</td>
                                 <td style="width: 20%; height: 18px; text-align: center;">Price</td>
                                 <td style="width: 20%; height: 18px; text-align: center;">Order Status</td>
                             </tr>
-                                            <?php $sql = "SELECT * FROM order WHERE USERNAME ='" . $_SESSION['Username'] . "'";
-                                                $result = $conn->query($sql);
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $id = $row['OID'];
-                                                    $username = $row['USERNAME'];
-                                                    $fullname = $row['NAME'];
-                                                    $email = $row['EMAIL'];
-                                                    $address = $row['ADDRESS'];
-                                                    $phone = $row['PHONE'];
-                                                }
-                                                ?>
                             <tr style="height: 18px;">
-                                <td style="width: 20%; height: 18px; text-align: center;" value="<?= $id?>"></td>
-                                <td style="width: 20%; height: 18px; text-align: center;">&nbsp;</td>
-                                <td style="width: 20%; height: 18px; text-align: center;">&nbsp;</td>
-                                <td style="width: 20%; height: 18px; text-align: center;">&nbsp;</td>
-                                <td style="width: 20%; height: 18px; text-align: center;">&nbsp;</td>
+                                <td style="width: 20%; height: 18px; text-align: center;"></td>
+                                <td style="width: 20%; height: 18px; text-align: center;"></td>
+                                <td style="width: 20%; height: 18px; text-align: center;"></td>
+                                <td style="width: 20%; height: 18px; text-align: center;"></td>
+                                <td style="width: 20%; height: 18px; text-align: center;"></td>
                             </tr>
                             </tbody>
                         </table>

@@ -76,6 +76,7 @@ if (islogin()) {
                 <li><a href="#">blog</a></li>
                 <li><a href="contact.php">contact us</a></li>
                 <li><a href="updateacc.php">Update account</a></li>
+                <li><a href="myorder.php">My Order</a></li>
               </ul>
             </div>
           </div>
