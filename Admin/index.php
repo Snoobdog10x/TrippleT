@@ -1,13 +1,14 @@
-<?= require_once('Sessionadmin.php') ?>
-<?php
 
+<?php
+require_once('Sessionadmin.php');
 if (islogin()) {
     if (!isset($_REQUEST['Page']))
         $_REQUEST['Page'] = 0;
     require_once('header.php');
 ?>
     <!--product management-->
-    <div id="PManagement" class="container_fullwidth">
+
+    <div class="container_fullwidth" style="background-color: white;">
         <div class="container" style="background-color: white;width: 100%;margin-top: 5%;">
             <br>
             <h3>Product Management</h3>
@@ -24,7 +25,7 @@ if (islogin()) {
                             <input type="hidden" name="search1" value="search">
                             <div class="col-md-3">
                                 <label for="search">Name:</label>
-                                <input type="text" id="search" name="search" value="<?=isset($_REQUEST['search'])?$_REQUEST['search']:""?>" class="form-control" placeholder="Search">
+                                <input type="text" id="search" name="search" value="<?= isset($_REQUEST['search']) ? $_REQUEST['search'] : "" ?>" class="form-control" placeholder="Search">
                             </div>
                             <div class="col-md-3">
                                 <label for="sel1">Select type :</label>
@@ -206,7 +207,7 @@ if (islogin()) {
             </div>
         </div>
 
-    </div>
+            </div>
 
     </html>
 <?php

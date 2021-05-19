@@ -1,6 +1,6 @@
-<?= require_once('Sessionadmin.php') ?>
 
 <?php
+require_once('Sessionadmin.php');
 if (islogin()) {
     if (!isset($_REQUEST['Page']))
         $_REQUEST['Page'] = 0;
