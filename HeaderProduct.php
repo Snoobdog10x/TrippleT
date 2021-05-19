@@ -71,12 +71,13 @@ if (islogin()) {
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div class="navbar-collapse collapse" style="margin-left: 15%;">
+            <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="index.php">home</a></li>
                 <li><a href="productgird.php">Productgird</a></li>
                 <li><a href="#">blog</a></li>
                 <li><a href="contact.php">contact us</a></li>
+                <li><a href="updateacc.php">Update account</a></li>
               </ul>
             </div>
           </div>
@@ -150,7 +151,7 @@ if (islogin()) {
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div class="navbar-collapse collapse" style="margin-left: 15%;">
+            <div class="navbar-collapse collapse" >
               <ul class="nav navbar-nav">
                 <li><a href="index.php">home</a></li>
                 <li><a href="productgird.php">Productgird</a></li>

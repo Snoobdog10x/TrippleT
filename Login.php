@@ -61,9 +61,20 @@ if (isset($_REQUEST['Username'])) {
                     </div>
                     <br>
                     <br>
-                    <button type="submit" class="large btn btn-default center-block">
-                        <h4>Login</h4>
-                    </button>
+                    <div class="">
+                        <div class="row center-block">
+                            <div class="col-md-6 ">
+                                <button type="submit" style="width: 100%;" class="btn btn-default ">
+                                    <h4>Login</h4>
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" style="width: 100%;" onclick="window.location.href='index.php'" class="btn btn-default center-block">
+                                    <h4>cancel</h4>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </body>

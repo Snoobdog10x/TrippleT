@@ -34,7 +34,7 @@
   </script>
 </head>
 
-<body>
+<body id="home">
   <div class="wrapper">
     <?= require_once("HeaderProduct.php") ?>
     <div class="clearfix">

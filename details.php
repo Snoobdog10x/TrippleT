@@ -21,7 +21,7 @@
 <![endif]-->
 </head>
 
-<body>
+<body id="home">
     <div class="wrapper">
         <?= require("HeaderProduct.php") ?>
     </div>
