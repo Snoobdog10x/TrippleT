@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?= require_once('Sessionadmin.php') ?> 
 <head>
     <meta http-equiv="Content-Type" content="text/php;charset=utf-8" />
     <meta name="description" content="">
@@ -49,6 +48,7 @@
     </script>
 </head>
 <?php
+require_once('Sessionadmin.php');
 if (islogin()) {
 ?>
     <?php
