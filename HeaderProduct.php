@@ -1,4 +1,3 @@
-
 <?php
 require_once('LoginSession.php');
 if (islogin()) {
@@ -60,10 +59,9 @@ if (islogin()) {
           <div class="header_bottom">
             <ul class="option">
               <li id="search" class="search">
-                <form action="productgird.php?Page=0" method="GET">
-                  <input type="hidden" name="Page" value="0">
-                  <input class="search-submit" type="submit" value="">
-                  <input class="search-input" placeholder="Enter your search term..." type="text" name="name">
+                <form action="productgird.php" method="GET">
+                  <input class="search-submit" type="submit">
+                  <input class="search-input" placeholder="Enter your search term..." type="text" name="search_name">
                 </form>
               </li>
               <li class="option-cart">
@@ -141,9 +139,8 @@ if (islogin()) {
             <ul class="option">
               <li id="search" class="search">
                 <form action="productgird.php" method="GET">
-                  <input type="hidden" name="Page" value="0">
-                  <input class="search-submit" type="submit" value="">
-                  <input class="search-input" placeholder="Enter your search term..." type="text" name="name">
+                  <input class="search-submit" type="submit">
+                  <input class="search-input" placeholder="Enter your search term..." type="text" name="search_name">
                 </form>
               </li>
               <li class="option-cart">
@@ -151,7 +148,7 @@ if (islogin()) {
               </li>
             </ul>
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div class="navbar-collapse collapse" >
+            <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="index.php">home</a></li>
                 <li><a href="productgird.php">Productgird</a></li>
@@ -191,6 +188,7 @@ if (islogin()) {
       return false;
     }
   }
+
   function addtocart(id) {
     if (isloginn()) {
       window.location.href = 'addcart.php?id=' + id;

@@ -2,6 +2,16 @@
 require_once("lib.php");
 if (!isset($_REQUEST['Page']))
     $_REQUEST['Page'] = 0;
+if (!isset($_REQUEST['search_name']))
+$_REQUEST['search_name']="";
+if (!isset($_REQUEST['brand_list']))
+$_REQUEST['brand_list']="";
+if (!isset($_REQUEST['type_list']))
+$_REQUEST['type_list']="";
+if (!isset($_REQUEST['price_list']))
+$_REQUEST['price_list']="";
+if (!isset($_REQUEST['button_go']))
+$_REQUEST['button_go']="Go";
 ?>
 <!DOCTYPE html>
 <html>

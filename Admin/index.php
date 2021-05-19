@@ -24,7 +24,7 @@ if (islogin()) {
                             <input type="hidden" name="search1" value="search">
                             <div class="col-md-3">
                                 <label for="search">Name:</label>
-                                <input type="text" id="search" name="search" class="form-control" placeholder="Search">
+                                <input type="text" id="search" name="search" value="<?=isset($_REQUEST['search'])?$_REQUEST['search']:""?>" class="form-control" placeholder="Search">
                             </div>
                             <div class="col-md-3">
                                 <label for="sel1">Select type :</label>
@@ -111,7 +111,7 @@ if (islogin()) {
                         if ($_REQUEST['type'] != '')
                             return sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
                         if ($_REQUEST['search'] != '')
-                            return sprintf("select* from product where name like '%%%s%%'", $_REQUEST['name']);
+                            return sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
                         if ($_REQUEST['price'] != '') {
                             $a = explode('-', $_REQUEST['price']);
                             return sprintf(
