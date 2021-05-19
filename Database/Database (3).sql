@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 06:58 AM
+-- Generation Time: May 19, 2021 at 07:41 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `tripplet`
 --
+CREATE DATABASE IF NOT EXISTS `tripplet` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+USE `tripplet`;
 
 -- --------------------------------------------------------
 
@@ -27,10 +29,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `USERNAME` varchar(64) COLLATE utf8mb4_bin NOT NULL,
   `PASSWORD` text COLLATE utf8mb4_bin NOT NULL,
-  `NAME` text COLLATE utf8mb4_bin NOT NULL
+  `NAME` text COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`USERNAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -48,7 +51,7 @@ INSERT INTO `admin` (`USERNAME`, `PASSWORD`, `NAME`) VALUES
 -- Table structure for table `customer`
 --
 
-CREATE TABLE `customer` (
+CREATE TABLE IF NOT EXISTS `customer` (
   `USERNAME` varchar(64) COLLATE utf8mb4_bin NOT NULL,
   `PASSWORD` text COLLATE utf8mb4_bin NOT NULL,
   `NAME` text COLLATE utf8mb4_bin NOT NULL,
@@ -56,7 +59,8 @@ CREATE TABLE `customer` (
   `PHONE` text COLLATE utf8mb4_bin NOT NULL,
   `SEX` text COLLATE utf8mb4_bin NOT NULL,
   `ADDRESS` text COLLATE utf8mb4_bin NOT NULL,
-  `EMAIL` text COLLATE utf8mb4_bin NOT NULL
+  `EMAIL` text COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`USERNAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -72,20 +76,15 @@ INSERT INTO `customer` (`USERNAME`, `PASSWORD`, `NAME`, `BIRTHDAY`, `PHONE`, `SE
 -- Table structure for table `order`
 --
 
-CREATE TABLE `order` (
-  `OID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `order` (
+  `OID` int(11) NOT NULL AUTO_INCREMENT,
   `USERNAME` varchar(64) COLLATE utf8mb4_bin NOT NULL,
-  `DATE` datetime NOT NULL,
   `TOTAL` decimal(20,3) NOT NULL,
-  `STATUS` varchar(64) COLLATE utf8mb4_bin NOT NULL
+  `DATE` date NOT NULL,
+  `STATUS` text COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`OID`),
+  KEY `USERNAME` (`USERNAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`OID`, `USERNAME`, `DATE`, `TOTAL`, `STATUS`) VALUES
-(0, 'duythanh', '2021-05-19 05:42:14', '102.000', 'PROCESSING');
 
 -- --------------------------------------------------------
 
@@ -93,24 +92,15 @@ INSERT INTO `order` (`OID`, `USERNAME`, `DATE`, `TOTAL`, `STATUS`) VALUES
 -- Table structure for table `orderdetail`
 --
 
-CREATE TABLE `orderdetail` (
+CREATE TABLE IF NOT EXISTS `orderdetail` (
   `OID` int(11) NOT NULL,
   `PID` int(11) NOT NULL,
-  `AMOUNT` bigint(20) NOT NULL,
-  `UPRICE` decimal(20,3) NOT NULL,
-  `TOTAL` decimal(20,3) NOT NULL
+  `UPRICE` int(11) NOT NULL,
+  `AMOUNT` int(11) NOT NULL,
+  `TOTAL` int(11) NOT NULL,
+  PRIMARY KEY (`OID`,`PID`),
+  KEY `PID` (`PID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Dumping data for table `orderdetail`
---
-
-INSERT INTO `orderdetail` (`OID`, `PID`, `AMOUNT`, `UPRICE`, `TOTAL`) VALUES
-(0, 1, 2, '50.000', '102.000'),
-(0, 2, 2, '50.000', '102.000'),
-(0, 3, 2, '50.000', '102.000'),
-(0, 5, 2, '50.000', '102.000'),
-(0, 10, 2, '50.000', '102.000');
 
 -- --------------------------------------------------------
 
@@ -118,15 +108,17 @@ INSERT INTO `orderdetail` (`OID`, `PID`, `AMOUNT`, `UPRICE`, `TOTAL`) VALUES
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
-  `PID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product` (
+  `PID` int(11) NOT NULL AUTO_INCREMENT,
   `TYPE` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `NAME` text COLLATE utf8mb4_bin NOT NULL,
   `PRICE` decimal(20,3) NOT NULL,
   `IMG` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `BRAND` text COLLATE utf8mb4_bin NOT NULL,
-  `DETAIL` text COLLATE utf8mb4_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  `DETAIL` text COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`PID`) USING BTREE,
+  KEY `TYPE` (`TYPE`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `product`
@@ -183,8 +175,9 @@ INSERT INTO `product` (`PID`, `TYPE`, `NAME`, `PRICE`, `IMG`, `BRAND`, `DETAIL`)
 -- Table structure for table `producttype`
 --
 
-CREATE TABLE `producttype` (
-  `TYPE` varchar(255) COLLATE utf8mb4_bin NOT NULL
+CREATE TABLE IF NOT EXISTS `producttype` (
+  `TYPE` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`TYPE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -197,58 +190,6 @@ INSERT INTO `producttype` (`TYPE`) VALUES
 ('MEN'),
 ('UNISEX'),
 ('WOMEN');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`USERNAME`);
-
---
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`USERNAME`);
-
---
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`OID`,`USERNAME`),
-  ADD KEY `USERNAME` (`USERNAME`);
-
---
--- Indexes for table `orderdetail`
---
-ALTER TABLE `orderdetail`
-  ADD PRIMARY KEY (`OID`,`PID`);
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`PID`) USING BTREE,
-  ADD KEY `TYPE` (`TYPE`);
-
---
--- Indexes for table `producttype`
---
-ALTER TABLE `producttype`
-  ADD PRIMARY KEY (`TYPE`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables
@@ -264,7 +205,8 @@ ALTER TABLE `order`
 -- Constraints for table `orderdetail`
 --
 ALTER TABLE `orderdetail`
-  ADD CONSTRAINT `orderdetail_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `order` (`OID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `orderdetail_ibfk_1` FOREIGN KEY (`PID`) REFERENCES `product` (`PID`),
+  ADD CONSTRAINT `orderdetail_ibfk_2` FOREIGN KEY (`OID`) REFERENCES `order` (`OID`);
 
 --
 -- Constraints for table `product`
