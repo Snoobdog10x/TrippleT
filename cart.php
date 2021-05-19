@@ -189,7 +189,15 @@
                     </span>
                   </div>
                   <button>
-                    <a href="checkout.php">Process To Checkout</a>
+                    <a href="" onclick="return checktotal('<?=$total?>');">Process To Checkout</a>
+                    <script>
+                    function checktotal(total){
+                      if(total!=0){
+                        window.location.href="checkout.php";
+                      }
+                      else alert("empty cart!!");
+                    }
+                    </script>
                   </button>
                 </div>
               </div>
