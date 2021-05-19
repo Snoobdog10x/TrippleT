@@ -269,6 +269,33 @@
                     $day = date("Y-m-d");
                     $sql = "INSERT INTO `order` (`USERNAME`,`TOTAL`,`DATE`,`STATUS`) VALUES ('$username','$total','$day','PROCESSING')";
                     $result = $conn->query($sql);
+                    $sql = "SELECT MAX(OID) as OID from `order`";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    $OID = $row['OID'];
+                    foreach ($_SESSION['cart'] as $key => $value) {
+                        $sql = "SELECT * from product where PID=" . $key;
+                        $result = $conn->query($sql);
+                        $row = $result->fetch_assoc();
+                        $total = number_format($row['PRICE'] * $value, 2);
+                        $sql = sprintf(
+                            "INSERT INTO `orderdetail` (`OID`,`PID`,`UPRICE`,`AMOUNT`,`TOTAL`) VALUES ('%s','%s','%s','%s','%s')",
+                            $OID,
+                            $row['PID'],
+                            $row['PRICE'],
+                            $value,
+                            $total
+                        );
+                        $result = $conn->query($sql);
+                    }
+                    unset($_SESSION['cart']);
+                    ?>
+                    <script>
+                        alert('Order Success');
+                        window.location.href="index.php";
+                    </script>
+                    <?php
+                    closeDB($conn);
                 } else {
                     echo ($conn->error);
                     closeDB($conn);

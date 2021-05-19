@@ -126,7 +126,7 @@ if (islogin()) {
                                 $total = number_format($total + $row['UPRICE'] * $row['AMOUNT'], 2);
                             ?>
                                 <tr>
-                                    <th><?= $count ?></th>
+                                    <th><?= $count++ ?></th>
                                     <td><img src="../<?= $row1['IMG'] ?>" width=5%" alt=""><?= $row1['NAME'] ?></td>
                                     <td><?= $row['AMOUNT'] ?></td>
                                     <td><?= $row['UPRICE'] ?></td>
