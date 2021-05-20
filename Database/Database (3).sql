@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 07:41 AM
+-- Generation Time: May 20, 2021 at 04:45 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -68,7 +68,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
 --
 
 INSERT INTO `customer` (`USERNAME`, `PASSWORD`, `NAME`, `BIRTHDAY`, `PHONE`, `SEX`, `ADDRESS`, `EMAIL`) VALUES
-('duythanh', 'duythanh', 'Nguyen Duy Thanh', '2001-08-28', '0858497861', 'MEN', '574/15/1/29 sinco binhtan', 'duythanh1565@gmail.com');
+('duythanh', 'duythanh', 'Nguyen Duy Thanh', '2001-08-28', '0858497861', 'MEN', '574/15/1/29 sinco binhtan', 'duythanh1565@gmail.com'),
+('huythong', 'huythong', 'Do Huy Thong', '2021-05-06', '0858497861', 'MEN', '574/15/1/29 sinco binhtan', 'huythong@gmail.com'),
+('minhtam', 'minhtam', 'Tran Dang Minh Tam', '2021-05-06', '0858497861', 'MEN', '111 dong den', 'minhtam@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,21 @@ CREATE TABLE IF NOT EXISTS `order` (
   `STATUS` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`OID`),
   KEY `USERNAME` (`USERNAME`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`OID`, `USERNAME`, `TOTAL`, `DATE`, `STATUS`) VALUES
+(11, 'minhtam', '427.500', '2021-05-20', 'PROCESSING'),
+(12, 'minhtam', '118.590', '2021-05-20', 'PROCESSING'),
+(13, 'minhtam', '100.000', '2021-05-20', 'PROCESSING'),
+(14, 'minhtam', '51.000', '2021-05-20', 'PROCESSING'),
+(15, 'duythanh', '220.590', '2021-05-20', 'PROCESSING'),
+(16, 'duythanh', '120.820', '2021-05-20', 'PROCESSING'),
+(17, 'huythong', '100.000', '2021-05-20', 'PROCESSING'),
+(18, 'huythong', '355.680', '2021-05-20', 'PROCESSING');
 
 -- --------------------------------------------------------
 
@@ -95,12 +111,39 @@ CREATE TABLE IF NOT EXISTS `order` (
 CREATE TABLE IF NOT EXISTS `orderdetail` (
   `OID` int(11) NOT NULL,
   `PID` int(11) NOT NULL,
-  `UPRICE` int(11) NOT NULL,
+  `UPRICE` decimal(20,3) NOT NULL,
   `AMOUNT` int(11) NOT NULL,
-  `TOTAL` int(11) NOT NULL,
+  `TOTAL` decimal(20,3) NOT NULL,
   PRIMARY KEY (`OID`,`PID`),
   KEY `PID` (`PID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `orderdetail`
+--
+
+INSERT INTO `orderdetail` (`OID`, `PID`, `UPRICE`, `AMOUNT`, `TOTAL`) VALUES
+(11, 1, '51.000', 1, '51.000'),
+(11, 2, '49.000', 3, '147.000'),
+(11, 3, '69.590', 1, '69.590'),
+(11, 4, '59.250', 1, '59.250'),
+(11, 14, '52.830', 1, '52.830'),
+(11, 15, '47.830', 1, '47.830'),
+(12, 2, '49.000', 1, '49.000'),
+(12, 3, '69.590', 1, '69.590'),
+(13, 1, '51.000', 1, '51.000'),
+(13, 2, '49.000', 1, '49.000'),
+(14, 1, '51.000', 1, '51.000'),
+(15, 1, '51.000', 2, '102.000'),
+(15, 2, '49.000', 1, '49.000'),
+(15, 3, '69.590', 1, '69.590'),
+(16, 13, '67.990', 1, '67.990'),
+(16, 14, '52.830', 1, '52.830'),
+(17, 1, '51.000', 1, '51.000'),
+(17, 2, '49.000', 1, '49.000'),
+(18, 2, '49.000', 2, '98.000'),
+(18, 3, '69.590', 2, '139.180'),
+(18, 4, '59.250', 2, '118.500');
 
 -- --------------------------------------------------------
 
@@ -118,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `DETAIL` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`PID`) USING BTREE,
   KEY `TYPE` (`TYPE`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `product`
@@ -167,7 +210,7 @@ INSERT INTO `product` (`PID`, `TYPE`, `NAME`, `PRICE`, `IMG`, `BRAND`, `DETAIL`)
 (40, 'WOMEN', 'Splendida Tubereuse ', '76.490', 'images/products/W-5.png', 'Bvlgari', '..'),
 (41, 'WOMEN', 'Sexy Amber ', '64.970', 'images/products/W-6.png', 'Michael Kors', '..'),
 (42, 'HOTPRODUCT', 'MB Woman ', '33.990', 'images/products/D8-1.png', 'Mercedes Benz', '..'),
-(43, 'MEN', 'Pure Xs', '74.790', 'images/products/a.png', 'Paco Rabanne', 'asdsa');
+(43, 'MEN', 'Pure Xs', '74.790', 'images/products/a.png', 'Paco Rabanne', '...');
 
 -- --------------------------------------------------------
 

@@ -26,7 +26,7 @@ if (islogin()) {
                 <tbody>
                     <?php
                     $conn = connectDb();
-                    $sql = "select* from `order` Limit " . ($_REQUEST['Page'] * 4) . ",4";
+                    $sql = "select* from `order` Limit " . ($_REQUEST['Page'] * 7) . ",7";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                     ?>
@@ -62,7 +62,7 @@ if (islogin()) {
                 $sql = "select* from `order`";
                 $result = $conn->query($sql);
                 $row = $result->num_rows;
-                $pages = $row % 4 == 0 ? intval($row / 3) : intval($row / 3) + 1;
+                $pages = $row % 7 == 0 ? intval($row / 7) : intval($row / 7) + 1;
                 $search = '?Page=' . (($_REQUEST['Page'] > 0) ? $_REQUEST['Page'] - 1 : $_REQUEST['Page']);
                 if ($pages !== 0) {
                 ?>
