@@ -14,10 +14,6 @@
                 alert('Email is not valid');
                 return false;
             }
-            if (!document.getElementById('address').value.includes("/")) {
-                alert('Address is not valid');
-                return false;
-            }
             if (document.getElementById('password').value != document.getElementById('repassword').value) {
                 alert('Password and retype password are not same');
                 return false;
