@@ -68,19 +68,19 @@
                                         <tr style="height: 18px;">
                                             <td style="text-align: center; height: 18px;">
                                                 <h6><strong>Name</strong>
-                                                    <h6>
+                                                    </h6>
                                             </td>
                                             <td style="text-align: center; height: 18px;">
                                                 <h6><strong>Price</strong>
-                                                    <h6>
+                                                    </h6>
                                             </td>
                                             <td style="text-align: center; height: 18px;">
                                                 <h6><strong>Quantity</strong>
-                                                    <h6>
+                                                    </h6>
                                             </td>
                                             <td style="text-align: center; height: 18px;">
                                                 <h6><strong>Price</strong>
-                                                    <h6>
+                                                    </h6>
                                             </td>
                                         </tr>
                                         <?php
@@ -210,13 +210,13 @@
                                                 }
                                                 ?>
                                                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                                <input type="text" id="fname" name="firstname" value="<?= $fullname ?>"></input>
+                                                <input type="text" id="fname" name="firstname" value="<?= $fullname ?>" disabled></input>
                                                 <label for="phone"><i class="fa fa-institution"></i>Phone</label>
-                                                <input type="text" id="phone" name="phone" value="<?= $phone ?>"></input>
+                                                <input type="text" id="phone" name="phone" value="<?= $phone ?>" disabled></input>
                                                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                                <input type="text" id="email" name="email" value="<?= $email ?>"></input>
+                                                <input type="text" id="email" name="email" value="<?= $email ?>" disabled></input>
                                                 <label for="adr"><i class="fa fa-address-card-o"></i> Address (Default)</label>
-                                                <input type="text" id="adr" name="address" value="<?= $address ?>"></input>
+                                                <input type="text" id="adr" name="address" value="<?= $address ?>" disabled></input>
                                                 <label for="city"><i class="fa fa-institution"></i> City</label>
                                                 <input type="text" id="city" name="city" value="Ho Chi Minh city"></input>
                                                 <div class="row">
@@ -235,7 +235,7 @@
                                                 <label for="fname">Accepted Cards</label>
                                                 <img src="images/CardIcons.jpeg" style="width: 95%;">
                                                 <label for="cname">Name on Card</label>
-                                                <input type="text" id="cname" name="cardname" value="<?= $fullname ?>">
+                                                <input type="text" id="cname" name="cardname" value="<?= $fullname ?>" disabled>
                                                 <label for="ccnum">Credit card number<span style="color:red;" id="numcard">&nbsp; *</span></label>
                                                 <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" onsubmit="return checkcard()">
                                                 <label for="expmonth">Exp Month<span style="color:red;" id="exp_month">*</span></label>
