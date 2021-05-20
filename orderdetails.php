@@ -33,44 +33,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h4 class="title contact-title">
-                            MY ORDER
+                            ORDER DETAILS
                         </h4>
                         <div class="clearfix">
                         </div>
-                    <div style="height:400px">
-                        <table style="border-collapse: collapse; width: 100%; height: 36px;" border="1">
-                            <tbody>
-                            <tr style="height: 18px; font-family:Verdana; font-size:18px;">
-                                <td style="width: 20%; height: 30px; text-align: center;">Purchase Date</td>
-                                <td style="width: 20%; height: 30px; text-align: center;">Product</td>
-                                <td style="width: 20%; height: 30px; text-align: center;">Price</td>
-                                <td style="width: 20%; height: 30px; text-align: center;">Order Status</td>
-                            </tr>
-                            <?php
-                                $getOID = $conn->query("SELECT * FROM `order`");
-                                while ($row = $getOID->fetch_assoc()) {
-                                    $oid = $row['OID'];
-                                    $date = $row['DATE'];
-                                    $total = $row['TOTAL'];
-                                    $status = $row['STATUS']; ?>
-                            <tr style="height: 18px; font-family: Verdana; font-size:12px;">
-                                <td style="width: 20%; height: 18px; text-align: center;"><?= $date?></td>
-                                <td style="text-align: center;">
-                                <?php
-                                    $getname_pro = $conn->query("SELECT * FROM `orderdetail`,`product` WHERE orderdetail.PID=product.PID AND orderdetail.OID=$oid");
-                                    while ($row = $getname_pro->fetch_assoc()) {
-                                        echo $row['NAME'] . "</br>";
-                                    }?><br></td>
-                                <td style="width: 20%; height: 18px; text-align: center;"><?= $total?> $</td>
-                                <td style="width: 20%; height: 18px; text-align: center;"><?= $status?></td>
-                                <td style="width: 20%; height: 30px; text-align: center;"><a href="orderdetails.php">Detail</a></td>
-                            </tr>
-                            <?php
-                                } 
-                            ?>
-                            </tbody>
-                        </table>
-                    </div>
+                        
                 <div class="clearfix">
                 </div>
                 <div class="our-brand">

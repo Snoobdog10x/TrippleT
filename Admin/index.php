@@ -1,9 +1,16 @@
-
 <?php
 require_once('Sessionadmin.php');
 if (islogin()) {
     if (!isset($_REQUEST['Page']))
         $_REQUEST['Page'] = 0;
+    if (!isset($_REQUEST['search']))
+        $_REQUEST['search'] = "";
+    if (!isset($_REQUEST['type']))
+        $_REQUEST['type'] = "";
+    if (!isset($_REQUEST['price']))
+        $_REQUEST['price'] = "";
+    if (!isset($_REQUEST['search1']))
+        $_REQUEST['search1'] = "";
     require_once('header.php');
 ?>
     <!--product management-->
@@ -15,21 +22,21 @@ if (islogin()) {
             <br>
             <br>
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <br>
                     <button onclick="location.href = 'add.php'" class="form-control" style="width: 100%;" data-toggle="modal" data-target="#addModal">Add</button>
                 </div>
-                <div class="col-md-10 ">
+                <div class="col-md-11 ">
                     <form class="" action="index.php">
                         <div class="row pull-right">
                             <input type="hidden" name="search1" value="search">
                             <div class="col-md-3">
                                 <label for="search">Name:</label>
-                                <input type="text" id="search" name="search" value="<?= isset($_REQUEST['search']) ? $_REQUEST['search'] : "" ?>" class="form-control" placeholder="Search">
+                                <input type="text" id="search" name="search" value="<?= $_REQUEST['search'] ?>" class="form-control" placeholder="Search">
                             </div>
                             <div class="col-md-3">
                                 <label for="sel1">Select type :</label>
-                                <select class="form-control" class="" name="type" id="sel1">
+                                <select class="form-control" class="" name="type" id="type">
                                     <option id="none" value=""></option>
                                     <option id="men" value="MEN">MEN</option>
                                     <option id="women" value="WOMEN">WOMEN</option>
@@ -37,10 +44,13 @@ if (islogin()) {
                                     <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
                                     <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
                                 </select>
+                                <script>
+                                    document.getElementById('type').value="<?=$_REQUEST['type']?>";
+                                </script>
                             </div>
                             <div class="col-md-3">
                                 <label for="sel1">Select price :</label>
-                                <select class="form-control" class="" name="price" id="sel1">
+                                <select class="form-control" class="" name="price" id="price">
                                     <option id="none" value=""></option>
                                     <option id="men" value="10-30">10$-30$</option>
                                     <option id="women" value="30-50">30$-50$</option>
@@ -48,11 +58,18 @@ if (islogin()) {
                                     <option id="hot" value="70-90">70$-90$</option>
                                     <option id="feat" value="90-1000">>=90$</option>
                                 </select>
+                                <script>
+                                    document.getElementById('price').value="<?=$_REQUEST['price']?>";
+                                </script>
                             </div>
-                            <div class="col-md-3 pull-right">
+                            <div class="col-md-2 pull-right">
                                 <br>
                                 <button type="submit" class="btn btn-default">Search</button>
                             </div>
+                            <div class="col-md-1 pull-right">
+                                <br>
+                                <button type="reset" class="btn btn-default">reset</button>
+                            </div>  
                         </div>
                     </form>
                 </div>
@@ -75,59 +92,38 @@ if (islogin()) {
                     <?php
                     function getSQL()
                     {
-                        if (!isset($_REQUEST['search1']))
-                            return  "select* from product";
-                        if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
-                            $a = explode('-', $_REQUEST['price']);
-                            return sprintf(
-                                "select* 
-                        from product 
-                        where name like '%%%s%%' and TYPE='%s' and price>=%s and price<%s",
-                                $_REQUEST['search'],
-                                $_REQUEST['type'],
-                                $a[0],
-                                $a[1]
-                            );
+                        $sql = "";
+                        if ($_REQUEST['search'] != '') {
+                            $sql = sprintf("SELECT * FROM product WHERE NAME LIKE '%%%s%%'", $_REQUEST['search']);
                         }
-                        if ($_REQUEST['search'] != '' && $_REQUEST['type'] != '')
-                            return sprintf("select* from product where name like '%%%s%%' and TYPE='%s' ", $_REQUEST['search'], $_REQUEST['type']);
-                        if ($_REQUEST['type'] != '' && $_REQUEST['price'] != '') {
-                            $a = explode('-', $_REQUEST['price']);
-                            return sprintf(
-                                "select* from product where TYPE='%s' and price>=%s and price<%s ",
-                                $_REQUEST['type'],
-                                $a[0],
-                                $a[1]
-                            );
+                        if ($_REQUEST['type'] != '') {
+                            if ($sql != "")
+                                $sql = $sql . sprintf(" and TYPE='%s'", $_REQUEST['type']);
+                            else
+                                $sql = sprintf("SELECT * FROM product WHERE TYPE='%s'", $_REQUEST['type']);
                         }
-                        if ($_REQUEST['search'] != '' && $_REQUEST['price'] != '') {
-                            $a = explode('-', $_REQUEST['price']);
-                            return sprintf(
-                                "select* from product where name like '%%%s%%' and price>=%s and price<%s ",
-                                $_REQUEST['search'],
-                                $a[0],
-                                $a[1]
-                            );
-                        }
-                        if ($_REQUEST['type'] != '')
-                            return sprintf("select* from product where TYPE='%s'", $_REQUEST['type']);
-                        if ($_REQUEST['search'] != '')
-                            return sprintf("select* from product where name like '%%%s%%'", $_REQUEST['search']);
                         if ($_REQUEST['price'] != '') {
                             $a = explode('-', $_REQUEST['price']);
-                            return sprintf(
-                                "select* from product where price>=%s and price<%s",
-                                $a[0],
-                                $a[1]
-                            );
+                            if ($sql != "")
+                                $sql = $sql . sprintf(" and PRICE BETWEEN '%s' and '%s'", $a[0], $a[1]);
+                            else
+                                $sql = sprintf("SELECT * FROM product WHERE PRICE BETWEEN '%s' and '%s'", $a[0], $a[1]);
                         }
-                        if ($_REQUEST['search'] == '' && $_REQUEST['type'] == '' && $_REQUEST['price'] == '')
-                            return  "select* from product";
+                        if ($sql == "")
+                            $sql = "SELECT * FROM product";
+                        return $sql;
                     }
                     $sql = getSQL();
                     $sql = $sql . " Limit " . ($_REQUEST['Page'] * 4) . ",4";
                     $conn = connectDb();
                     $result = $conn->query($sql);
+                    if ($result->num_rows == 0) {
+                    ?>
+                        <script>
+                            alert('Cannot find product you need');
+                        </script>
+                    <?php
+                    }
                     while ($row = $result->fetch_assoc()) {
                         $count = $row['PID'];
                     ?>
@@ -207,7 +203,7 @@ if (islogin()) {
             </div>
         </div>
 
-            </div>
+    </div>
 
     </html>
 <?php

@@ -20,13 +20,12 @@
         }
     </script>
 </head>
-
 <body style="background-color: white;">
     <div class="navbar navbar-fixed-top" style="background-color: rgb(67, 67, 67,0.5);">
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-sm-2">
-                    <div class="logo"><a href="index.php?Page=0"><img src="../images/logo.png" alt="FlatShop"></a></div>
+                    <div class="logo"><a href="index.php"><img src="../images/logo.png" alt="FlatShop"></a></div>
                 </div>
                 <div class="col-md-10 col-sm-10">
                     <div class="clearfix"></div>
