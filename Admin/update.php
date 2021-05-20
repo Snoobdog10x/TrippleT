@@ -21,7 +21,11 @@
             // Allowing file type
             var allowedExtensions =
                 /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-
+            if (fileInput.files[0].size > 3000000) {
+                alert('file size must less than 3mb');
+                fileInput.value = '';
+                return false;
+            } else
             if (!allowedExtensions.exec(filePath)) {
                 alert('Invalid file type');
                 fileInput.value = '';
@@ -34,7 +38,7 @@
                     reader.onload = function(e) {
                         document.getElementById(
                                 'imagePreview').innerHTML =
-                            '<img style="width:100%;" src="' + e.target.result +
+                            '<img class="img-thumbnail" src="' + e.target.result +
                             '"/>';
                     };
 
@@ -54,7 +58,7 @@ if (islogin()) {
 ?>
     <?php
     if (!isset($_REQUEST['name'])) {
-        $conn=connectDb();
+        $conn = connectDb();
         $sql = "select * from product where PID=" . $_REQUEST['id'];
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
@@ -82,14 +86,16 @@ if (islogin()) {
                     <div class=" col-md-7 row">
                         <div class="col-md-6 form-group">
                             <label for="pwd">Type:</label>
-                            <select class="form-control" name="type">
+                            <select class="form-control" name="type" id="type">
                                 <option id="men" value="MEN">MEN</option>
                                 <option id="women" value="WOMEN">WOMEN</option>
                                 <option id="uni" value="UNISEX">UNISEX</option>
                                 <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
                                 <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
                             </select>
-
+                            <script>
+                                document.getElementById("type").value = "<?= $row['TYPE'] ?>"
+                            </script>
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="pwd">Name:</label>
@@ -112,59 +118,112 @@ if (islogin()) {
                                 <button class="btn btn-success btn-block" value="Upload Image" type="submit" onclick="return check()" name="submit">Update</button>
                             </div>
                             <div class="col-md-6">
-                                <a class="btn btn-success btn-block" href="javascript:history.go(-1)"   >Cancel</a>
+                                <a class="btn btn-success btn-block" href="index.php">Cancel</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-        <script>
-            var type = "<?= $row['TYPE'] ?>"
-            switch (type) {
-                case 'MEN':
-                    document.getElementById('men').selected = "true";
-                    break;
-                case 'WOMEN':
-                    document.getElementById('women').selected = "true";
-                    break;
-                case 'UNISEX':
-                    document.getElementById('uni').selected = "true";
-                    break;
-                case 'HOTPRODUCT':
-                    document.getElementById('hot').selected = "true";
-                    break;
-                case 'FEATUREDPRODUCT':
-                    document.getElementById('feat').selected = "true";
-                    break;
-                default:
-                    break;
-            }
-        </script>
+
     <?php
     } else {
     ?>
         <?php
-        $conn=connectDb();
+        $conn = connectDb();
         if ($_FILES["fileToUpload"]["name"] != '') {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-            $sql = sprintf(
-                'UPDATE product 
+            if (!file_exists($target_file)) {
+                $sql = sprintf(
+                    'UPDATE product 
                     SET TYPE="%s",NAME="%s",PRICE="%s",IMG="%s",BRAND="%s",DETAIL="%s"
                     WHERE PID=%s',
-                $_REQUEST['type'],
-                $_REQUEST['name'],
-                $_REQUEST['price'],
-                substr($target_file, 3, strlen($target_file) - 1),
-                $_REQUEST['brand'],
-                $_REQUEST['des'],
-                $_REQUEST['pid']
-            );
-            var_dump($sql);
-            if ($conn->query($sql) === TRUE) {
-                unlink('../' . $_REQUEST['oldimg']);
-                $bool = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+                    $_REQUEST['type'],
+                    $_REQUEST['name'],
+                    $_REQUEST['price'],
+                    substr($target_file, 3, strlen($target_file) - 1),
+                    $_REQUEST['brand'],
+                    $_REQUEST['des'],
+                    $_REQUEST['pid']
+                );
+                if ($conn->query($sql) === TRUE) {
+                    unlink('../' . $_REQUEST['oldimg']);
+                    $bool = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+        ?>
+                    <script>
+                        alert("success");
+                        window.location.href = 'index.php';
+                    </script>
+                <?php
+                }
+            } else {
+                ?>
+                <script>
+                    alert("Duplicate Image!");
+                </script>
+                <div style="background-color: white;">
+                    <form class="border border-danger container" style="margin-top: 3%; width: 70%;height: 80;" method="POST" enctype="multipart/form-data" action="update.php">
+                        <input type="hidden" value="<?= $_REQUEST['pid'] ?>" name="pid">
+                        <input type="hidden" value="<?= $_REQUEST['oldimg'] ?>" name="oldimg">
+                        <div class="form-group" style="margin-top: 1%; width: 100%;background-color: red;">
+                            <Strong>
+                                <h3>+ Update New Product</h3>
+                            </Strong>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-5 form-group row">
+                                <div class="col-md-12">
+                                    <label for="pwd">Image:</label>
+                                    <input type="FILE" name="fileToUpload" onchange="return fileValidation()" id="fileToUpload" accept="image/*" class="form-control-file">
+                                </div>
+                                <div id="imagePreview" class="col-md-12">
+                                    <img src="../<?= $_REQUEST['oldimg'] ?>" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class=" col-md-7 row">
+                                <div class="col-md-6 form-group">
+                                    <label for="pwd">Type:</label>
+                                    <select class="form-control" name="type" id="type">
+                                        <option id="men" value="MEN">MEN</option>
+                                        <option id="women" value="WOMEN">WOMEN</option>
+                                        <option id="uni" value="UNISEX">UNISEX</option>
+                                        <option id="hot" value="HOTPRODUCT">HOT PRODUCT</option>
+                                        <option id="feat" value="FEATUREDPRODUCT">FEATURED PRODUCT</option>
+                                    </select>
+                                    <script>
+                                        document.getElementById("type").value = "<?= $_REQUEST['type'] ?>"
+                                    </script>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="pwd">Name:</label>
+                                    <input type="text" name="name" value="<?= $_REQUEST['name'] ?>" class="form-control" id="pwd" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="pwd">Brand:</label>
+                                    <input type="text" name="brand" value="<?= $_REQUEST['brand'] ?>" class="form-control" id="pwd" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="PID">Price:</label>
+                                    <input type="number" name="price" value="<?= $_REQUEST['price'] ?>" step="0.001" class="form-control" id="pwd" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="comment">Description:</label>
+                                    <textarea class="form-control" name="des" style="resize: none;" rows="5" id="comment" required><?= $_REQUEST['des'] ?></textarea>
+                                </div>
+                                <div class="col-md-12 row form-group mx-auto">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-success btn-block" value="Upload Image" type="submit" onclick="return check()" name="submit">Update</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a class="btn btn-success btn-block" href="index.php">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <?php
             }
         } else {
             $sql = sprintf(
@@ -180,14 +239,16 @@ if (islogin()) {
                 $_REQUEST['pid']
             );
             if ($conn->query($sql) === TRUE) {
+            ?>
+                <script>
+                    alert("success");
+                    window.location.href = 'index.php';
+                </script>
+        <?php
             }
             closeDB($conn);
         }
         ?>
-        <script>
-           alert("success");
-            window.location.href='index.php';
-        </script>
     <?php
     }
     ?>

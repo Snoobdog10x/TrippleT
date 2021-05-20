@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/php;charset=utf-8" />
     <meta name="description" content="">
@@ -20,7 +21,11 @@
             // Allowing file type
             var allowedExtensions =
                 /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-
+            if (fileInput.files[0].size > 3000000) {
+                alert('file size must less than 3mb');
+                fileInput.value = '';
+                return false;
+            } else
             if (!allowedExtensions.exec(filePath)) {
                 alert('Invalid file type');
                 fileInput.value = '';
@@ -103,7 +108,7 @@ if (islogin()) {
                                 <button class="btn btn-success btn-block" value="Upload Image" type="submit" onclick="return check()" name="submit">Add</button>
                             </div>
                             <div class="col-md-6">
-                                <a class="btn btn-success btn-block" href="javascript:history.go(-1)">Cancel</a>
+                                <a class="btn btn-success btn-block" href="index.php">Cancel</a>
                             </div>
                         </div>
                     </div>
@@ -114,30 +119,118 @@ if (islogin()) {
     } else {
     ?>
         <?php
-        $conn=connectDb();
+        $conn = connectDb();
         $target_dir = "../images/products/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $sql = sprintf(
-            'INSERT INTO product (TYPE,NAME,PRICE,IMG,BRAND,DETAIL)
-                    VALUES ("%s", "%s", "%s", "%s", "%s", "%s")',
-            $_REQUEST['type'],
-            $_REQUEST['name'],
-            $_REQUEST['price'],
-            substr($target_file,3,strlen($target_file)-1),
-            $_REQUEST['brand'],
-            $_REQUEST['des']
-        );
-        if ($conn->query($sql) === TRUE) {
-            $bool=move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+        function isduplicatefile($target_file)
+        {
+            if (file_exists($target_file)) {
+                return false;
+            }
+            return move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
         }
-        else
-        echo ($conn->error);
-        closeDB($conn);
-        ?><script>
-            alert('Succes')
-            window.location.href='index.php'
-        </script>
+        function isinsertSuccess($conn, $target_file)
+        {
+            $sql = sprintf(
+                'INSERT INTO product (TYPE,NAME,PRICE,IMG,BRAND,DETAIL)
+                        VALUES ("%s", "%s", "%s", "%s", "%s", "%s")',
+                $_REQUEST['type'],
+                $_REQUEST['name'],
+                $_REQUEST['price'],
+                substr($target_file, 3, strlen($target_file) - 1),
+                $_REQUEST['brand'],
+                $_REQUEST['des']
+            );
+            if ($conn->query($sql) === TRUE) {
+                closeDB($conn);
+                return true;
+            } else {
+                closeDB($conn);
+                return false;
+            }
+        }
+        $isdupImg = isduplicatefile($target_file);
+        $isinsert = isinsertSuccess($conn, $target_file);
+        if ($isdupImg && $isinsert) {
+        ?>
+            <script>
+                alert('Succes')
+                window.location.href = 'index.php'
+            </script>
+            <?php
+        } else {
+            if (!$isdupImg && $isinsert) {
+                $conn = connectDb();
+                $sql = "select max(PID) as PID from product";
+                $result = $conn->query($sql);
+                $row=$result->fetch_assoc();
+                $sql = "DELETE FROM product WHERE PID='".$row['PID']."'";
+                $result = $conn->query($sql);
+            ?>
+                <script>
+                    alert("Duplicate Img")
+                </script>
+                <div style="background-color: white;">
+                    <form class="border border-danger container" style="margin-top: 3%; width: 70%;height: 80;" method="POST" enctype="multipart/form-data" action="add.php">
+                        <div class="form-group" style="margin-top: 1%; width: 100%;background-color: red;">
+                            <Strong>
+                                <h3>+ Add New Product</h3>
+                            </Strong>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-5 form-group row">
+                                <div class="col-md-12">
+                                    <label for="pwd">Image:</label>
+                                    <input type="FILE" name="fileToUpload" onchange="return fileValidation()" id="fileToUpload" accept="image/*" class="form-control-file" required>
+                                </div>
+                                <div id="imagePreview" class="col-md-12">
+                                </div>
+                            </div>
+                            <div class=" col-md-7 row">
+                                <div class="col-md-6 form-group">
+                                    <label for="pwd">Type:</label>
+                                    <select class="form-control" name="type" id="type">
+                                        <option value="MEN">MEN</option>
+                                        <option value="WOMEN">WOMEN</option>
+                                        <option value="UNISEX">UNISEX</option>
+                                        <option value="HOTPRODUCT">HOTPRODUCT</option>
+                                        <option value="FEATUREDPRODUCT">FEATUREDPRODUCT</option>
+                                    </select>
+                                    <script>
+                                        document.getElementById("type").value = "<?= $_REQUEST['type'] ?>"
+                                    </script>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="pwd">Name:</label>
+                                    <input type="text" name="name" value="<?= $_REQUEST['name'] ?>" class="form-control" id="pwd" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="pwd">Brand:</label>
+                                    <input type="text" name="brand" value="<?= $_REQUEST['brand'] ?>" class="form-control" id="pwd" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="PID">Price:</label>
+                                    <input type="number" name="price" value="<?= $_REQUEST['price'] ?>" step="0.001" class="form-control" id="pwd" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="comment">Description:</label>
+                                    <textarea class="form-control" name="des" value="<?= $_REQUEST['des'] ?>" style="resize: none;" rows="5" id="comment" required></textarea>
+                                </div>
+                                <div class="col-md-12 row form-group mx-auto">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-success btn-block" value="Upload Image" type="submit" onclick="return check()" name="submit">Add</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a class="btn btn-success btn-block" href="index.php">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
     <?php
+            }
+        }
     }
     ?>
 <?php
