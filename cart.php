@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?= require_once('lib.php') ?>
+<?php require_once('lib.php') ?>
 <head>
   <style>
     input[type=number]:hover::-webkit-inner-spin-button {
