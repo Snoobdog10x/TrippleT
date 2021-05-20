@@ -32,12 +32,15 @@ if (islogin()) {
                             <input type="hidden" name="search1" value="search">
                             <div class="col-md-3">
                                 <label for="search">Name:</label>
-                                <input type="text" id="search" name="search" value="<?= $_REQUEST['search'] ?>" class="form-control" placeholder="Search">
+                                <input type="text" id="search" name="search" class="form-control" placeholder="Search">
+                                <script>
+                                    document.getElementById('search').value="<?=$_REQUEST['search']?>";
+                                </script>
                             </div>
                             <div class="col-md-3">
                                 <label for="sel1">Select type :</label>
                                 <select class="form-control" class="" name="type" id="type">
-                                    <option id="none" value=""></option>
+                                    <option id="none" value="">Choose type</option>
                                     <option id="men" value="MEN">MEN</option>
                                     <option id="women" value="WOMEN">WOMEN</option>
                                     <option id="uni" value="UNISEX">UNISEX</option>
@@ -51,7 +54,7 @@ if (islogin()) {
                             <div class="col-md-3">
                                 <label for="sel1">Select price :</label>
                                 <select class="form-control" class="" name="price" id="price">
-                                    <option id="none" value=""></option>
+                                    <option id="none" value="">Choose price</option>
                                     <option id="men" value="10-30">10$-30$</option>
                                     <option id="women" value="30-50">30$-50$</option>
                                     <option id="uni" value="50-60">50$-70$</option>
@@ -64,7 +67,7 @@ if (islogin()) {
                             </div>
                             <div class="col-md-2 pull-right">
                                 <br>
-                                <button type="submit" class="btn btn-default">Search</button>
+                                <button type="submit"  class="btn btn-default">Search</button>
                             </div>
                             <div class="col-md-1 pull-right">
                                 <br>
