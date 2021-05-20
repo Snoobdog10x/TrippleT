@@ -22,7 +22,7 @@ if (!isset($_REQUEST['button_go']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.png">
     <title>
-        Welcome to FlatShop
+        Welcome to TrippleTshop
     </title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
@@ -415,9 +415,9 @@ if (!isset($_REQUEST['button_go']))
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="footer-logo">
-                                <a href="#">
-                                    <img src="images/logo.png" alt="">
+                            <div class="footer-logo"style="margin-top: -20%;">
+                                <a href="#" >
+                                    <img src="images/logo2.png" width="150px" height="150px" alt="">
                                 </a>
                             </div>
                         </div>
@@ -493,7 +493,7 @@ if (!isset($_REQUEST['button_go']))
                             <p>
                                 Copyright © 2012. Designed by
                                 <a href="#">
-                                    Michael Lee
+                                    Tripple T
                                 </a>
                                 . All rights reseved
                             </p>

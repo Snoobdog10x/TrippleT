@@ -252,7 +252,7 @@ require_once('LoginSession.php');
             <div class="container">
                <div class="row">
                   <div class="col-md-3">
-                     <div class="footer-logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+                     <div class="footer-logo" style="margin-top: -20%;"><a href="#"><img src="images/logo2.png" width="150px" height="150px"  alt=""></a></div>
                   </div>
                   <div class="col-md-3 col-sm-6">
                      <h4 class="title">Contact <strong>Info</strong></h4>
