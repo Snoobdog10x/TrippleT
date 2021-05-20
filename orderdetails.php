@@ -22,6 +22,7 @@
 </script>
 <![endif]-->
 </head>
+
 <body id="home">
     <div class="wrapper">
         <?php
@@ -29,99 +30,96 @@
         <div class="clearfix">
         </div>
         <?php
-            $sql = "SELECT * FROM `orderdetail` WHERE OID ='" . $_REQUEST['oid'] . "'";
-            $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
-            $oid = $row['OID'];
+        $sql = "SELECT * FROM `orderdetail` WHERE OID ='" . $_REQUEST['oid'] . "'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $oid = $row['OID'];
         ?>
         <div class="container_fullwidth">
             <div class="container">
-            <div class="row">
-                            <div class="col-md-4">
-                                <div class="contact-infoormation">
-                                    <h5>
-                                        Order Details
-                                    </h5>
-                                    <?php
-                                        $sql = "SELECT * FROM `order`,`customer` WHERE order.OID = '" . $_REQUEST['oid'] . "' AND order.USERNAME = customer.USERNAME";
-                                        $inf = $conn->query($sql);
-                                        $row = $inf->fetch_assoc();
-                                    ?>
-                                    <table style="border-collapse: collapse; width: 100%; height: 54px; font-family:Verdana; font-size:14px; font-weight:bold;" border="1">
-                                    <tbody>
-                                        <tr style="height: 18px;">
-                                            <td style="width: 20%; height: 18px; text-align: center;">Receiver's
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="contact-infoormation">
+                            <h5>
+                                Order Details
+                            </h5>
+                            <?php
+                            $sql = "SELECT * FROM `order`,`customer` WHERE order.OID = '" . $_REQUEST['oid'] . "' AND order.USERNAME = customer.USERNAME";
+                            $inf = $conn->query($sql);
+                            $row = $inf->fetch_assoc();
+                            ?>
+                            <table style="border-collapse: collapse; width: 100%; height: 54px; font-family:Verdana; font-size:14px; font-weight:bold;" border="1">
+                                <tbody>
+                                    <tr style="height: 18px;">
+                                        <td style="width: 20%; height: 18px; text-align: center;">Receiver's
                                             Address</td>
-                                            <td style="width: 80%; height: 18px; text-align: left;">
-                                                <p>&nbsp;- Address: <?= $row['ADDRESS']?> </p>
-                                                <p>&nbsp;- Phone: <?= $row['PHONE']?></p>
-                                            </td>
-                                        </tr>
-                                        <tr style="height: 18px;">
-                                            <td style="width: 20%; height: 18px; text-align: center;">Mode of Delivery</td>
-                                            <td style="width: 80%; height: 18px; text-align: left;">
-                                                <p>&nbsp;- Delivered on: 5 - 7 days after order</p>
-                                                <p>&nbsp;- Shipping fee: no </p>
-                                            </td>
-                                        </tr>
-                                            <tr style="height: 18px;">
-                                            <td style="width: 20%; height: 18px; text-align: center;">Payments</td>
-                                            <td style="width: 80%; height: 18px; text-align: left;">
-                                                <p>&nbsp; Payment via cart</p>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="ContactForm">
-                                    <table style="border-collapse: collapse; width: 100%;" border="1">
-                                    <tbody>
-                                        <tr style="font-family:Verdana; font-size:18px; font-weight:bold;">
-                                            <td style="width: 20%; text-align: center;">Product</td>
-                                            <td style="width: 20%; text-align: center;">Price</td>
-                                            <td style="width: 20%; text-align: center;">Quantity</td>
-                                            <td style="width: 20%; text-align: center;">Provisional</td>
-                                        </tr>
+                                        <td style="width: 80%; height: 18px; text-align: left;">
+                                            <p>&nbsp;- Address: <?= $row['ADDRESS'] ?> </p>
+                                            <p>&nbsp;- Phone: <?= $row['PHONE'] ?></p>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 18px;">
+                                        <td style="width: 20%; height: 18px; text-align: center;">Mode of Delivery</td>
+                                        <td style="width: 80%; height: 18px; text-align: left;">
+                                            <p>&nbsp;- Delivered on: 5 - 7 days after order</p>
+                                            <p>&nbsp;- Shipping fee: no </p>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 18px;">
+                                        <td style="width: 20%; height: 18px; text-align: center;">Payments</td>
+                                        <td style="width: 80%; height: 18px; text-align: left;">
+                                            <p>&nbsp; Payment via cart</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="ContactForm">
+                            <table style="border-collapse: collapse; width: 100%;" border="1">
+                                <tbody>
+                                    <tr style="font-family:Verdana; font-size:18px; font-weight:bold;">
+                                        <td style="width: 20%; text-align: center;">Product</td>
+                                        <td style="width: 20%; text-align: center;">Price</td>
+                                        <td style="width: 20%; text-align: center;">Quantity</td>
+                                        <td style="width: 20%; text-align: center;">Provisional</td>
+                                    </tr>
                                     <?php
                                     $sql = "SELECT * FROM `orderdetail`,`product` WHERE orderdetail.OID ='" . $_REQUEST['oid'] . "' AND orderdetail.PID= product.PID";
                                     $product = $conn->query($sql);
-                                    while($row=$product->fetch_assoc()){
+                                    while ($row = $product->fetch_assoc()) {
                                         $name = $row['NAME'];
                                         $price = $row['PRICE'];
                                         $qty = $row['AMOUNT'];
                                         $pricep = $row['TOTAL']
                                     ?>
-                                        <tr style="font-family:Verdana; font-size:16px; text-align: center;">
-                                            <td style="width: 20%;"><?= $name?></td>
-                                            <td style="width: 20%;"><?= $price?> $</td>
-                                            <td style="width: 20%;"><?= $qty?></td>
-                                            <td style="width: 20%;"><?= $pricep?> $</td>
-                                        </tr>
-                                    </tbody>
-                                    <?php
-                                    }?>
-                                    </table>
-                                    <hr>
-                                    <?php
-                                        $sql = "SELECT TOTAL FROM `order` WHERE OID='" . $_REQUEST['oid'] . "'";
-                                        $total = $conn->query($sql);
-                                        $row= $total->fetch_assoc();
-                                    ?>
-                                    <div class="text-right">
-                                    <h4>
-                                    TOTAL: <?= $row['TOTAL']?> $
-                                    </h4>
-                                    </div>
-                                </div>
+                                        
+                                            <tr style="font-family:Verdana; font-size:16px; text-align: center;">
+                                                <td style="width: 20%;"><a href="details.php?pid=<?= $row['PID'] ?>"><?= $name ?></a></td>
+                                                <td style="width: 20%;"><?= $price ?> $</td>
+                                                <td style="width: 20%;"><?= $qty ?></td>
+                                                <td style="width: 20%;"><?= $pricep ?> $</td>
+                                            </tr>
+                                        
+                                </tbody>
+                            <?php
+                                    } ?>
+                            </table>
+                            <hr>
+                            <?php
+                            $sql = "SELECT TOTAL FROM `order` WHERE OID='" . $_REQUEST['oid'] . "'";
+                            $total = $conn->query($sql);
+                            $row = $total->fetch_assoc();
+                            ?>
+                            <div class="text-right">
+                                <h4>
+                                    TOTAL: <?= $row['TOTAL'] ?> $
+                                </h4>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="clearfix">
-                </div>
-                <div class="our-brand">
+                    <div class="our-brand">
                         <h3 class="title">
                             <strong>
                                 Our
@@ -219,121 +217,127 @@
                     </div>
                 </div>
             </div>
-            <div class="clearfix">
-            </div>
-            <div class="footer">
-                <div class="footer-info">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="footer-logo"style="margin-top: -20%;">
-                                    <a href="#" >
-                                        <img src="images/logo2.png"width="150px" height="150px" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h4 class="title">
-                                    Contact
-                                    <strong>
-                                        Info
-                                    </strong>
-                                </h4>
-                                <p>
-                                    No. 08, Nguyen Trai, Hanoi , Vietnam
-                                </p>
-                                <p>
-                                    Call Us : (084) 1900 1008
-                                </p>
-                                <p>
-                                    Email : michael@leebros.us
-                                </p>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h4 class="title">
-                                    Customer
-                                    <strong>
-                                        Support
-                                    </strong>
-                                </h4>
-                                <ul class="support">
-                                    <li>
-                                        <a href="#">
-                                            FAQ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Payment Option
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Booking Tips
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Infomation
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h4 class="title">
-                                    REQUEST Our
-                                    <strong>
-                                        Newsletter
-                                    </strong>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor ipsum dolor.
-                                </p>
-                                <form class="newsletter">
-                                    <input type="text" name="" placeholder="Type your email....">
-                                    <input type="submit" value="SignUp" class="button">
-                                </form>
-                            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+
+    </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="footer">
+        <div class="footer-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="footer-logo" style="margin-top: -20%;">
+                            <a href="#">
+                                <img src="images/logo2.png" width="150px" height="150px" alt="">
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="copyright-info">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p>
-                                    Copyright © 2012. Designed by
-                                    <a href="#">
-                                        Michael Lee
-                                    </a>
-                                    . All rights reseved
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="social-icon">
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="google-plus">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="facebook">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="title">
+                            Contact
+                            <strong>
+                                Info
+                            </strong>
+                        </h4>
+                        <p>
+                            No. 08, Nguyen Trai, Hanoi , Vietnam
+                        </p>
+                        <p>
+                            Call Us : (084) 1900 1008
+                        </p>
+                        <p>
+                            Email : michael@leebros.us
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="title">
+                            Customer
+                            <strong>
+                                Support
+                            </strong>
+                        </h4>
+                        <ul class="support">
+                            <li>
+                                <a href="#">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Payment Option
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Booking Tips
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Infomation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="title">
+                            REQUEST Our
+                            <strong>
+                                Newsletter
+                            </strong>
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor ipsum dolor.
+                        </p>
+                        <form class="newsletter">
+                            <input type="text" name="" placeholder="Type your email....">
+                            <input type="submit" value="SignUp" class="button">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="copyright-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            Copyright © 2012. Designed by
+                            <a href="#">
+                                Michael Lee
+                            </a>
+                            . All rights reseved
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-icon">
+                            <li>
+                                <a href="#" class="linkedin">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="google-plus">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="facebook">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Bootstrap core JavaScript==================================================-->
     <script type="text/javascript" src="js/jquery-1.10.2.min.js">
     </script>
