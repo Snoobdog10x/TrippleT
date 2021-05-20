@@ -32,11 +32,11 @@ function login($username, $password)
         return "Username doesn't exists";
     }
 }
-function addnewitemID($id)
+function addnewitemID($id,$quan)
 {
     if (!isset($_SESSION['cart']))
         $_SESSION['cart'] = array();
-    $_SESSION['cart'][$id] = intval($_SESSION['cart'][$id]) + 1;
+    $_SESSION['cart'][$id] = intval($_SESSION['cart'][$id]) + $quan;
 }
 function deleteitemID($id)
 {
