@@ -51,7 +51,7 @@
                                         <th>Detail</th>
                                     </tr>
                                     <?php
-                                    $getOID = $conn->query("SELECT * FROM `order`");
+                                    $getOID = $conn->query("SELECT * FROM `order` where USERNAME='".$_SESSION['Username']."'");
                                     while ($row = $getOID->fetch_assoc()) {
                                         $oid = $row['OID'];
                                         $date = $row['DATE'];
