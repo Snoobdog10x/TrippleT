@@ -157,7 +157,7 @@ require_once('LoginSession.php');
                            ?>
                               <div class="col-md-3 col-sm-6">
                                  <div class="products">
-                                    <div class="thumbnail"><a href="details.php">
+                                    <div class="thumbnail"><a href="details.php?pid=<?=$row['PID']?>">
                                           <img src="<?= $row['IMG'] ?>" style="max-width: 100%;max-height: 100%;" alt="Product Name">
                                        </a>
                                     </div>
