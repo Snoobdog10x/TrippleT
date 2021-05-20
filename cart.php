@@ -313,7 +313,7 @@
             <div class="col-md-3">
               <div class="footer-logo" style="margin-top: -20%;">
                 <a href="#" >
-                  <img src="images/logo.png" width="150px" height="150px" alt="">
+                  <img src="images/logo2.png" width="150px" height="150px" alt="">
                 </a>
               </div>
             </div>
