@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?= require_once('lib.php') ?>
+<?php 
+    require_once('lib.php') 
+?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
