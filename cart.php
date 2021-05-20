@@ -1,6 +1,9 @@
+<?php
+require_once('lib.php');
+?>
 <!DOCTYPE html>
 <html>
-<?= require_once('lib.php') ?>
+
 <head>
   <style>
     input[type=number]:hover::-webkit-inner-spin-button {
@@ -14,21 +17,16 @@
   <link rel="shortcut icon" href="images/favicon.png">
   <title>
     Welcome to TrippleTshop
+  </title>
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
   <link href="css/style.css" rel="stylesheet" type="text/css">
-  <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
-</script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js">
-</script>
-<![endif]-->
   <script>
     function update(id) {
-      var value=document.getElementById(id).value;
-      window.location.href="updatecart.php?id="+id+"&value="+value;
+      var value = document.getElementById(id).value;
+      window.location.href = "updatecart.php?id=" + id + "&value=" + value;
     }
   </script>
 </head>
@@ -69,13 +67,13 @@
               </thead>
               <tbody>
                 <?php
-                $total=0;
+                $total = 0;
                 if (isset($_SESSION['cart'])) {
-                    foreach ($_SESSION['cart'] as $key => $value) {
-                        $sql = "SELECT * from product where PID=" . $key;
-                        $result = $conn->query($sql);
-                        $row = $result->fetch_assoc();
-                        $total=number_format($total+$row['PRICE']*$value, 2);
+                  foreach ($_SESSION['cart'] as $key => $value) {
+                    $sql = "SELECT * from product where PID=" . $key;
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    $total = number_format($total + $row['PRICE'] * $value, 2);
                 ?>
                     <tr>
                       <td>
@@ -176,7 +174,7 @@
                       Sub Total
                     </h5>
                     <span>
-                      <?=$total?>$
+                      <?= $total ?>$
                     </span>
                   </div>
                   <div class="grandtotal">
@@ -184,19 +182,18 @@
                       GRAND TOTAL
                     </h5>
                     <span>
-                    <?=$total?>$
+                      <?= $total ?>$
                     </span>
                   </div>
                   <button>
-                    <a href="checkout.php" onclick="return checktotal('<?=$total?>');">Process To Checkout</a>
+                    <a href="checkout.php" onclick="return checktotal('<?= $total ?>');">Process To Checkout</a>
                     <script>
-                    function checktotal(total){
-                      if(total!=0){
-                        return true;
+                      function checktotal(total) {
+                        if (total != 0) {
+                          return true;
+                        } else alert("empty cart!!");
+                        return false;
                       }
-                      else alert("empty cart!!");
-                      return false;
-                    }
                     </script>
                   </button>
                 </div>
@@ -312,7 +309,7 @@
           <div class="row">
             <div class="col-md-3">
               <div class="footer-logo" style="margin-top: -20%;">
-                <a href="#" >
+                <a href="#">
                   <img src="images/logo.png" width="150px" height="150px" alt="">
                 </a>
               </div>
