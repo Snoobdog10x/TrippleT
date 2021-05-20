@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?= require_once('lib.php') ?>
+<?php 
+    require_once('lib.php');
+?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -54,7 +56,7 @@
                                     $date = $row['DATE'];
                                     $total = $row['TOTAL'];
                                     $status = $row['STATUS']; ?>
-                            <tr>
+                            <tr style="font-size:14px;">
                                 <td><?= $date?></td>
                                 <td style="text-align: center;">
                                 <?php

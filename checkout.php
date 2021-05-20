@@ -254,7 +254,7 @@
 
                                         </div>
                                         <label>
-                                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address 2
+                                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address is the same as my billing address
                                         </label>
                                         <input type="submit" value="Continue to checkout" class="btn" name="submit_order">
                                     </form>
