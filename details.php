@@ -84,7 +84,7 @@
                             <div class="wided">
                                 <div class="qty">
                                     Qty &nbsp;&nbsp;:
-                                    <input type="number" value="0" min="1" name="quantity"></input>
+                                    <input type="number" value="1" min="1" name="quantity"></input>
                                     </div>
                                 <div class="button_group">
                                     <button class="button" value="<?= $row['PID'] ?>" type="submit" name="id">
