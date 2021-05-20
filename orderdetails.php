@@ -28,16 +28,97 @@
         require('HeaderProduct.php') ?>
         <div class="clearfix">
         </div>
+        <?php
+            $sql = "SELECT * FROM `orderdetail` WHERE OID ='" . $_REQUEST['oid'] . "'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $oid = $row['OID'];
+        ?>
         <div class="container_fullwidth">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4 class="title contact-title">
-                            ORDER DETAILS
-                        </h4>
-                        <div class="clearfix">
+            <div class="row">
+                            <div class="col-md-4">
+                                <div class="contact-infoormation">
+                                    <h5>
+                                        Order Details
+                                    </h5>
+                                    <?php
+                                        $sql = "SELECT * FROM `order`,`customer` WHERE order.OID = '" . $_REQUEST['oid'] . "' AND order.USERNAME = customer.USERNAME";
+                                        $inf = $conn->query($sql);
+                                        $row = $inf->fetch_assoc();
+                                    ?>
+                                    <table style="border-collapse: collapse; width: 100%; height: 54px; font-family:Verdana; font-size:14px; font-weight:bold;" border="1">
+                                    <tbody>
+                                        <tr style="height: 18px;">
+                                            <td style="width: 20%; height: 18px; text-align: center;">Receiver's
+                                            Address</td>
+                                            <td style="width: 80%; height: 18px; text-align: left;">
+                                                <p>&nbsp;- Address: <?= $row['ADDRESS']?> </p>
+                                                <p>&nbsp;- Phone: <?= $row['PHONE']?></p>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 18px;">
+                                            <td style="width: 20%; height: 18px; text-align: center;">Mode of Delivery</td>
+                                            <td style="width: 80%; height: 18px; text-align: left;">
+                                                <p>&nbsp;- Delivered on: 5 - 7 days after order</p>
+                                                <p>&nbsp;- Shipping fee: no </p>
+                                            </td>
+                                        </tr>
+                                            <tr style="height: 18px;">
+                                            <td style="width: 20%; height: 18px; text-align: center;">Payments</td>
+                                            <td style="width: 80%; height: 18px; text-align: left;">
+                                                <p>&nbsp; Payment via cart</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="ContactForm">
+                                    <table style="border-collapse: collapse; width: 100%;" border="1">
+                                    <tbody>
+                                        <tr style="font-family:Verdana; font-size:18px; font-weight:bold;">
+                                            <td style="width: 20%; text-align: center;">Product</td>
+                                            <td style="width: 20%; text-align: center;">Price</td>
+                                            <td style="width: 20%; text-align: center;">Quantity</td>
+                                            <td style="width: 20%; text-align: center;">Provisional</td>
+                                        </tr>
+                                    <?php
+                                    $sql = "SELECT * FROM `orderdetail`,`product` WHERE orderdetail.OID ='" . $_REQUEST['oid'] . "' AND orderdetail.PID= product.PID";
+                                    $product = $conn->query($sql);
+                                    while($row=$product->fetch_assoc()){
+                                        $name = $row['NAME'];
+                                        $price = $row['PRICE'];
+                                        $qty = $row['AMOUNT'];
+                                        $pricep = $row['TOTAL']
+                                    ?>
+                                        <tr style="font-family:Verdana; font-size:16px; text-align: center;">
+                                            <td style="width: 20%;"><?= $name?></td>
+                                            <td style="width: 20%;"><?= $price?> $</td>
+                                            <td style="width: 20%;"><?= $qty?></td>
+                                            <td style="width: 20%;"><?= $pricep?> $</td>
+                                        </tr>
+                                    </tbody>
+                                    <?php
+                                    }?>
+                                    </table>
+                                    <hr>
+                                    <?php
+                                        $sql = "SELECT TOTAL FROM `order` WHERE OID='" . $_REQUEST['oid'] . "'";
+                                        $total = $conn->query($sql);
+                                        $row= $total->fetch_assoc();
+                                    ?>
+                                    <div class="text-right">
+                                    <h4>
+                                    TOTAL: <?= $row['TOTAL']?> $
+                                    </h4>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
+                    </div>
+                </div>
                 <div class="clearfix">
                 </div>
                 <div class="our-brand">

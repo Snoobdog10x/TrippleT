@@ -37,14 +37,15 @@
                         </h4>
                         <div class="clearfix">
                         </div>
-                    <div style="height:400px">
+                    <div style="height:350px">
                         <table style="border-collapse: collapse; width: 100%; height: 36px;" border="1">
                             <tbody>
-                            <tr style="height: 18px; font-family:Verdana; font-size:18px;">
+                            <tr style="height: 18px; font-family:Verdana; font-size:18px; font-weight:bold;">
                                 <td style="width: 20%; height: 30px; text-align: center;">Purchase Date</td>
                                 <td style="width: 20%; height: 30px; text-align: center;">Product</td>
                                 <td style="width: 20%; height: 30px; text-align: center;">Price</td>
                                 <td style="width: 20%; height: 30px; text-align: center;">Order Status</td>
+                                <td style="width: 20%; height: 30px; text-align: center;"></td>
                             </tr>
                             <?php
                                 $getOID = $conn->query("SELECT * FROM `order`");
@@ -53,7 +54,7 @@
                                     $date = $row['DATE'];
                                     $total = $row['TOTAL'];
                                     $status = $row['STATUS']; ?>
-                            <tr style="height: 18px; font-family: Verdana; font-size:12px;">
+                            <tr style="height: 18px; font-family: Verdana; font-size:16px;">
                                 <td style="width: 20%; height: 18px; text-align: center;"><?= $date?></td>
                                 <td style="text-align: center;">
                                 <?php
@@ -63,7 +64,7 @@
                                     }?><br></td>
                                 <td style="width: 20%; height: 18px; text-align: center;"><?= $total?> $</td>
                                 <td style="width: 20%; height: 18px; text-align: center;"><?= $status?></td>
-                                <td style="width: 20%; height: 30px; text-align: center;"><a href="orderdetails.php">Detail</a></td>
+                                <td style="width: 20%; height: 30px; text-align: center;"><button ata-toggle="modal" data-target="#updateModal" onclick="location.href='orderdetails.php?oid= <?= $oid?>' ">Detail</button></td>
                             </tr>
                             <?php
                                 } 
