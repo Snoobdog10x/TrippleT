@@ -29,7 +29,7 @@
     </div>
     <div class="container_fullwidth">
         <div class="container">
-        <form action="" method="POST">
+        <form action="addcart.php" method="POST">
             <div class="row">
                 <?php
                 require_once("lib.php");
@@ -87,8 +87,7 @@
                                     <input type="number" value="0" name="quantity"></input>
                                     </div>
                                 <div class="button_group">
-                                    <button class="button" onclick="addtocart(<?= $row['PID'] ?>)">
-                                    <button class="button" type="submit" name="addcart">
+                                    <button class="button" value="<?= $row['PID'] ?>" type="submit" name="id">
                                         Add To Cart
                                     </button>
                                     <button class="button compare">
