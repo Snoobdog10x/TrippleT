@@ -87,7 +87,7 @@
                                     <input type="number" onkeydown="return false;" value="1" min="1" max="4" name="quantity"></input>
                                     </div>
                                 <div class="button_group">
-                                    <button class="button" value="<?= $row['PID'] ?>" type="submit" name="id">
+                                    <button class="button" value="<?= $row['PID'] ?>" onclick="return addtocart(<?= $row['PID'] ?>);" type="submit" name="id">
                                         Add To Cart
                                     </button>
                                     <button class="button compare">

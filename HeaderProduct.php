@@ -193,6 +193,8 @@ if (islogin()) {
   function addtocart(id) {
     if (isloginn()) {
       window.location.href = 'addcart.php?id=' + id;
+      return true;
     }
+    return false;
   }
 </script>
